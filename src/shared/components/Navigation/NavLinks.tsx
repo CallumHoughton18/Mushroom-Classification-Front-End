@@ -1,7 +1,7 @@
-import React from "react";
+import React, {FunctionComponent} from "react";
 import {NavLink} from "react-router-dom";
 
-const NavLinks = () => {
+const NavLinks: FunctionComponent = () => {
     return (
         <ul className="nav-links">
             <li>

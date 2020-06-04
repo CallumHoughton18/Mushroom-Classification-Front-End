@@ -1,11 +1,8 @@
 import React, {FunctionComponent} from "react";
-import {Route} from "react-router-dom";
 import Header from "./Header";
 import NavLinks from "./NavLinks";
 
-type NavbarProps = {};
-
-const Navbar: FunctionComponent<NavbarProps> = (props) => {
+const NavBar: FunctionComponent = () => {
     return (
         <div>
             <Header>
@@ -15,4 +12,4 @@ const Navbar: FunctionComponent<NavbarProps> = (props) => {
     );
 };
 
-export default Navbar;
+export default NavBar;
