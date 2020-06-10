@@ -17,9 +17,7 @@ const App: FunctionComponent = () => {
 
     return (
         <Router>
-            <header>
-                <NavBar />
-            </header>
+            <NavBar />
             <main>{routes}</main>
         </Router>
     );
