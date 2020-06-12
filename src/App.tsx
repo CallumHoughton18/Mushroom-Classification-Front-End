@@ -7,9 +7,14 @@ import "./scss/App.scss";
 const App: FunctionComponent = () => {
     const routes = (
         <Switch>
-            <Route path="/" exact>
+            <Route path="/Classification" exact>
                 <div>
                     <h1>Classification Page</h1>
+                </div>
+            </Route>
+            <Route path="/About" exact>
+                <div>
+                    <h1>About Page</h1>
                 </div>
             </Route>
         </Switch>

@@ -5,12 +5,12 @@ const NavLinks: FunctionComponent = () => {
     return (
         <ul>
             <li>
-                <NavLink to="/" exact>
+                <NavLink to="/Classification" exact>
                     Classification
                 </NavLink>
             </li>
             <li>
-                <NavLink to="/" exact>
+                <NavLink to="/About" exact>
                     About
                 </NavLink>
             </li>

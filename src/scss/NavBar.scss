@@ -1,21 +1,23 @@
-$navbar-height: 50px;
+$navbar-height: 60px;
 $navbar-margin-bottom: 10;
-$bg-color: rgb(0, 134, 34);
+$bg-color: #52796f;
 $font-color: rgb(255, 255, 255);
+$max-width-for-hamburger: 600px;
 
-.NavBar {
+.navbar {
     min-height: $navbar-height;
-    max-height: $navbar-height;
-    background-color: $bg-color;
-    display: flex;
-    align-items: center;
-    //justify-content: flex-end;
+    height: $navbar-height;
+    background: $bg-color;
     width: 100%;
+    transition: height 0.2s;
+    -webkit-box-shadow: 0 8px 8px -7px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 8px 8px -7px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 8px -7px rgba(0, 0, 0, 0.5);
 
     li a {
         display: inline-block;
         text-align: center;
-        padding: 18px 20px;
+        padding: 5px 10px;
         text-decoration: none;
         color: $font-color;
         text-transform: uppercase;
@@ -23,43 +25,66 @@ $font-color: rgb(255, 255, 255);
     }
 
     li {
-        display: inline;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
     li a:hover {
-        color: #111;
+        background-color: #84a98c;
         transition: 0.2s;
     }
 
     ul {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
         list-style-type: none;
         margin-top: 0;
         margin-bottom: 0;
-        margin-left: auto;
         padding: 0;
         overflow: hidden;
+        float: left;
     }
 
     .hamburger {
         font-size: 30px;
         color: white;
-        margin-right: 20px;
         cursor: pointer;
         display: none;
     }
-    #hamcheck {
-        display: none;
-    }
 
-    @media (max-width: 600px) {
+    @media (max-width: $max-width-for-hamburger) {
         .hamburger {
             display: block;
-            margin-left: auto;
+            float: left;
+            margin: 14px 10px;
         }
 
         ul {
-            list-style-type: none;
             display: none;
+        }
+    }
+}
+
+.expanded {
+    @media (max-width: $max-width-for-hamburger) {
+        height: 170px;
+        ul {
+            clear: both;
+            float: none;
+            height: auto;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        li {
+            margin-top: 10px;
+        }
+
+        li a {
+            padding: 5px 20px;
         }
     }
 }
