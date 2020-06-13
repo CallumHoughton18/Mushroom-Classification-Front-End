@@ -1,7 +1,11 @@
-$font-stack: Helvetica, sans-serif;
-$primary-color: #333;
+@import "./Theme.scss";
 
 main {
+    margin: 5px;
     font: 100% $font-stack;
     color: $primary-color;
+}
+
+html {
+    background-color: $primary-background;
 }

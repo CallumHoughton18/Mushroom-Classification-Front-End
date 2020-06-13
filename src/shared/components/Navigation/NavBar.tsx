@@ -3,6 +3,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBars} from "@fortawesome/free-solid-svg-icons";
 
 import NavLinks from "./NavLinks";
+import logo from "../../../icons/logo.png";
 
 import "../../../scss/NavBar.scss";
 
@@ -19,6 +20,7 @@ const NavBar: FunctionComponent = () => {
 
     return (
         <div className={expanded ? "navbar expanded" : "navbar"}>
+            <img src={logo} className="logo" />
             <FontAwesomeIcon
                 icon={faBars}
                 onClick={() => {

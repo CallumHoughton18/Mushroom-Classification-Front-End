@@ -1,13 +1,14 @@
+@import "./Theme.scss";
+
 $navbar-height: 60px;
 $navbar-margin-bottom: 10;
-$bg-color: #52796f;
-$font-color: rgb(255, 255, 255);
 $max-width-for-hamburger: 600px;
 
 .navbar {
+    font-family: $font-stack;
     min-height: $navbar-height;
     height: $navbar-height;
-    background: $bg-color;
+    background: $secondary-color;
     width: 100%;
     transition: height 0.2s;
     -webkit-box-shadow: 0 8px 8px -7px rgba(0, 0, 0, 0.5);
@@ -17,10 +18,10 @@ $max-width-for-hamburger: 600px;
     li a {
         display: inline-block;
         text-align: center;
-        padding: 5px 10px;
+        padding: 10px 10px;
         text-decoration: none;
-        color: $font-color;
-        text-transform: uppercase;
+        font-weight: bold;
+        color: $primary-color-highlight;
         border-radius: 3px;
     }
 
@@ -30,7 +31,7 @@ $max-width-for-hamburger: 600px;
     }
 
     li a:hover {
-        background-color: #84a98c;
+        background-color: $secondary-color-lighter;
         transition: 0.2s;
     }
 
@@ -40,18 +41,23 @@ $max-width-for-hamburger: 600px;
         align-items: center;
         flex-direction: row;
         list-style-type: none;
-        margin-top: 0;
-        margin-bottom: 0;
+        margin: 0 20px;
         padding: 0;
         overflow: hidden;
-        float: left;
+        float: right;
     }
 
     .hamburger {
         font-size: 30px;
-        color: white;
+        color: $primary-color-highlight;
         cursor: pointer;
         display: none;
+    }
+
+    .logo {
+        float: left;
+        max-height: $navbar-height;
+        scale: 0.8;
     }
 
     @media (max-width: $max-width-for-hamburger) {
@@ -64,16 +70,24 @@ $max-width-for-hamburger: 600px;
         ul {
             display: none;
         }
+
+        .logo {
+            float: right;
+            margin: 0 2px;
+        }
     }
 }
 
 .expanded {
     @media (max-width: $max-width-for-hamburger) {
         height: 170px;
+
         ul {
+            border-top: 2px solid $primary-color-highlight;
+            margin: 0 5px;
             clear: both;
             float: none;
-            height: auto;
+            height: 170px - $navbar-height;
             display: flex;
             align-items: center;
             flex-direction: column;
@@ -84,7 +98,7 @@ $max-width-for-hamburger: 600px;
         }
 
         li a {
-            padding: 5px 20px;
+            padding: 8px 30px;
         }
     }
 }
