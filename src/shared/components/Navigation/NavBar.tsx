@@ -5,13 +5,15 @@ import {faBars} from "@fortawesome/free-solid-svg-icons";
 import NavLinks from "./NavLinks";
 import logo from "../../../icons/logo.png";
 
-import "../../../scss/NavBar.scss";
+import navStyle from "../../../scss/NavBar.scss";
 
 const NavBar: FunctionComponent = () => {
+    //TODO: Add type to navStyle? currently just imported as module alias
+    const widthForHamburger = parseInt(navStyle.maxWidthForHamburger);
     const [expanded, setExpanded] = useState(false);
     useEffect(() => {
         const handleResize = () => {
-            if (window.innerWidth >= 600) {
+            if (window.innerWidth >= widthForHamburger) {
                 setExpanded(false);
             }
         };
