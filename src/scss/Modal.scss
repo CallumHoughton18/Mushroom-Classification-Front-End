@@ -1,0 +1,45 @@
+@import "./Theme.scss";
+
+.modal {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+
+    .modal-window {
+        border-radius: 5px;
+        min-height: 50%;
+        position: fixed;
+        background: $primary-background;
+        min-width: 60%;
+        height: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 30px;
+        display: flex;
+        align-content: flex-start;
+        flex-direction: column;
+
+        .modal-header {
+            font-size: xx-large;
+            font-weight: bold;
+            color: $secondary-color-darkest;
+            border-color: $secondary-color-darkest;
+            border-bottom: 2px solid;
+        }
+
+        .modal-body {
+            flex-grow: 1;
+        }
+
+        .modal-footer {
+            align-self: center;
+            vertical-align: bottom;
+            min-height: 15px;
+        }
+    }
+}

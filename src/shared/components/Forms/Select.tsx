@@ -1,8 +1,11 @@
 import React, {FunctionComponent, useState, FormEvent} from "react";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faQuestionCircle} from "@fortawesome/free-solid-svg-icons";
 
 type SelectProps = {
     id: React.ReactText;
     options: Array<string>;
+    viewInfoCallback?: () => void;
 };
 
 const Select: FunctionComponent<SelectProps> = (props) => {
@@ -20,9 +23,17 @@ const Select: FunctionComponent<SelectProps> = (props) => {
             </option>
         );
     });
+
+    const moreInfoIcon = props.viewInfoCallback ? (
+        <FontAwesomeIcon
+            icon={faQuestionCircle}
+            onClick={props.viewInfoCallback}
+            className="more-info"
+        />
+    ) : undefined;
     return (
         <React.Fragment>
-            <label htmlFor={props.id.toString()}>Select an Option</label>
+            <label htmlFor={props.id.toString()}>Select an Option {moreInfoIcon}</label>
             <select
                 title="Select an item"
                 onChange={changeHandler}
