@@ -1,6 +1,7 @@
 import React, {FunctionComponent, ReactNode} from "react";
 
 import "../../../scss/Modal.scss";
+import Button from "./Button";
 
 type ModalProps = {
     title: string;
@@ -15,7 +16,7 @@ const Modal: FunctionComponent<ModalProps> = (props) => {
                 <div className="modal-header">{props.title}</div>
                 <div className="modal-body">{props.children}</div>
                 <div className="modal-footer">
-                    <button onClick={props.closeModalCallBack}>Close</button>
+                    <Button onClick={props.closeModalCallBack}>Close</Button>
                 </div>
             </section>
         </div>

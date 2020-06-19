@@ -32,14 +32,14 @@ const ClassificationForm: FunctionComponent<ClassificationFormProps> = (props) =
                         ? () => {
                               setShowInfoModal(true);
                           }
-                        : undefined
+                        : null
                 }
             ></Select>
         );
     });
     return (
         <React.Fragment>
-            {showInfoModal ? mockModal : undefined}
+            {showInfoModal ? mockModal : null}
             <form>{selects}</form>
         </React.Fragment>
     );

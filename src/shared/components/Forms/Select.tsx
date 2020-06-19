@@ -30,7 +30,7 @@ const Select: FunctionComponent<SelectProps> = (props) => {
             onClick={props.viewInfoCallback}
             className="more-info"
         />
-    ) : undefined;
+    ) : null;
     return (
         <React.Fragment>
             <label htmlFor={props.id.toString()}>Select an Option {moreInfoIcon}</label>

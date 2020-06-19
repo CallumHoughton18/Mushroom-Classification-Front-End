@@ -1,11 +1,14 @@
 import React, {FunctionComponent} from "react";
 
+import "../../../scss/Button.scss";
+
 type ButtonProps = {
-    value: string;
+    onClick: () => void;
+    children: React.ReactNode;
 };
 
 const Button: FunctionComponent<ButtonProps> = (props) => {
-    return <button>{props.value}</button>;
+    return <button onClick={props.onClick}>{props.children}</button>;
 };
 
 export default Button;
