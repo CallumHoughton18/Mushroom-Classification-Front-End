@@ -14,7 +14,8 @@ const webpackConfig = (): Configuration => ({
     },
     output: {
         path: path.join(__dirname, "/build"),
-        filename: "build.js"
+        filename: "build.js",
+        publicPath: "/"
     },
     module: {
         rules: [
@@ -59,6 +60,9 @@ const webpackConfig = (): Configuration => ({
                 ]
             }
         ]
+    },
+    devServer: {
+        historyApiFallback: true
     },
     plugins: [
         new HtmlWebpackPlugin({
