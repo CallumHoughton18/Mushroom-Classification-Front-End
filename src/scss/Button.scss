@@ -1,14 +1,22 @@
 @import "./Theme.scss";
 
 button {
+    -webkit-transition: background-color 50ms linear;
+    -ms-transition: background-color 50ms linear;
+    transition: background-color 50ms linear;
     background-color: $secondary-color-lighter;
     color: $primary-color-highlight;
     font-weight: bold;
     font-size: large;
     border-radius: 5px;
     padding: 10px 40px;
+    border: none;
 }
 
 button:hover {
     cursor: pointer;
+}
+
+button:active {
+    background-color: $secondary-color-highlight;
 }

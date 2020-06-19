@@ -9,7 +9,7 @@ type SelectProps = {
 };
 
 const Select: FunctionComponent<SelectProps> = (props) => {
-    const [selectedVal, onSelectedVal] = useState(undefined);
+    const [selectedVal, onSelectedVal] = useState("");
 
     const changeHandler = (event: FormEvent<HTMLSelectElement>) => {
         event.preventDefault();
@@ -29,7 +29,7 @@ const Select: FunctionComponent<SelectProps> = (props) => {
             icon={faQuestionCircle}
             onClick={props.viewInfoCallback}
             className="more-info"
-        />
+        ></FontAwesomeIcon>
     ) : null;
     return (
         <React.Fragment>

@@ -25,6 +25,7 @@ form {
         margin-bottom: 70px;
         -webkit-appearance: none;
         -moz-appearance: none;
+        font-size: medium;
 
         $arrow-color: str-replace(#{$secondary-color-lighter}, "#", "");
         // Arrow
