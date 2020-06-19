@@ -1,15 +1,19 @@
 import React, {FunctionComponent} from "react";
 import {NavLink} from "react-router-dom";
 
-const NavLinks: FunctionComponent = () => {
+type NavLinkProps = {
+    onLinkClicked: () => void;
+};
+
+const NavLinks: FunctionComponent<NavLinkProps> = (props) => {
     return (
         <ul>
-            <li>
+            <li onClick={props.onLinkClicked}>
                 <NavLink to="/Classification" exact>
                     Classification
                 </NavLink>
             </li>
-            <li>
+            <li onClick={props.onLinkClicked}>
                 <NavLink to="/About" exact>
                     About
                 </NavLink>

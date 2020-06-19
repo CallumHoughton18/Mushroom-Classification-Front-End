@@ -30,7 +30,11 @@ const NavBar: FunctionComponent = () => {
                 }}
                 className="hamburger"
             />
-            <NavLinks />
+            <NavLinks
+                onLinkClicked={() => {
+                    setExpanded(false);
+                }}
+            />
         </div>
     );
 };
