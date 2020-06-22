@@ -1,0 +1,41 @@
+@import "./Theme.scss";
+
+.page {
+    margin: 50px 0;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+
+    .info {
+        display: flex;
+        justify-content: left;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 50%;
+
+        h1 {
+            font-size: xx-large;
+            font-weight: bold;
+            color: $primary-color;
+        }
+
+        p {
+            font-size: medium;
+            color: $primary-color-alt;
+        }
+    }
+    .animation {
+        height: 300px;
+        width: 300px;
+        background-color: #000;
+    }
+
+    // TODO: extract this out as a constant to be shared between navbar and page
+    @media (max-width: 600px) {
+        flex-direction: column-reverse;
+        .info {
+            width: 80%;
+        }
+    }
+}
