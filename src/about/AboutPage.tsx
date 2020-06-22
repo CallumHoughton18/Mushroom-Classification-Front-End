@@ -2,6 +2,8 @@ import React, {FunctionComponent} from "react";
 import "../scss/AboutPage.scss";
 
 const AboutPage: FunctionComponent = () => {
+    // TODO: maybe use grid layout as I want a 'footer' below the info and animation
+    // linking back to github
     return (
         <div className="page">
             <div className="info">
