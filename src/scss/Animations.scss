@@ -1,4 +1,6 @@
-@mixin fadeAnimation($startOpacity, $endOpacity, $time) {
+//TODO: possibly find a way to remove duplication, fadeAnimation is pretty repetitive
+
+@mixin fadeAnimation($startOpacity, $endOpacity, $time, $startPos: null, $endPos: null) {
     -webkit-animation: fade $time; /* Safari, Chrome and Opera > 12.1 */
     -moz-animation: fade $time; /* Firefox < 16 */
     -ms-animation: fade $time; /* Internet Explorer */
@@ -8,18 +10,30 @@
     @keyframes fade {
         from {
             opacity: $startOpacity;
+            @if $startPos {
+                transform: translateY($startPos);
+            }
         }
         to {
             opacity: $endOpacity;
+            @if $endPos {
+                transform: translateY($endPos);
+            }
         }
     }
     /* Firefox < 16 */
     @-moz-keyframes fade {
         from {
             opacity: $startOpacity;
+            @if $startPos {
+                transform: translateY($startPos);
+            }
         }
         to {
             opacity: $endOpacity;
+            @if $endPos {
+                transform: translateY($endPos);
+            }
         }
     }
 
@@ -27,9 +41,15 @@
     @-webkit-keyframes fade {
         from {
             opacity: $startOpacity;
+            @if $startPos {
+                transform: translateY($startPos);
+            }
         }
         to {
             opacity: $endOpacity;
+            @if $endPos {
+                transform: translateY($endPos);
+            }
         }
     }
 
@@ -37,9 +57,15 @@
     @-ms-keyframes fade {
         from {
             opacity: $startOpacity;
+            @if ($startPos) {
+                transform: translateY($startPos);
+            }
         }
         to {
             opacity: $endOpacity;
+            @if ($endPos) {
+                transform: translateY($endPos);
+            }
         }
     }
 }

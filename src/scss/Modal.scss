@@ -45,7 +45,3 @@
         }
     }
 }
-
-.fade-out {
-    @include fadeAnimation(1, 0, 0.3s);
-}

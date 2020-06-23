@@ -1,11 +1,13 @@
 @import "./Theme.scss";
+@import "./Animations.scss";
 
 .page {
-    margin: 50px 0;
+    margin-top: 130px;
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
     align-items: center;
+    @include fadeAnimation(0, 1, 0.8s, 700px);
 
     .info {
         display: flex;
@@ -25,7 +27,7 @@
             color: $primary-color-alt;
         }
     }
-    .animation {
+    .mushroom {
         height: 300px;
         width: 300px;
         background-color: #000;
@@ -34,6 +36,7 @@
     // TODO: extract this out as a constant to be shared between navbar and page
     @media (max-width: 600px) {
         flex-direction: column-reverse;
+        margin-top: 50px;
         .info {
             width: 80%;
         }

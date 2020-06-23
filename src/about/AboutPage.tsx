@@ -3,7 +3,7 @@ import "../scss/AboutPage.scss";
 
 const AboutPage: FunctionComponent = () => {
     // TODO: maybe use grid layout as I want a 'footer' below the info and animation
-    // linking back to github
+    // linking back to github and the eventual docker image
     return (
         <div className="page">
             <div className="info">
@@ -21,7 +21,7 @@ const AboutPage: FunctionComponent = () => {
                     application.
                 </p>
             </div>
-            <div className="animation"></div>
+            <div className="mushroom"></div>
         </div>
     );
 };
