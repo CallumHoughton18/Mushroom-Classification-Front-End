@@ -2,43 +2,67 @@
 @import "./Animations.scss";
 
 .page {
-    margin-top: 130px;
     display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     @include fadeAnimation(0, 1, 0.8s, 700px);
-
-    .info {
+    .info-body {
+        flex: 1;
+        margin-top: 130px;
         display: flex;
-        justify-content: left;
-        flex-direction: column;
-        align-items: flex-start;
-        width: 50%;
+        justify-content: space-evenly;
+        flex-direction: row;
+        align-items: center;
 
-        h1 {
-            font-size: xx-large;
-            font-weight: bold;
-            color: $primary-color;
-        }
-
-        p {
-            font-size: medium;
-            color: $primary-color-alt;
-        }
-    }
-    .mushroom {
-        height: 300px;
-        width: 300px;
-        background-color: #000;
-    }
-
-    // TODO: extract this out as a constant to be shared between navbar and page
-    @media (max-width: 600px) {
-        flex-direction: column-reverse;
-        margin-top: 50px;
         .info {
-            width: 80%;
+            display: flex;
+            justify-content: left;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 50%;
+
+            h1 {
+                font-size: xx-large;
+                font-weight: bold;
+                color: $primary-color;
+            }
+
+            p {
+                font-size: medium;
+                color: $primary-color-alt;
+            }
+        }
+        .mushroom {
+            height: 300px;
+            width: 300px;
+            background-color: #000;
+        }
+
+        // TODO: extract this out as a constant to be shared between navbar and page
+        @media (max-width: 600px) {
+            flex-direction: column-reverse;
+            margin-top: 50px;
+            .info {
+                width: 80%;
+            }
+        }
+    }
+
+    .links {
+        position: relative;
+        top: 200px;
+        height: 150px;
+        width: 300px;
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+
+        svg {
+            margin: 0 20px;
+        }
+
+        svg:hover {
+            cursor: pointer;
         }
     }
 }
