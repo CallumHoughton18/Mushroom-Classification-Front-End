@@ -1,13 +1,13 @@
 //TODO: possibly find a way to remove duplication, fadeAnimation is pretty repetitive
 
-@mixin fadeAnimation($startOpacity, $endOpacity, $time, $startPos: null, $endPos: null) {
-    -webkit-animation: fade $time; /* Safari, Chrome and Opera > 12.1 */
-    -moz-animation: fade $time; /* Firefox < 16 */
-    -ms-animation: fade $time; /* Internet Explorer */
-    -o-animation: fade $time; /* Opera < 12.1 */
-    animation: fade $time;
+@mixin fadeAnimation($animName, $startOpacity, $endOpacity, $time, $startPos: null, $endPos: null) {
+    -webkit-animation: $animName $time; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: $animName $time; /* Firefox < 16 */
+    -ms-animation: $animName $time; /* Internet Explorer */
+    -o-animation: $animName $time; /* Opera < 12.1 */
+    animation: $animName $time;
 
-    @keyframes fade {
+    @keyframes #{$animName} {
         from {
             opacity: $startOpacity;
             @if $startPos {
@@ -22,7 +22,7 @@
         }
     }
     /* Firefox < 16 */
-    @-moz-keyframes fade {
+    @-moz-keyframes #{$animName} {
         from {
             opacity: $startOpacity;
             @if $startPos {
@@ -38,7 +38,7 @@
     }
 
     /* Safari, Chrome and Opera > 12.1 */
-    @-webkit-keyframes fade {
+    @-webkit-keyframes #{$animName} {
         from {
             opacity: $startOpacity;
             @if $startPos {
@@ -54,7 +54,7 @@
     }
 
     /* Internet Explorer */
-    @-ms-keyframes fade {
+    @-ms-keyframes #{$animName} {
         from {
             opacity: $startOpacity;
             @if ($startPos) {

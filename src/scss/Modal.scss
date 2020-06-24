@@ -9,7 +9,7 @@
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    @include fadeAnimation(0, 1, 0.3, null, null);
+    @include fadeAnimation("modal-fade-in", 0, 1, 0.3s);
 
     .modal-window {
         border-radius: 5px;
