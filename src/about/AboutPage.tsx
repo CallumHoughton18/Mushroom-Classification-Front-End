@@ -1,7 +1,7 @@
 import React, {FunctionComponent} from "react";
-import "../scss/AboutPage.scss";
 import GithubLogo from "../shared/components/Logos/GithubLogo";
 import DockerLogo from "../shared/components/Logos/DockerLogo";
+
 const AboutPage: FunctionComponent = () => {
     //TODO: this really needs to be split up into separate components, e.g InfoBody, ProjectLinks, Mushroom
     return (

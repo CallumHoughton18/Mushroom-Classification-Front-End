@@ -1,9 +1,11 @@
 import React, {FunctionComponent} from "react";
 import {Route, BrowserRouter as Router, Switch} from "react-router-dom";
+
 import NavBar from "./shared/components/Navigation/NavBar";
 import ClassificationPage from "./classification/pages/ClassificationPage";
-import "./scss/App.scss";
 import AboutPage from "./about/AboutPage";
+
+import "./stylesheets/main.scss";
 
 const App: FunctionComponent = () => {
     const routes = (

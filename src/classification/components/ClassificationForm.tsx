@@ -2,7 +2,6 @@ import React, {FunctionComponent, useState} from "react";
 import Select from "../../shared/components/Forms/Select";
 import Question from "../models/types/Question";
 import Modal from "../../shared/components/UI/Modal";
-import "../../scss/Form.scss";
 
 type ClassificationFormProps = {
     questions: Array<Question>;

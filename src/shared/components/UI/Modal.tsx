@@ -1,6 +1,5 @@
 import React, {FunctionComponent, ReactNode} from "react";
 
-import "../../../scss/Modal.scss";
 import Button from "./Button";
 
 type ModalProps = {

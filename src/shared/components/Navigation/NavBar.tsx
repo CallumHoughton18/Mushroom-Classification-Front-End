@@ -5,11 +5,11 @@ import {faBars} from "@fortawesome/free-solid-svg-icons";
 import NavLinks from "./NavLinks";
 import logo from "../../../icons/logo.png";
 
-import navStyle from "../../../scss/NavBar.scss";
+import sassVars from "../../../stylesheets/abstractions/_variables.scss";
 
 const NavBar: FunctionComponent = () => {
     //TODO: Add type to navStyle? currently just imported as module alias
-    const widthForHamburger = parseInt(navStyle.maxWidthForHamburger);
+    const widthForHamburger = parseInt(sassVars.maxWidthForHamburger);
     const [expanded, setExpanded] = useState(false);
     useEffect(() => {
         const handleResize = () => {
