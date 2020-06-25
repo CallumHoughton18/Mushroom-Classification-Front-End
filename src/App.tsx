@@ -16,6 +16,9 @@ const App: FunctionComponent = () => {
             <Route path="/About" exact>
                 <AboutPage />
             </Route>
+            <Route path="/" exact>
+                <AboutPage />
+            </Route>
         </Switch>
     );
 
