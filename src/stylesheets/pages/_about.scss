@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    @include fadeAnimation("about-page-fade-in", 0, 1, 0.8s, 700px);
+    @include fade-animation("about-page-fade-in", 0, 1, 1s, 700px);
 
     .info-body {
         flex: 1;

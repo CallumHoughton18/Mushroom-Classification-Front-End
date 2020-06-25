@@ -1,13 +1,17 @@
-//TODO: possibly find a way to remove duplication, fadeAnimation is pretty repetitive
-
-@mixin fadeAnimation($animName, $startOpacity, $endOpacity, $time, $startPos: null, $endPos: null) {
+@mixin fade-animation(
+    $animName,
+    $startOpacity,
+    $endOpacity,
+    $time,
+    $startPos: null,
+    $endPos: null
+) {
     -webkit-animation: $animName $time; /* Safari, Chrome and Opera > 12.1 */
     -moz-animation: $animName $time; /* Firefox < 16 */
-    -ms-animation: $animName $time; /* Internet Explorer */
     -o-animation: $animName $time; /* Opera < 12.1 */
     animation: $animName $time;
 
-    @keyframes #{$animName} {
+    @include keyframes($animName) {
         from {
             opacity: $startOpacity;
             @if $startPos {
@@ -17,53 +21,6 @@
         to {
             opacity: $endOpacity;
             @if $endPos {
-                transform: translateY($endPos);
-            }
-        }
-    }
-    /* Firefox < 16 */
-    @-moz-keyframes #{$animName} {
-        from {
-            opacity: $startOpacity;
-            @if $startPos {
-                transform: translateY($startPos);
-            }
-        }
-        to {
-            opacity: $endOpacity;
-            @if $endPos {
-                transform: translateY($endPos);
-            }
-        }
-    }
-
-    /* Safari, Chrome and Opera > 12.1 */
-    @-webkit-keyframes #{$animName} {
-        from {
-            opacity: $startOpacity;
-            @if $startPos {
-                transform: translateY($startPos);
-            }
-        }
-        to {
-            opacity: $endOpacity;
-            @if $endPos {
-                transform: translateY($endPos);
-            }
-        }
-    }
-
-    /* Internet Explorer */
-    @-ms-keyframes #{$animName} {
-        from {
-            opacity: $startOpacity;
-            @if ($startPos) {
-                transform: translateY($startPos);
-            }
-        }
-        to {
-            opacity: $endOpacity;
-            @if ($endPos) {
                 transform: translateY($endPos);
             }
         }
