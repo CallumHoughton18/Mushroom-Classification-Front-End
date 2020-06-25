@@ -103,7 +103,3 @@ $max-width-for-hamburger: 600px;
         }
     }
 }
-
-:export {
-    maxWidthForHamburger: strip-unit($max-width-for-hamburger);
-}

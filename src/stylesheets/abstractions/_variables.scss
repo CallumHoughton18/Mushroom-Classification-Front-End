@@ -1,5 +1,25 @@
 $max-width-for-hamburger: 600px;
 
+$secondary-color: #3a5a40 !default;
+$secondary-color-lighter: #588157 !default;
+$secondary-color-darkest: #344e41 !default;
+$secondary-color-highlight: #a3b18a !default;
+$secondary-color-lightest: #dad7cd !default;
+
+$primary-color: #2e3440 !default;
+$primary-color-alt: #464e5e !default;
+$primary-background: #eceff4 !default;
+$primary-color-highlight: #e5e9f0 !default;
+
 :export {
-    max-with-for-hamburger: $max-width-for-hamburger;
+    maxWidthForHamburger: strip-unit($max-width-for-hamburger);
+    secondaryColor: $secondary-color;
+    secondaryColorLighter: $secondary-color-lighter;
+    secondaryColorDarkest: $secondary-color-darkest;
+    secondaryColorHighlight: $secondary-color-highlight;
+    secondaryColorLightest: $secondary-color-lightest;
+    primaryColor: $primary-color;
+    primaryColorAlt: $primary-color-alt;
+    primaryBackground: $primary-background;
+    primaryColorHighlight: $primary-color-highlight;
 }

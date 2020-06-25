@@ -36,31 +36,12 @@
             background-color: #000;
         }
 
-        // TODO: extract this out as a constant to be shared between navbar and page
         @media (max-width: $max-width-for-hamburger) {
             flex-direction: column-reverse;
             margin-top: 50px;
             .info {
                 width: 80%;
             }
-        }
-    }
-
-    .links {
-        position: relative;
-        top: 200px;
-        height: 150px;
-        width: 300px;
-        display: flex;
-        flex-direction: row;
-        align-content: center;
-
-        svg {
-            margin: 0 20px;
-        }
-
-        svg:hover {
-            cursor: pointer;
         }
     }
 }

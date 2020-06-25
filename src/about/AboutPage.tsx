@@ -2,6 +2,8 @@ import React, {FunctionComponent} from "react";
 import GithubLogo from "../shared/components/Logos/GithubLogo";
 import DockerLogo from "../shared/components/Logos/DockerLogo";
 
+import sassVars from "../stylesheets/abstractions/_variables.scss";
+
 const AboutPage: FunctionComponent = () => {
     //TODO: this really needs to be split up into separate components, e.g InfoBody, ProjectLinks, Mushroom
     return (
@@ -27,9 +29,12 @@ const AboutPage: FunctionComponent = () => {
                 </div>
                 <div className="mushroom"></div>
             </div>
-            <div className="links">
-                <GithubLogo LogoPrimaryColor="#3a5a40" />
-                <DockerLogo LogoPrimaryColor="#3a5a40" LogoSecondaryColor="#eceff4" />
+            <div className="project-links">
+                <GithubLogo LogoPrimaryColor={sassVars.secondaryColor} />
+                <DockerLogo
+                    LogoPrimaryColor={sassVars.secondaryColor}
+                    LogoSecondaryColor={sassVars.primaryBackground}
+                />
             </div>
         </div>
     );

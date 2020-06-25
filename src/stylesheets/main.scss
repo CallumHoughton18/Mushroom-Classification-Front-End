@@ -2,8 +2,6 @@
 
 @import "../fonts/inter/inter.css";
 
-@import "./theme/default";
-
 @import "./abstractions/functions", "./abstractions/variables";
 
 @import "./animations/animations";
@@ -12,6 +10,7 @@
 
 @import "./layout/forms", "./layout/navbar";
 
-@import "./components/button", "./components/modal";
+@import "./components/button", "./components/modal", "./components/project-links",
+    "./components/select";
 
 @import "./pages/about";
