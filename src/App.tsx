@@ -3,7 +3,7 @@ import {Route, BrowserRouter as Router, Switch} from "react-router-dom";
 
 import NavBar from "./shared/components/Navigation/NavBar";
 import ClassificationPage from "./classification/pages/ClassificationPage";
-import AboutPage from "./about/AboutPage";
+import AboutPage from "./about/pages/AboutPage";
 
 import "./stylesheets/main.scss";
 

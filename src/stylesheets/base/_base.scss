@@ -6,3 +6,28 @@ main {
 html {
     background-color: $primary-background;
 }
+
+h1 {
+    font-size: xxx-large;
+    font-weight: bold;
+    color: $primary-color;
+}
+
+p {
+    font-size: large;
+    color: $primary-color-alt;
+    line-height: 2;
+}
+
+@media (max-width: $max-width-for-hamburger) {
+    h1 {
+        font-size: xx-large;
+        font-weight: bold;
+        color: $primary-color;
+    }
+
+    p {
+        font-size: medium;
+        color: $primary-color-alt;
+    }
+}

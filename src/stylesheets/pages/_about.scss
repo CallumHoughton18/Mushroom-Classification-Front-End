@@ -1,46 +1,67 @@
-.page {
+$graphic-size: 250px;
+
+.about-page {
     display: flex;
     flex-direction: column;
     align-items: center;
-    @include fade-animation("about-page-fade-in", 0, 1, 1s, 700px);
+    justify-content: center;
+    @include fade-animation("about-page-fade-in", 0, 1, 1s, 50px);
 
-    .info-body {
-        flex: 1;
-        margin-top: 130px;
+    .info-section {
+        margin: 50px 0px;
         display: flex;
-        justify-content: space-evenly;
-        flex-direction: row;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
 
-        .info {
+        .info-body {
             display: flex;
-            justify-content: left;
-            flex-direction: column;
-            align-items: flex-start;
-            width: 50%;
+            flex-direction: row;
+            align-items: center;
+            width: 70%;
 
             h1 {
-                font-size: xx-large;
-                font-weight: bold;
-                color: $primary-color;
+                margin-right: 30%;
             }
 
             p {
-                font-size: medium;
-                color: $primary-color-alt;
+                margin-right: 30%;
+            }
+
+            .mushroom {
+                color: $secondary-color-lighter;
+                width: $graphic-size;
+                height: $graphic-size;
             }
         }
-        .mushroom {
-            height: 300px;
+
+        .links {
+            @extend .project-ribbon;
+            margin-top: 10%;
+            height: 150px;
             width: 300px;
-            background-color: #000;
         }
 
         @media (max-width: $max-width-for-hamburger) {
-            flex-direction: column-reverse;
-            margin-top: 50px;
-            .info {
-                width: 80%;
+            margin: 50px 50px;
+            .info-body {
+                flex-direction: column-reverse;
+                width: 100%;
+                margin: 0 30px;
+                h1 {
+                    margin-right: 0px;
+                }
+
+                p {
+                    margin-right: 0px;
+                }
+
+                .mushroom {
+                    color: $secondary-color;
+                    width: $graphic-size/1.5;
+                    height: $graphic-size/1.5;
+                    margin-bottom: 30px;
+                }
             }
         }
     }
