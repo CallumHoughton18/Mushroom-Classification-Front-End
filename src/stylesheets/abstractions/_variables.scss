@@ -9,6 +9,7 @@ $secondary-color-lightest: #dad7cd !default;
 $primary-color: #2e3440 !default;
 $primary-color-alt: #464e5e !default;
 $primary-background: #eceff4 !default;
+$primary-background-lighter: #f2f4f7 !default;
 $primary-color-highlight: #e5e9f0 !default;
 
 :export {
@@ -21,5 +22,6 @@ $primary-color-highlight: #e5e9f0 !default;
     primaryColor: $primary-color;
     primaryColorAlt: $primary-color-alt;
     primaryBackground: $primary-background;
+    primaryBackgroundLighter: $primary-background-lighter;
     primaryColorHighlight: $primary-color-highlight;
 }

@@ -4,6 +4,7 @@ import Introduction from "../components/Introduction";
 import ProjectLinks from "../../shared/components/UI/ProjectLinks";
 
 import sassVars from "../../stylesheets/abstractions/_variables.scss";
+import TechnologiesRibbon from "../components/TechnologiesRibbon";
 
 const AboutPage: FunctionComponent = () => {
     return (
@@ -14,6 +15,13 @@ const AboutPage: FunctionComponent = () => {
                     style="links"
                     PrimaryLogoColor={sassVars.secondaryColorLighter}
                     SecondaryLogoColor={sassVars.primaryBackground}
+                />
+            </div>
+            <div className="info-section">
+                <TechnologiesRibbon
+                    iconsColor={sassVars.secondaryColorLighter}
+                    iconsSecondaryColor={sassVars.secondaryColorLightest}
+                    ribbonStyle="links"
                 />
             </div>
         </div>
