@@ -21,7 +21,8 @@ const AboutPage: FunctionComponent = () => {
                 <TechnologiesRibbon
                     iconsColor={sassVars.secondaryColorLighter}
                     iconsSecondaryColor={sassVars.secondaryColorLightest}
-                    ribbonStyle="links"
+                    iconsBackground={sassVars.primaryBackground}
+                    ribbonStyle="technologies-ribbon"
                 />
             </div>
         </div>
