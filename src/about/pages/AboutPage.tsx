@@ -5,7 +5,6 @@ import ProjectLinks from "../../shared/components/UI/ProjectLinks";
 
 import sassVars from "../../stylesheets/abstractions/_variables.scss";
 import TechnologiesRibbon from "../components/TechnologiesRibbon";
-import AnimateWhenInView from "../../shared/components/Animation/AnimateWhenInView";
 
 const AboutPage: FunctionComponent = () => {
     return (
@@ -19,14 +18,13 @@ const AboutPage: FunctionComponent = () => {
                 />
             </div>
             <div className="info-section">
-                <AnimateWhenInView isVisibleClass="visible" isNotVisibleClass="fade-in-section">
-                    <TechnologiesRibbon
-                        iconsColor={sassVars.secondaryColorLighter}
-                        iconsSecondaryColor={sassVars.secondaryColorLightest}
-                        iconsBackground={sassVars.primaryBackground}
-                        ribbonStyle="technologies-ribbon"
-                    />
-                </AnimateWhenInView>
+                <TechnologiesRibbon
+                    iconsColor={sassVars.secondaryColorLighter}
+                    iconsSecondaryColor={sassVars.secondaryColorLightest}
+                    iconsBackground={sassVars.primaryBackground}
+                    ribbonStyle="technologies-ribbon"
+                    fadeInClass="fade-in-section"
+                />
             </div>
         </div>
     );

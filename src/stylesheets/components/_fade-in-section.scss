@@ -1,9 +1,4 @@
-.fade-in-section {
-    opacity: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.visible {
+//TODO: change to reflect hook based pattern this could be better, mixin maybe?
+.fade-in {
     @include fade-animation("fade-in-section-visible", 0, 1, 1s);
 }

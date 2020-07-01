@@ -1,22 +1,27 @@
-import React, {FunctionComponent, ReactNode, Fragment} from "react";
+import React, {FunctionComponent, ReactNode, Fragment, useRef} from "react";
 import ReactLogo from "../../shared/components/Logos/ReactLogo";
 import PythonLogo from "../../shared/components/Logos/PythonLogo";
 import TypeScriptLogo from "../../shared/components/Logos/TypeScriptLogo";
 import LogoWithDescription from "../../shared/components/Logos/LogoWithDescription";
+import useWhenInView from "../../shared/hooks/useWhenInView";
 
 type TechnologiesRibbonProps = {
     ribbonStyle: string;
     iconsBackground: string;
     iconsColor: string;
     iconsSecondaryColor: string;
+    fadeInClass: string;
     children?: ReactNode;
 };
 
 const TechnologiesRibbon: FunctionComponent<TechnologiesRibbonProps> = (props) => {
+    const domRef = useRef();
+    const isInView = useWhenInView(domRef);
+    const style = `${props.ribbonStyle} ${isInView ? "fade-in" : ""}`;
     return (
         <Fragment>
-            <h1>Powered By:</h1>
-            <div className={props.ribbonStyle}>
+            <h1>Powered By</h1>
+            <div className={style} ref={domRef}>
                 <LogoWithDescription
                     logoClass="logo-with-description"
                     logoTitle="ReactJS"
