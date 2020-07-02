@@ -26,3 +26,7 @@
         }
     }
 }
+
+.fade-in {
+    @include fade-animation("fade-in", 0, 1, 1s);
+}

@@ -17,7 +17,7 @@ type TechnologiesRibbonProps = {
 const TechnologiesRibbon: FunctionComponent<TechnologiesRibbonProps> = (props) => {
     const domRef = useRef();
     const isInView = useWhenInView(domRef);
-    const style = `${props.ribbonStyle} ${isInView ? "fade-in" : ""}`;
+    const style = `${props.ribbonStyle} ${isInView ? "fade-in" : "hide"}`;
     return (
         <Fragment>
             <h1>Powered By</h1>
@@ -27,7 +27,7 @@ const TechnologiesRibbon: FunctionComponent<TechnologiesRibbonProps> = (props) =
                     logoTitle="ReactJS"
                     logoDescription="Front-End"
                 >
-                    <ReactLogo LogoPrimaryColor={props.iconsColor} />
+                    <ReactLogo LogoPrimaryColor={props.iconsColor} Link="https://reactjs.org/" />
                 </LogoWithDescription>
                 <LogoWithDescription
                     logoClass="logo-with-description"
@@ -35,6 +35,7 @@ const TechnologiesRibbon: FunctionComponent<TechnologiesRibbonProps> = (props) =
                     logoDescription="Front-End"
                 >
                     <TypeScriptLogo
+                        Link="https://www.typescriptlang.org/"
                         LogoPrimaryColor={props.iconsColor}
                         LogoSecondaryColor={props.iconsBackground}
                     />
@@ -45,6 +46,7 @@ const TechnologiesRibbon: FunctionComponent<TechnologiesRibbonProps> = (props) =
                     logoDescription="Back-End"
                 >
                     <PythonLogo
+                        Link="https://www.python.org/"
                         LogoPrimaryColor={props.iconsColor}
                         LogoSecondaryColor={props.iconsSecondaryColor}
                     />

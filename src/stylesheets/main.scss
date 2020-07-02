@@ -8,9 +8,8 @@
 
 @import "./base/base", "./base/typography";
 
-@import "./layout/forms", "./layout/navbar";
+@import "./layout/forms", "./layout/navbar", "./layout/hide";
 
 @import "./components/button", "./components/modal", "./components/project-ribbon",
-    "./components/select", "./components/logo-with-description", "./components/fade-in-section";
-
+    "./components/select", "./components/logo-with-description";
 @import "./pages/about";

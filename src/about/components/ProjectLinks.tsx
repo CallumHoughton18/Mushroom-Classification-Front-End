@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from "react";
-import GithubLogo from "../Logos/GithubLogo";
-import DockerLogo from "../Logos/DockerLogo";
+import GithubLogo from "../../shared/components/Logos/GithubLogo";
+import DockerLogo from "../../shared/components/Logos/DockerLogo";
 
 type ProjectLinksType = {
     PrimaryLogoColor: string;
@@ -11,10 +11,14 @@ type ProjectLinksType = {
 const ProjectLinks: FunctionComponent<ProjectLinksType> = (props) => {
     return (
         <div className={props.style}>
-            <GithubLogo LogoPrimaryColor={props.PrimaryLogoColor} />
+            <GithubLogo
+                LogoPrimaryColor={props.PrimaryLogoColor}
+                Link="https://github.com/CallumHoughton18/Mushroom-Classification-Front-End"
+            />
             <DockerLogo
                 LogoPrimaryColor={props.PrimaryLogoColor}
                 LogoSecondaryColor={props.SecondaryLogoColor}
+                Link=""
             />
         </div>
     );

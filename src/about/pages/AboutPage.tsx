@@ -1,7 +1,7 @@
 import React, {FunctionComponent} from "react";
 
 import Introduction from "../components/Introduction";
-import ProjectLinks from "../../shared/components/UI/ProjectLinks";
+import ProjectLinks from "../components/ProjectLinks";
 
 import sassVars from "../../stylesheets/abstractions/_variables.scss";
 import TechnologiesRibbon from "../components/TechnologiesRibbon";
@@ -23,7 +23,7 @@ const AboutPage: FunctionComponent = () => {
                     iconsSecondaryColor={sassVars.secondaryColorLightest}
                     iconsBackground={sassVars.primaryBackground}
                     ribbonStyle="technologies-ribbon"
-                    fadeInClass="fade-in-section"
+                    fadeInClass="fade-in"
                 />
             </div>
         </div>
