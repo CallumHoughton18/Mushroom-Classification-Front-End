@@ -4,29 +4,29 @@ import Introduction from "../components/Introduction";
 import ProjectLinks from "../components/ProjectLinks";
 
 import sassVars from "../../stylesheets/abstractions/_variables.scss";
-import TechnologiesRibbon from "../components/TechnologiesRibbon";
+import TechnologiesRibbon from "../components/TechnologiesUsed";
 
 const AboutPage: FunctionComponent = () => {
     return (
-        <div className="about-page">
-            <div className="info-section">
+        <section className="about-page">
+            <section className="info-section">
                 <Introduction />
                 <ProjectLinks
-                    style="links"
+                    style="project-links"
                     PrimaryLogoColor={sassVars.secondaryColorLighter}
                     SecondaryLogoColor={sassVars.primaryBackground}
                 />
-            </div>
-            <div className="info-section">
+            </section>
+            <section className="info-section">
                 <TechnologiesRibbon
                     iconsColor={sassVars.secondaryColorLighter}
                     iconsSecondaryColor={sassVars.secondaryColorLightest}
                     iconsBackground={sassVars.primaryBackground}
-                    ribbonStyle="technologies-ribbon"
+                    style="technologies-used"
                     fadeInClass="fade-in"
                 />
-            </div>
-        </div>
+            </section>
+        </section>
     );
 };
 

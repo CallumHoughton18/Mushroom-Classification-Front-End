@@ -5,8 +5,8 @@ import TypeScriptLogo from "../../shared/components/Logos/TypeScriptLogo";
 import LogoWithDescription from "../../shared/components/Logos/LogoWithDescription";
 import useWhenInView from "../../shared/hooks/useWhenInView";
 
-type TechnologiesRibbonProps = {
-    ribbonStyle: string;
+type TechnologiesUsedProps = {
+    style: string;
     iconsBackground: string;
     iconsColor: string;
     iconsSecondaryColor: string;
@@ -14,10 +14,10 @@ type TechnologiesRibbonProps = {
     children?: ReactNode;
 };
 
-const TechnologiesRibbon: FunctionComponent<TechnologiesRibbonProps> = (props) => {
+const TechnologiesUsed: FunctionComponent<TechnologiesUsedProps> = (props) => {
     const domRef = useRef();
     const isInView = useWhenInView(domRef);
-    const style = `${props.ribbonStyle} ${isInView ? "fade-in" : "hide"}`;
+    const style = `${props.style} ${isInView ? "fade-in" : "hide"}`;
     return (
         <Fragment>
             <h1>Powered By</h1>
@@ -56,4 +56,4 @@ const TechnologiesRibbon: FunctionComponent<TechnologiesRibbonProps> = (props) =
     );
 };
 
-export default TechnologiesRibbon;
+export default TechnologiesUsed;
