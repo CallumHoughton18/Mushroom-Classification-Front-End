@@ -26,6 +26,7 @@ const ClassificationForm: FunctionComponent<ClassificationFormProps> = (props) =
                 key={indx}
                 id={`Select-${indx}`}
                 options={question.options}
+                required={true}
                 viewInfoCallback={
                     indx % 2 === 0
                         ? () => {
@@ -36,10 +37,14 @@ const ClassificationForm: FunctionComponent<ClassificationFormProps> = (props) =
             ></Select>
         );
     });
+
     return (
         <React.Fragment>
             {showInfoModal ? mockModal : null}
-            <form>{selects}</form>
+            <form>
+                {selects}
+                <input type="submit" value="Submit" />
+            </form>
         </React.Fragment>
     );
 };

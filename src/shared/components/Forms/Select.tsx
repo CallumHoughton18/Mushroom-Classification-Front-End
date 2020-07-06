@@ -5,6 +5,7 @@ import {faQuestionCircle} from "@fortawesome/free-solid-svg-icons";
 type SelectProps = {
     id: React.ReactText;
     options: Array<string>;
+    required: boolean;
     viewInfoCallback?: () => void;
 };
 
@@ -35,11 +36,15 @@ const Select: FunctionComponent<SelectProps> = (props) => {
         <React.Fragment>
             <label htmlFor={props.id.toString()}>Select an Option {moreInfoIcon}</label>
             <select
-                title="Select an item"
+                required={props.required}
+                title="Select an option"
                 onChange={changeHandler}
                 value={selectedVal}
                 id={props.id.toString()}
             >
+                <option value="" disabled selected>
+                    Select an option
+                </option>
                 {options}
             </select>
         </React.Fragment>
