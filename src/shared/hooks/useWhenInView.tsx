@@ -1,6 +1,6 @@
 import {useState, useEffect, MutableRefObject} from "react";
 
-const useWhenInView = (domRef: MutableRefObject<undefined>): boolean => {
+const useWhenInView = (domRef: MutableRefObject<Element>): boolean => {
     const [isVisible, setVisible] = useState(true);
 
     useEffect(() => {
