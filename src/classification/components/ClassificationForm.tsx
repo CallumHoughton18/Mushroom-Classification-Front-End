@@ -1,14 +1,16 @@
 import React, {FunctionComponent, useState} from "react";
 import Select from "../../shared/components/Forms/Select";
-import Question from "../models/types/Question";
 import Modal from "../../shared/components/UI/Modal";
+import IClassificationQuestion from "../models/types/IClassificationQuestion";
+import useForm from "../../shared/hooks/useForm";
 
 type ClassificationFormProps = {
-    questions: Array<Question>;
+    questions: Array<IClassificationQuestion>;
 };
 
 const ClassificationForm: FunctionComponent<ClassificationFormProps> = (props) => {
     const [showInfoModal, setShowInfoModal] = useState(false);
+    const [values, handleChange, handleSubmit] = useForm();
     const mockModal = (
         <Modal
             title="More Information"
@@ -20,13 +22,15 @@ const ClassificationForm: FunctionComponent<ClassificationFormProps> = (props) =
         </Modal>
     );
     const selects = props.questions.map((question, indx) => {
-        // TODO: Using index for key is unsafe in react
         return (
             <Select
-                key={indx}
-                id={`Select-${indx}`}
+                key={question.id}
+                id={question.id}
+                name={question.fieldName}
+                value={values[question.fieldName] || ""}
                 options={question.options}
-                required={true}
+                required={question.isRequired}
+                onChange={handleChange}
                 viewInfoCallback={
                     indx % 2 === 0
                         ? () => {
@@ -41,7 +45,7 @@ const ClassificationForm: FunctionComponent<ClassificationFormProps> = (props) =
     return (
         <React.Fragment>
             {showInfoModal ? mockModal : null}
-            <form>
+            <form onSubmit={handleSubmit}>
                 {selects}
                 <input type="submit" value="Submit" />
             </form>
