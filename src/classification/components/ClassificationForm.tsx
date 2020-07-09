@@ -1,16 +1,19 @@
 import React, {FunctionComponent, useState} from "react";
 import Select from "../../shared/components/Forms/Select";
 import Modal from "../../shared/components/UI/Modal";
-import IClassificationQuestion from "../models/types/IClassificationQuestion";
 import useForm from "../../shared/hooks/useForm";
+import {FormContents} from "../../shared/types";
+import {IClassificationQuestion} from "../interfaces";
 
 type ClassificationFormProps = {
     questions: Array<IClassificationQuestion>;
+    onSubmit: (formData: FormContents) => void;
 };
 
 const ClassificationForm: FunctionComponent<ClassificationFormProps> = (props) => {
     const [showInfoModal, setShowInfoModal] = useState(false);
-    const [values, handleChange, handleSubmit] = useForm();
+    const [values, handleChange, handleSubmit] = useForm(props.onSubmit);
+
     const mockModal = (
         <Modal
             title="More Information"

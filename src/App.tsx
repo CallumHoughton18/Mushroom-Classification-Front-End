@@ -6,6 +6,7 @@ import ClassificationPage from "./classification/pages/ClassificationPage";
 import AboutPage from "./about/pages/AboutPage";
 
 import "./stylesheets/main.scss";
+import ClassificationResultPage from "./classification/pages/ClassificationResultPage";
 
 const App: FunctionComponent = () => {
     const routes = (
@@ -18,6 +19,9 @@ const App: FunctionComponent = () => {
             </Route>
             <Route path="/" exact>
                 <AboutPage />
+            </Route>
+            <Route path="/ClassificationResult">
+                <ClassificationResultPage />
             </Route>
         </Switch>
     );

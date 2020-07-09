@@ -1,4 +1,4 @@
-type LogoProps = {
+export type LogoProps = {
     LogoPrimaryColor: string;
     LogoSecondaryColor?: string;
     Link: string;

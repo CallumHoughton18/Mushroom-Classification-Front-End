@@ -1,27 +1,20 @@
 import {useState, ChangeEvent, FormEvent} from "react";
+import {FormContents, GenericFormElement} from "../types";
 
-//TODO: possibly better here to use IFormElement? can keep track off if specific element is valid
-// and if its required for better handleSubmit?
-type FormType = {
-    [name: string]: string;
-};
-
-const useForm = (): [
-    FormType,
-    (event: ChangeEvent<HTMLSelectElement>) => void,
-    (event: FormEvent) => void
-] => {
-    const value: FormType = {};
+const useForm = (
+    submitCallback: (data: FormContents) => void
+): [FormContents, (event: ChangeEvent<GenericFormElement>) => void, (event: FormEvent) => void] => {
+    const value: FormContents = {};
     const [state, setState] = useState(value);
 
-    const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    const handleChange = (e: ChangeEvent<GenericFormElement>) => {
         e.persist();
         setState((state) => ({...state, [e.target.name]: e.target.value}));
     };
 
     const handleSubmit = (event: FormEvent) => {
         event.preventDefault();
-        console.log(state);
+        submitCallback(state);
     };
 
     return [state, handleChange, handleSubmit];

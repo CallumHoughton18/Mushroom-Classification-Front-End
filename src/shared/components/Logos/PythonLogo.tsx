@@ -1,4 +1,5 @@
 import React, {FunctionComponent} from "react";
+import {LogoProps} from "./LogoTypes";
 
 const PythonLogo: FunctionComponent<LogoProps> = ({LogoPrimaryColor, LogoSecondaryColor, Link}) => {
     return (
