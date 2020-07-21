@@ -40,7 +40,7 @@ const Select: FunctionComponent<SelectProps> = (props) => {
                 value={props.value}
                 id={props.id.toString()}
             >
-                <option value="" disabled selected>
+                <option value="" disabled>
                     Select an option
                 </option>
                 {options}

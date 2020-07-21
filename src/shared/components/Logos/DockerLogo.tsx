@@ -5,7 +5,6 @@ const DockerLogo: FunctionComponent<LogoProps> = ({LogoPrimaryColor, LogoSeconda
     return (
         <a href={Link}>
             <svg version="1.1" width="100%" height="100%" viewBox="0 0 512 512">
-                <a href={Link} />
                 <path
                     fill={LogoPrimaryColor}
                     d="M512,256c0,141.385-114.615,256-256,256S0,397.385,0,256S114.615,0,256,0

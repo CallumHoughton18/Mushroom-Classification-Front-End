@@ -9,7 +9,6 @@ const TypeScriptLogo: FunctionComponent<LogoProps> = ({
     return (
         <a href={Link}>
             <svg width="100%" height="100%" viewBox="0 0 256 256" preserveAspectRatio="xMidYMid">
-                <a href={Link} />
                 <g>
                     <polygon
                         fill={LogoPrimaryColor}
