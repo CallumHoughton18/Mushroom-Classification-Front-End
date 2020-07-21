@@ -1,0 +1,12 @@
+.loading-spinner {
+    @extend .popup;
+
+    font-size: xxx-large;
+    color: $primary-color-highlight;
+
+    .spinner-icon {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+    }
+}
