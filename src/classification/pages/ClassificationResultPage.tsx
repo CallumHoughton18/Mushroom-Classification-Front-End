@@ -1,22 +1,18 @@
-import React, {FunctionComponent, useState, useEffect} from "react";
+import React, {FunctionComponent} from "react";
 import useGetNavData from "../../navigation/hooks/useGetNavData";
 import {ClassificationQueryData} from "../types";
-import mockClassificationAPI from "../api/mockClassificationAPI";
 import {IClassificationAPI} from "../interfaces";
+import {useIsPoisonous} from "../api/classificationAPIHooks";
 
-const ClassificationResultPage: FunctionComponent = () => {
+type ClassificationResultsPageProps = {
+    classificationAPI: IClassificationAPI;
+};
+
+const ClassificationResultPage: FunctionComponent<ClassificationResultsPageProps> = ({
+    classificationAPI
+}) => {
     const {classificationData} = useGetNavData<ClassificationQueryData>();
-    const [isPoisonous, setIsPoisonous] = useState(undefined);
-    const classificationAPI: IClassificationAPI = mockClassificationAPI;
-
-    //TODO: could be turned into a hook
-    useEffect(() => {
-        async function doClassification() {
-            const test = await classificationAPI.GetClassification(classificationData);
-            setIsPoisonous(test);
-        }
-        doClassification();
-    }, [setIsPoisonous, classificationData, classificationAPI]);
+    const isPoisonous = useIsPoisonous(classificationAPI, classificationData);
 
     return (
         <div>

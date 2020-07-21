@@ -7,6 +7,7 @@ import AboutPage from "./about/pages/AboutPage";
 
 import "./stylesheets/main.scss";
 import ClassificationResultPage from "./classification/pages/ClassificationResultPage";
+import mockClassificationAPI from "./classification/api/mockClassificationAPI";
 
 const App: FunctionComponent = () => {
     const routes = (
@@ -21,7 +22,7 @@ const App: FunctionComponent = () => {
                 <AboutPage />
             </Route>
             <Route path="/ClassificationResult">
-                <ClassificationResultPage />
+                <ClassificationResultPage classificationAPI={mockClassificationAPI} />
             </Route>
         </Switch>
     );
