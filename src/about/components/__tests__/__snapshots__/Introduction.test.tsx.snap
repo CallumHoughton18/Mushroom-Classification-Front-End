@@ -1,0 +1,142 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Introduction /> render test should display introduction text and graphic 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="inner-content"
+      >
+        <div>
+          <h1>
+            Mushroom Classification - A Machine Learning Example
+          </h1>
+          <p>
+            This application is the front end to interact with the
+             
+            <a
+              href="https://github.com/CallumHoughton18/Mushroom-Classification"
+            >
+              mushroom classification RESTful API
+            </a>
+             
+            Which uses a model exposed via Flask, a web framework for Python, to predict whether a mushroom is poisonous.
+            <b>
+               It is NOT meant to be USED to determine if a mushroom is edible or not!
+            </b>
+             It is instead meant to demonstrate how a machine learning model can be exposed and interacted with. The application owner is not responsible for your use of the application.
+          </p>
+        </div>
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-leaf fa-w-18 mushroom"
+          data-icon="leaf"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 576 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M546.2 9.7c-5.6-12.5-21.6-13-28.3-1.2C486.9 62.4 431.4 96 368 96h-80C182 96 96 182 96 288c0 7 .8 13.7 1.5 20.5C161.3 262.8 253.4 224 384 224c8.8 0 16 7.2 16 16s-7.2 16-16 16C132.6 256 26 410.1 2.4 468c-6.6 16.3 1.2 34.9 17.5 41.6 16.4 6.8 35-1.1 41.8-17.3 1.5-3.6 20.9-47.9 71.9-90.6 32.4 43.9 94 85.8 174.9 77.2C465.5 467.5 576 326.7 576 154.3c0-50.2-10.8-102.2-29.8-144.6z"
+            fill="currentColor"
+          />
+        </svg>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="inner-content"
+    >
+      <div>
+        <h1>
+          Mushroom Classification - A Machine Learning Example
+        </h1>
+        <p>
+          This application is the front end to interact with the
+           
+          <a
+            href="https://github.com/CallumHoughton18/Mushroom-Classification"
+          >
+            mushroom classification RESTful API
+          </a>
+           
+          Which uses a model exposed via Flask, a web framework for Python, to predict whether a mushroom is poisonous.
+          <b>
+             It is NOT meant to be USED to determine if a mushroom is edible or not!
+          </b>
+           It is instead meant to demonstrate how a machine learning model can be exposed and interacted with. The application owner is not responsible for your use of the application.
+        </p>
+      </div>
+      <svg
+        aria-hidden="true"
+        class="svg-inline--fa fa-leaf fa-w-18 mushroom"
+        data-icon="leaf"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        viewBox="0 0 576 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M546.2 9.7c-5.6-12.5-21.6-13-28.3-1.2C486.9 62.4 431.4 96 368 96h-80C182 96 96 182 96 288c0 7 .8 13.7 1.5 20.5C161.3 262.8 253.4 224 384 224c8.8 0 16 7.2 16 16s-7.2 16-16 16C132.6 256 26 410.1 2.4 468c-6.6 16.3 1.2 34.9 17.5 41.6 16.4 6.8 35-1.1 41.8-17.3 1.5-3.6 20.9-47.9 71.9-90.6 32.4 43.9 94 85.8 174.9 77.2C465.5 467.5 576 326.7 576 154.3c0-50.2-10.8-102.2-29.8-144.6z"
+          fill="currentColor"
+        />
+      </svg>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

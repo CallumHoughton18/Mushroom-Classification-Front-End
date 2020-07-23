@@ -17,7 +17,7 @@ type TechnologiesUsedProps = {
 const TechnologiesUsed: FunctionComponent<TechnologiesUsedProps> = (props) => {
     const domRef = useRef();
     const isInView = useWhenInView(domRef);
-    const style = `${props.style} ${isInView ? "fade-in" : "hide"}`;
+    const style = `${props.style} ${isInView ? props.fadeInClass : "hide"}`;
     return (
         <Fragment>
             <h1>Powered By</h1>
