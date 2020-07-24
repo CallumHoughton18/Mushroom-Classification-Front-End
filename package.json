@@ -15,7 +15,7 @@
         "transform": {
             "\\.(ts|tsx)$": "ts-jest"
         },
-        "testRegex": "/__tests__/.*\\.(ts|tsx|js)$"
+        "testRegex": "/__tests__/.*\\.(ts|tsx)$"
     },
     "scripts": {
         "dev": "webpack-dev-server --mode development --env.development --open --hot --progress --port 5000",
