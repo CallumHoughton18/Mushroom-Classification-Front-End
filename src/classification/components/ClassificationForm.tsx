@@ -5,7 +5,7 @@ import useForm from "../../shared/hooks/useForm";
 import {FormContents} from "../../shared/types";
 import {IClassificationQuestion} from "../interfaces";
 
-type ClassificationFormProps = {
+export type ClassificationFormProps = {
     questions: Array<IClassificationQuestion>;
     onSubmit: (formData: FormContents) => void;
 };
