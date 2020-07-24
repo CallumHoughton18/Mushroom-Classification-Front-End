@@ -1,23 +1,39 @@
-import React from "react";
+import React, {ReactElement} from "react";
 import {render} from "@testing-library/react";
+import {mocked} from "ts-jest/utils";
+import useWhenInView from "../../../shared/hooks/useWhenInView";
+import TechnologiesUsed, {TechnologiesUsedProps} from "../TechnologiesUsed";
 
-import TechnologiesUsed from "../TechnologiesUsed";
+jest.mock("../../../shared/hooks/useWhenInView");
 
-const mockObserve = jest.fn();
-const mockIntersectionObserver = jest.fn();
-mockIntersectionObserver.mockReturnValue({
-    observe: mockObserve,
-    unobserve: jest.fn(),
-    disconnect: jest.fn()
+let technologiesUsedComponent: ReactElement<TechnologiesUsedProps>;
+
+beforeEach(() => {
+    technologiesUsedComponent = (
+        <TechnologiesUsed
+            style="testStyle"
+            iconsBackground="testBg"
+            iconsColor="testColor"
+            iconsSecondaryColor="testSecondaryColor"
+            fadeInClass="fade-in-test"
+        />
+    );
+});
+describe("<TechnologiesUsed /> hidden rendering test", () => {
+    it("should display technologies used icons, with hidden style", () => {
+        const renderedTechnologiesUsed = render(technologiesUsedComponent);
+        expect(renderedTechnologiesUsed).toMatchSnapshot();
+    });
 });
 
-beforeAll(() => {
-    // IntersectionObserver isn't available when running tests, has to be mocked
-    window.IntersectionObserver = mockIntersectionObserver;
-});
-
-describe("<TechnologiesUsed /> rendering test", () => {
-    test("should display technologies used icons", () => {
+describe("<TechnologiesUsed /> fade-in rendering test", () => {
+    beforeEach(() => {
+        const mockedUseWhenInView = mocked(useWhenInView, true);
+        mockedUseWhenInView.mockImplementation(() => {
+            return true;
+        });
+    });
+    it("should apply fade in class to technologies used when in view", () => {
         const renderedTechnologiesUsed = render(
             <TechnologiesUsed
                 style="testStyle"
@@ -28,20 +44,5 @@ describe("<TechnologiesUsed /> rendering test", () => {
             />
         );
         expect(renderedTechnologiesUsed).toMatchSnapshot();
-    });
-});
-
-describe("<TechnologiesUsed /> hooks tests", () => {
-    test("should apply fade in class to technologies used when in view", () => {
-        const renderedTechnologiesUsed = render(
-            <TechnologiesUsed
-                style="testStyle"
-                iconsBackground="testBg"
-                iconsColor="testColor"
-                iconsSecondaryColor="testSecondaryColor"
-                fadeInClass="fade-in-test"
-            />
-        );
-        expect(mockObserve).toHaveBeenCalled();
     });
 });

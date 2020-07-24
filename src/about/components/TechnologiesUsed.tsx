@@ -5,7 +5,7 @@ import TypeScriptLogo from "../../shared/components/Logos/TypeScriptLogo";
 import LogoWithDescription from "../../shared/components/Logos/LogoWithDescription";
 import useWhenInView from "../../shared/hooks/useWhenInView";
 
-type TechnologiesUsedProps = {
+export type TechnologiesUsedProps = {
     style: string;
     iconsBackground: string;
     iconsColor: string;
