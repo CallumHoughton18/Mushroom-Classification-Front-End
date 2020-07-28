@@ -4,8 +4,7 @@ import {ClassificationQueryData} from "../../classification/types";
 
 const useAppNavigation = (): INavigationManager => {
     const history = useHistory();
-
-    const appNavigation: INavigationManager = {
+    return {
         GoToClassificationPage: () => {
             history.push("/Classification");
         },
@@ -16,8 +15,6 @@ const useAppNavigation = (): INavigationManager => {
             history.push("/ClassificationResult", data);
         }
     };
-
-    return appNavigation;
 };
 
 export default useAppNavigation;
