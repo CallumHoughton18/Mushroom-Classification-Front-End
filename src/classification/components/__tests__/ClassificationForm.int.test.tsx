@@ -1,4 +1,4 @@
-import {render, waitFor} from "@testing-library/react";
+import {render} from "@testing-library/react";
 import {GenerateClassificationFormSUT} from "../../../test_helpers/classificationTestHelpers";
 import userEvent from "@testing-library/user-event";
 
@@ -33,13 +33,6 @@ describe("<ClassificationForm /> behaviour tests", () => {
     });
 
     it("should generate correct form submission data", async () => {
-        //TODO: fix this failing test
-        // for some reason the setState use is failing:
-        // setState((state) => ({...state, [e.target.name]: e.target.value}));
-        // gives incorrect value
-        // setState(({...state, [e.target.name]: e.target.value}));
-        // gives correct value?
-
         const sut = GenerateClassificationFormSUT();
 
         const renderedClassificationForm = render(sut.Component);
@@ -50,18 +43,15 @@ describe("<ClassificationForm /> behaviour tests", () => {
         for (let index = 0; index < selectElements.length; index++) {
             const element = selectElements[index];
             const option = element.options[1].value;
-
-            await waitFor(() => {
-                userEvent.selectOptions(element, option);
-            });
+            userEvent.selectOptions(element, option);
         }
 
-        await waitFor(() => {
-            userEvent.click(renderedClassificationForm.getByRole("button"));
-        });
+        userEvent.click(renderedClassificationForm.getByRole("button"));
 
-        expect(sut.onSubmit.mock.calls[0][0]).toBe(
-            '{"TestField0": "Opt1", "TestField1": "Opt1", "TestField2": "Opt1"}'
-        );
+        expect(sut.onSubmit.mock.calls[0][0]).toEqual({
+            TestField0: "Opt1",
+            TestField1: "Opt1",
+            TestField2: "Opt1"
+        });
     });
 });

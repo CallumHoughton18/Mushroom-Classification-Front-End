@@ -9,7 +9,10 @@ const useForm = (
 
     const handleChange = (e: ChangeEvent<GenericFormElement>) => {
         e.persist();
-        setState((state) => ({...state, [e.target.name]: e.target.value}));
+        // cache value, as can it can possibly change when changing form select very quickly.
+        // as seen in the ClassificationForm.int.test integration test
+        const {name, value} = e.target;
+        setState((state) => ({...state, [name]: value}));
     };
 
     const handleSubmit = (event: FormEvent) => {
