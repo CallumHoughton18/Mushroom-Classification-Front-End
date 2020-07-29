@@ -13,7 +13,7 @@ $primary-background-lighter: #f2f4f7 !default;
 $primary-color-highlight: #e5e9f0 !default;
 
 :export {
-    maxWidthForHamburger: strip-unit($max-width-for-hamburger);
+    maxWidthForHamburger: $max-width-for-hamburger;
     secondaryColor: $secondary-color;
     secondaryColorLighter: $secondary-color-lighter;
     secondaryColorDarkest: $secondary-color-darkest;
