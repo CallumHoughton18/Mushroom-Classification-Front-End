@@ -7,12 +7,12 @@ const useWhenInView = (domRef: MutableRefObject<Element>): boolean => {
         const currentRef = domRef.current;
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
-                // Tells us if entry is intersecting viewport
+                // boolean for if entry is intersecting viewport
                 setVisible(entry.isIntersecting);
             });
         });
         observer.observe(currentRef);
-        // clean up function. When component unmounted unobserve the DOM reference
+        // clean up function. When component unmounted unobserve the element in the DOM
         return () => observer.unobserve(currentRef);
     }, [domRef]);
 

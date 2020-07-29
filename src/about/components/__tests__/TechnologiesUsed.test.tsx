@@ -1,23 +1,16 @@
-import React, {ReactElement} from "react";
+import {ReactElement} from "react";
 import {render} from "@testing-library/react";
 import {mocked} from "ts-jest/utils";
 import useWhenInView from "../../../shared/hooks/useWhenInView";
-import TechnologiesUsed, {TechnologiesUsedProps} from "../TechnologiesUsed";
+import {TechnologiesUsedProps} from "../TechnologiesUsed";
+import {generateTechnologiesUsedSUT} from "../../../test_helpers/aboutTestHelpers";
 
 jest.mock("../../../shared/hooks/useWhenInView");
 
 let technologiesUsedComponent: ReactElement<TechnologiesUsedProps>;
 
 beforeEach(() => {
-    technologiesUsedComponent = (
-        <TechnologiesUsed
-            style="testStyle"
-            iconsBackground="testBg"
-            iconsColor="testColor"
-            iconsSecondaryColor="testSecondaryColor"
-            fadeInClass="fade-in-test"
-        />
-    );
+    technologiesUsedComponent = generateTechnologiesUsedSUT();
 });
 describe("<TechnologiesUsed /> hidden rendering test", () => {
     it("should display technologies used icons, with hidden style", () => {
@@ -34,15 +27,7 @@ describe("<TechnologiesUsed /> fade-in rendering test", () => {
         });
     });
     it("should apply fade in class to technologies used when in view", () => {
-        const renderedTechnologiesUsed = render(
-            <TechnologiesUsed
-                style="testStyle"
-                iconsBackground="testBg"
-                iconsColor="testColor"
-                iconsSecondaryColor="testSecondaryColor"
-                fadeInClass="fade-in-test"
-            />
-        );
+        const renderedTechnologiesUsed = render(technologiesUsedComponent);
         expect(renderedTechnologiesUsed).toMatchSnapshot();
     });
 });
