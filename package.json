@@ -10,7 +10,8 @@
             "js"
         ],
         "moduleNameMapper": {
-            "\\.(css|less|sass|scss)$": "<rootDir>/src/__mocks__/styleMock.ts"
+            "\\.(css|less|sass|scss)$": "<rootDir>/src/__mocks__/styleMock.ts",
+            "\\.(png)$": "<rootDir>/src/__mocks__/imageMock.ts"
         },
         "transform": {
             "\\.(ts|tsx)$": "ts-jest"
