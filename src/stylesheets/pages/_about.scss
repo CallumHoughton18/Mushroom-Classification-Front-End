@@ -1,12 +1,7 @@
 $graphic-size: 250px;
 
-// TODO: clean this up, could do with separating out the styles anyway
-// Possibly also factor out 'page' style for reuse?
 .about-page {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: center;
+    @extend .page;
     @include fade-animation("about-page-fade-in", 0, 1, 1s, 50px);
 
     .info-section {

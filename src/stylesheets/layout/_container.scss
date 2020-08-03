@@ -1,3 +1,6 @@
+// The idea behind this is to have a vertical centred layout, with inner content
+// that flows horizontally on bigger screens, and then vertically reversed on smalller screens
+
 .container {
     display: flex;
     flex-direction: column;
