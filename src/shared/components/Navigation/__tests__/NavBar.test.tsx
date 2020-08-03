@@ -7,8 +7,8 @@ import {StaticRouter} from "react-router-dom";
 import {sassVariablesType} from "../../../../stylesheets/abstractions/_variables.scss";
 
 jest.mock("../../../hooks/useNavbarExpanded");
-//TODO: extract this mockSassVars object into separate ts file, and also export expectedMaxWidthForHamburger
-// as a number const to avoid magic numbers
+
+const hamburgerWidth = 600;
 jest.mock("../../../../stylesheets/abstractions/_variables.scss", () => {
     const mockSassVars: sassVariablesType = {
         maxWidthForHamburger: "600px",
@@ -53,7 +53,7 @@ describe("<NavBar/> render tests", () => {
 
     it("Should parse px maxWidthForHamburger correctly and pass to useNavBar hook", () => {
         renderNavBarInRouter();
-        expect(useNavBarExpandedMock.mock.calls[0][0]).toBe(600);
+        expect(useNavBarExpandedMock.mock.calls[0][0]).toBe(hamburgerWidth);
     });
 
     describe("Expanded render tests", () => {

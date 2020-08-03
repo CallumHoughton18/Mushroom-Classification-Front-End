@@ -9,7 +9,6 @@ import useNavbarExpanded from "../../hooks/useNavbarExpanded";
 import sassVars from "../../../stylesheets/abstractions/_variables.scss";
 
 const NavBar: FunctionComponent = () => {
-    //TODO: Add type to navStyle? currently just imported as module alias
     const widthForHamburger = parseInt(sassVars.maxWidthForHamburger, 10);
     const [expanded, setExpanded] = useNavbarExpanded(widthForHamburger, "resize");
     return (
