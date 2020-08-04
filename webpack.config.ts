@@ -4,6 +4,7 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 
 const webpackConfig = (): Configuration => ({
+    devtool: "source-map",
     entry: "./src/index.tsx",
     resolve: {
         extensions: [".ts", ".tsx", ".js"],

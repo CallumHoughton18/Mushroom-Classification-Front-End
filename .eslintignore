@@ -1,3 +1,4 @@
+build/**
 **/webpack.config.js
 **/webpack.config.ts
 Dockerfile
