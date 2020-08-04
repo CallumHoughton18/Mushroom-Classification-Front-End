@@ -1,5 +1,4 @@
 import React, {FunctionComponent, Fragment} from "react";
-import {faLeaf} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import Container from "../../shared/components/Layout/Container";
 
@@ -22,7 +21,7 @@ const Introduction: FunctionComponent = () => {
         </Fragment>
     );
 
-    const introIcon = <FontAwesomeIcon icon={faLeaf} className="mushroom"></FontAwesomeIcon>;
+    const introIcon = <FontAwesomeIcon icon="leaf" className="mushroom"></FontAwesomeIcon>;
 
     return (
         <Container

@@ -1,6 +1,5 @@
 import React, {FunctionComponent, ChangeEvent} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faQuestionCircle} from "@fortawesome/free-solid-svg-icons";
 
 type SelectProps = {
     id: React.ReactText;
@@ -23,7 +22,7 @@ const Select: FunctionComponent<SelectProps> = (props) => {
 
     const moreInfoIcon = props.viewInfoCallback ? (
         <FontAwesomeIcon
-            icon={faQuestionCircle}
+            icon="question-circle"
             onClick={props.viewInfoCallback}
             className="more-info"
         ></FontAwesomeIcon>
