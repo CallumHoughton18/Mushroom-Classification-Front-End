@@ -8,8 +8,10 @@ import AboutPage from "./about/pages/AboutPage";
 import "./stylesheets/main.scss";
 import ClassificationResultPage from "./classification/pages/ClassificationResultPage";
 import mockClassificationAPI from "./classification/api/mockClassificationAPI";
+import setupfontAwesomeLibrary from "./libary_helpers/setupFontAwesomeLibrary";
 
 const App: FunctionComponent = () => {
+    setupfontAwesomeLibrary();
     const routes = (
         <Switch>
             <Route path="/Classification" exact>
