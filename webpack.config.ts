@@ -15,8 +15,8 @@ const webpackConfig = (): Configuration => ({
     },
     output: {
         path: path.join(__dirname, "/build"),
-        filename: "build.js",
-        publicPath: "/"
+        filename: "[name].bundle.js",
+        chunkFilename: "[name].chunk.js"
     },
     module: {
         rules: [

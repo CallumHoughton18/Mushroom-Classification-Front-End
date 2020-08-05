@@ -1,9 +1,10 @@
-import React, {FunctionComponent} from "react";
+import React, {FunctionComponent, lazy, Suspense} from "react";
 import {Route, BrowserRouter as Router, Switch} from "react-router-dom";
 
 import NavBar from "./shared/components/Navigation/NavBar";
-import ClassificationPage from "./classification/pages/ClassificationPage";
 import AboutPage from "./about/pages/AboutPage";
+
+const ClassificationPage = lazy(() => import("./classification/pages/ClassificationPage"));
 
 import "./stylesheets/main.scss";
 import ClassificationResultPage from "./classification/pages/ClassificationResultPage";
@@ -30,10 +31,12 @@ const App: FunctionComponent = () => {
     );
 
     return (
-        <Router>
-            <NavBar />
-            <main>{routes}</main>
-        </Router>
+        <Suspense fallback={<div>Loading...</div>}>
+            <Router>
+                <NavBar />
+                <main>{routes}</main>
+            </Router>
+        </Suspense>
     );
 };
 

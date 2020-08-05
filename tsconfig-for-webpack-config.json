@@ -1,0 +1,10 @@
+// This file is needed for allowing a TypeScript configurration for webpack configs
+// https://webpack.js.org/configuration/configuration-languages/
+// As ts-node doesn't support esnext, which is what is needed for code splitting
+{
+    "compilerOptions": {
+        "module": "CommonJS",
+        "target": "ES5",
+        "esModuleInterop": true
+    }
+}
