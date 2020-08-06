@@ -16,8 +16,7 @@ pipeline {
         }
         stage('test') {
           steps {
-            // sh 'yarn jest --coverage --coverageDirectory='coverage''
-            sh 'yarn jest'
+            sh 'yarn jest --coverage'
             sh 'yarn lint'
           }   
         }
@@ -25,13 +24,13 @@ pipeline {
       post {
         always {
           script {
-            summary = junit testResults: '**/junit.xml'
-            // cobertura coberturaReportFile: 'coverage.xml'
+            summary = junit testResults: '**/testresults.xml'
+            cobertura coberturaReportFile: './coverage/clover.xml'
           }
-        //   recordIssues(
-        //     enabledForFailure: false, 
-        //     tool: pyLint(pattern: 'pylint.log'),
-        //     unstableTotalAll: 1)
+          recordIssues(
+            enabledForFailure: false, 
+            tool: esLint(pattern: 'linterresults.xml'),
+            unstableTotalAll: 1)
         }
         cleanup {
           deleteDir()
