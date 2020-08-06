@@ -17,7 +17,7 @@ pipeline {
         stage('test') {
           steps {
             sh 'yarn jest --coverage'
-            sh 'yarn lint'
+            sh 'yarn lint-output'
           }   
         }
       }
@@ -25,7 +25,7 @@ pipeline {
         always {
           script {
             summary = junit testResults: '**/testresults.xml'
-            cobertura coberturaReportFile: './coverage/clover.xml'
+            cobertura coberturaReportFile: '**/clover.xml'
           }
           recordIssues(
             enabledForFailure: false, 
