@@ -29,7 +29,7 @@ pipeline {
           }
           recordIssues(
             enabledForFailure: false, 
-            tool: esLint(),
+            tool: esLint(pattern: 'linterresults.xml'),
             unstableTotalAll: 1)
         }
         cleanup {
