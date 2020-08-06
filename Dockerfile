@@ -6,9 +6,9 @@ WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 
 COPY ./package.json ./
-RUN npm install
+RUN yarn
 
 COPY . ./
-RUN npm run build
+RUN yarn build
 
 # Would be nice here to delete everything and just have the build folder as the app folder? 
