@@ -17,7 +17,20 @@
         "transform": {
             "\\.(ts|tsx)$": "ts-jest"
         },
-        "testRegex": "/__tests__/.*\\.(ts|tsx)$"
+        "testRegex": "/__tests__/.*\\.(ts|tsx)$",
+        "reporters": [
+            "default",
+            "jest-junit"
+        ]
+    },
+    "jest-junit": {
+        "outputDirectory": ".",
+        "outputName": "junit.xml",
+        "uniqueOutputName": "false",
+        "classNameTemplate": "{classname}-{title}",
+        "titleTemplate": "{classname}-{title}",
+        "ancestorSeparator": " › ",
+        "usePathForSuiteName": "true"
     },
     "scripts": {
         "dev": "TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack-dev-server --mode development --env.development --open --hot --progress --port 5000",
@@ -52,6 +65,7 @@
         "fork-ts-checker-webpack-plugin": "^4.1.6",
         "html-webpack-plugin": "^4.3.0",
         "jest": "^26.1.0",
+        "jest-junit": "^11.1.0",
         "node-sass": "^4.14.1",
         "prettier": "^2.0.5",
         "sass-loader": "^8.0.2",
