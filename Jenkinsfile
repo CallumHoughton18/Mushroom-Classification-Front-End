@@ -25,7 +25,7 @@ pipeline {
         always {
           script {
             summary = junit testResults: '**/testresults.xml'
-            cobertura coberturaReportFile: '**/clover.xml'
+            cobertura coberturaReportFile: '**/cobertura-coverage.xml'
           }
           recordIssues(
             enabledForFailure: false, 
