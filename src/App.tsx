@@ -15,8 +15,7 @@ const App: FunctionComponent = () => {
     setupfontAwesomeLibrary();
     const routes = (
         <Switch>
-            <Route path="/Classification" exact>
-                <ClassificationPage />
+            <Route path="/Classification" exact> <ClassificationPage />
             </Route>
             <Route path="/About" exact>
                 <AboutPage />
