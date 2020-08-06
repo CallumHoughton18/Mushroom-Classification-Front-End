@@ -17,7 +17,7 @@ pipeline {
         stage('test') {
           steps {
             sh 'yarn jest --coverage'
-            sh 'yarn lint-output'
+            sh 'yarn lint --format checkstyle -o linterresults.xml'
           }   
         }
       }
