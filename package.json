@@ -36,7 +36,7 @@
         "dev": "TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack-dev-server --mode development --env.development --open --hot --progress --port 5000",
         "build": "TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack --mode production --env.production --progress",
         "lint": "eslint './src/**/*.{ts,tsx}'",
-        "lint-output": "eslint-output './src/**/*.{ts,tsx}'",
+        "lint-output": "eslint-output",
         "analyze": "source-map-explorer build/*.js",
         "lint:fix": "eslint './src/**/*.{ts,tsx}' --fix",
         "test": "jest",

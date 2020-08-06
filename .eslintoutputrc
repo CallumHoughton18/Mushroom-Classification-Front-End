@@ -1,4 +1,7 @@
 {
+    "files": [
+        "./src/**/*.{ts,tsx}"
+    ],
     "formats": [
         {
             "name": "stylish",
