@@ -1,1 +1,9 @@
 node_modules
+build
+coverage
+design
+.dockerignore
+Dockerfile
+testresults.xml
+linterresults.xml
+Jenkinsfile
