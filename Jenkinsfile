@@ -45,18 +45,18 @@ pipeline {
       }
       steps {
         echo 'This step will push the image'
-        // script {
-        //   withCredentials([string(credentialsId: 'dockerhub-repo', variable: 'REPO')]) {
-        //     def apiImage = docker.build("${REPO}", "./src")
-        //     docker.withRegistry('https://registry.hub.docker.com', 'DockerHub') {
-        //       apiImage.push("${env.BUILD_NUMBER}")
-        //       apiImage.push("latest")
-        //     }
+        script {
+          withCredentials([string(credentialsId: 'dockerhub-repo', variable: 'REPO')]) {
+            def apiImage = docker.build("${REPO}", ".")
+            docker.withRegistry('https://registry.hub.docker.com', 'DockerHub') {
+              apiImage.push("${env.BUILD_NUMBER}")
+              apiImage.push("latest")
+            }
 
-        //     sh "docker rmi ${apiImage.id} -f"
-        //     // build job: 'Mushroom_Application_Deployment/Mushroom_Classification_Application_Deployment', wait: false
-        //   }
-        // }
+            sh "docker rmi ${apiImage.id} -f"
+            build job: 'Mushroom_Application_Deployment/Mushroom_Classification_Application_Deployment', wait: false
+          }
+        }
       }
     }
   }
