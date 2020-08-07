@@ -10,4 +10,5 @@ RUN yarn install
 
 COPY . ./
 RUN yarn build
+CMD yarn dev
 # Would be nice here to delete everything and just have the build folder as the app folder? 
