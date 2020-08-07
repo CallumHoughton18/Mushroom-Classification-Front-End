@@ -61,17 +61,17 @@ pipeline {
     }
   }
 
-//   post {
-//     always {
-//       node('master') {
-//         withCredentials([string(credentialsId: 'sendto-email', variable: 'EMAIL')]) {
-//           emailext( to: "${EMAIL}", 
-//                     body: "*Test Summary* - ${summary.totalCount}, Failures: ${summary.failCount}, Skipped: ${summary.skipCount}, Passed: ${summary.passCount}\n${env.BUILD_URL}", 
-//                     subject: "[${currentBuild.currentResult}] ${env.JOB_NAME} - Build # ${env.BUILD_NUMBER}",
-//                     attachLog: true)
-//         }
-//         deleteDir()
-//       }
-//     }
-//   }
+  post {
+    always {
+      node('master') {
+        withCredentials([string(credentialsId: 'sendto-email', variable: 'EMAIL')]) {
+          emailext( to: "${EMAIL}", 
+                    body: "*Test Summary* - ${summary.totalCount}, Failures: ${summary.failCount}, Skipped: ${summary.skipCount}, Passed: ${summary.passCount}\n${env.BUILD_URL}", 
+                    subject: "[${currentBuild.currentResult}] ${env.JOB_NAME} - Build # ${env.BUILD_NUMBER}",
+                    attachLog: true)
+        }
+        deleteDir()
+      }
+    }
+  }
 }
