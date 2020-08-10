@@ -28,6 +28,9 @@ Object {
              It is instead meant to demonstrate how a machine learning model can be exposed and interacted with. The application owner is not responsible for your use of the application.
           </p>
         </div>
+        <i
+          class="fa"
+        />
       </div>
     </div>
   </body>,
@@ -55,6 +58,9 @@ Object {
            It is instead meant to demonstrate how a machine learning model can be exposed and interacted with. The application owner is not responsible for your use of the application.
         </p>
       </div>
+      <i
+        class="fa"
+      />
     </div>
   </div>,
   "debug": [Function],

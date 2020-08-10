@@ -10,6 +10,9 @@ Object {
           for="classques-0"
         >
           Select an Option 
+          <i
+            class="fa"
+          />
         </label>
         <select
           id="classques-0"
@@ -76,6 +79,9 @@ Object {
           for="classques-2"
         >
           Select an Option 
+          <i
+            class="fa"
+          />
         </label>
         <select
           id="classques-2"
@@ -118,6 +124,9 @@ Object {
         for="classques-0"
       >
         Select an Option 
+        <i
+          class="fa"
+        />
       </label>
       <select
         id="classques-0"
@@ -184,6 +193,9 @@ Object {
         for="classques-2"
       >
         Select an Option 
+        <i
+          class="fa"
+        />
       </label>
       <select
         id="classques-2"

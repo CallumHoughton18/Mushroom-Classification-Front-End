@@ -12,6 +12,9 @@ Object {
           class="logo"
           src="[object Object]"
         />
+        <i
+          class="fa"
+        />
         <ul>
           <li>
             <a
@@ -38,6 +41,9 @@ Object {
       <img
         class="logo"
         src="[object Object]"
+      />
+      <i
+        class="fa"
       />
       <ul>
         <li>
@@ -123,6 +129,9 @@ Object {
           class="logo"
           src="[object Object]"
         />
+        <i
+          class="fa"
+        />
         <ul>
           <li>
             <a
@@ -149,6 +158,9 @@ Object {
       <img
         class="logo"
         src="[object Object]"
+      />
+      <i
+        class="fa"
       />
       <ul>
         <li>
