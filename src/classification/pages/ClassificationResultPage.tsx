@@ -22,7 +22,7 @@ const ClassificationResultPage: FunctionComponent<ClassificationResultsPageProps
             {isPoisonous === undefined ? (
                 <Spinner />
             ) : (
-                <div>
+                <div className="page">
                     <h1>Classification Results Page, Form Data:</h1>
                     {JSON.stringify(classificationData)}
                     {isPoisonous !== undefined && (
