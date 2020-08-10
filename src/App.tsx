@@ -9,7 +9,7 @@ const ClassificationPage = lazy(() => import("./classification/pages/Classificat
 import "./stylesheets/main.scss";
 import ClassificationResultPage from "./classification/pages/ClassificationResultPage";
 import mockClassificationAPI from "./classification/api/mockClassificationAPI";
-import setupfontAwesomeLibrary from "./libary_helpers/setupFontAwesomeLibrary";
+import setupfontAwesomeLibrary from "./library_helpers/setupFontAwesomeLibrary";
 
 const App: FunctionComponent = () => {
     setupfontAwesomeLibrary();
