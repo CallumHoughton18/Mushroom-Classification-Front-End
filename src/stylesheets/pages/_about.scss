@@ -56,6 +56,11 @@ $graphic-size: 250px;
                 }
             }
         }
+        @media (max-height: 750px) {
+            .mushroom {
+                display: none;
+            }
+        }
     }
 
     section.info-section:nth-of-type(even) {

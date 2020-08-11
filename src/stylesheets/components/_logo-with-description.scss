@@ -1,4 +1,5 @@
 .logo-with-description {
+    @extend .icon;
     display: flex;
     flex-direction: column;
     justify-content: center;

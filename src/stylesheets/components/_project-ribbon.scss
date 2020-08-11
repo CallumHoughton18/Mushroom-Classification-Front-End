@@ -1,15 +1,11 @@
 .project-ribbon {
+    @extend .icon;
     display: flex;
     flex-direction: row;
     align-content: center;
+    justify-content: center;
 
     svg {
-        margin: 0 20px;
-        max-width: 100px;
-        max-height: 100px;
-    }
-
-    svg:hover {
-        cursor: pointer;
+        margin: 0px 10px;
     }
 }
