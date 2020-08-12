@@ -8,7 +8,7 @@ const ClassificationPage = lazy(() => import("./classification/pages/Classificat
 
 import "./stylesheets/main.scss";
 import ClassificationResultPage from "./classification/pages/ClassificationResultPage";
-import mockClassificationAPI from "./classification/api/mockClassificationAPI";
+import classificationAPI from "./classification/api/classificationAPI";
 import setupfontAwesomeLibrary from "./library_helpers/setupFontAwesomeLibrary";
 
 const App: FunctionComponent = () => {
@@ -16,7 +16,7 @@ const App: FunctionComponent = () => {
     const routes = (
         <Switch>
             <Route path="/Classification" exact>
-                <ClassificationPage />
+                <ClassificationPage classificationAPI={classificationAPI} />
             </Route>
             <Route path="/About" exact>
                 <AboutPage />
@@ -25,7 +25,7 @@ const App: FunctionComponent = () => {
                 <AboutPage />
             </Route>
             <Route path="/ClassificationResult">
-                <ClassificationResultPage classificationAPI={mockClassificationAPI} />
+                <ClassificationResultPage classificationAPI={classificationAPI} />
             </Route>
         </Switch>
     );

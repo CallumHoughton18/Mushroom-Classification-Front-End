@@ -18,3 +18,16 @@ export const useIsPoisonous = (
 
     return isPoisonous;
 };
+
+export const useGetFormDefinition = (classificationAPI: IClassificationAPI): string => {
+    const [formDef, setFormDef] = useState<string>(undefined);
+    useEffect(() => {
+        async function retrieveFormDefinition() {
+            const formData = await classificationAPI.GetClassificationFormDefinition();
+            setFormDef(formData);
+        }
+        retrieveFormDefinition();
+    }, [setFormDef, classificationAPI]);
+
+    return formDef;
+};

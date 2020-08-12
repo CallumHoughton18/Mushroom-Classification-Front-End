@@ -1,6 +1,8 @@
 import {FormContents} from "../../shared/types";
 import {IClassificationAPI} from "../interfaces";
 
+const baseUri = "https://mushroomai.site/api/";
+
 const mockClassificationAPI: IClassificationAPI = {
     GetClassification: async (data: FormContents): Promise<boolean> => {
         console.log(data);
@@ -8,7 +10,9 @@ const mockClassificationAPI: IClassificationAPI = {
         return true;
     },
     GetClassificationFormDefinition: async (): Promise<string> => {
-        return Promise.resolve("form definition");
+        const formDefinition = await fetch(`${baseUri}/files/features-definition.json`);
+        console.log(formDefinition);
+        return formDefinition.json();
     }
 };
 

@@ -3,10 +3,15 @@ import ClassificationForm from "../components/ClassificationForm";
 import useAppNavigation from "../../navigation/hooks/useAppNavigation";
 import {FormContents} from "../../shared/types";
 import {ClassificationQueryData} from "../types";
-import {IClassificationQuestion} from "../interfaces";
+import {IClassificationQuestion, IClassificationAPI} from "../interfaces";
+import {useGetFormDefinition} from "../api/classificationAPIHooks";
 
-const ClassificationPage: FunctionComponent = () => {
+type ClassificationPageProps = {
+    classificationAPI: IClassificationAPI;
+};
+const ClassificationPage: FunctionComponent<ClassificationPageProps> = ({classificationAPI}) => {
     const navManager = useAppNavigation();
+    const formData = useGetFormDefinition(classificationAPI);
 
     const navToClassificationResult = (formData: FormContents) => {
         const classificationData: ClassificationQueryData = {
