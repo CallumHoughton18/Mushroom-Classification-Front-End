@@ -12,6 +12,7 @@ type ClassificationPageProps = {
 const ClassificationPage: FunctionComponent<ClassificationPageProps> = ({classificationAPI}) => {
     const navManager = useAppNavigation();
     const formData = useGetFormDefinition(classificationAPI);
+    console.log(formData);
 
     const navToClassificationResult = (formData: FormContents) => {
         const classificationData: ClassificationQueryData = {

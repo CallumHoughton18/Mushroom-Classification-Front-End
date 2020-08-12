@@ -5,6 +5,7 @@ import userEvent from "@testing-library/user-event";
 import useAppNavigation from "../../../navigation/hooks/useAppNavigation";
 import ClassificationPage from "../ClassificationPage";
 import INavigationManager from "../../../navigation/interfaces/INavigationManager";
+import mockClassificationAPI from "../../../classification/api/mockClassificationAPI";
 
 jest.mock("../../../navigation/hooks/useAppNavigation");
 
@@ -27,7 +28,9 @@ describe("<Classificationpage /> functional tests", () => {
     });
 
     it("Should perform navigation on successful form submission", () => {
-        const {getByRole} = render(<ClassificationPage />);
+        const {getByRole} = render(
+            <ClassificationPage classificationAPI={mockClassificationAPI} />
+        );
 
         userEvent.click(getByRole("button"));
 
