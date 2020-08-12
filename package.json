@@ -37,7 +37,7 @@
         "usePathForSuiteName": "true"
     },
     "scripts": {
-        "dev": "TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack-dev-server --mode development --env.development --open --hot --progress --port 5000",
+        "dev": "TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack-dev-server --mode development --env.development --open --hot --progress --port 8000",
         "build": "TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack --mode production --env.production --progress",
         "lint": "eslint './src/**/*.{ts,tsx}'",
         "analyze": "source-map-explorer build/*.js",
