@@ -19,7 +19,7 @@ p {
     line-height: 2;
 }
 
-@media (max-width: $max-width-for-hamburger) {
+@media (max-width: $max-medium-screen-dimension) {
     h1 {
         font-size: xx-large;
         font-weight: bold;

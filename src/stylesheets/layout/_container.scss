@@ -16,7 +16,7 @@
         width: 70%;
     }
 
-    @media (max-width: $max-width-for-hamburger) {
+    @media (max-width: $max-medium-screen-dimension) {
         .inner-content {
             flex-direction: column-reverse;
             margin: 0 30px;
