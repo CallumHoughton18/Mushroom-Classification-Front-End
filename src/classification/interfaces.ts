@@ -10,5 +10,15 @@ export interface IClassificationQuestion extends IFormElement, IClassificationDa
 
 export interface IClassificationAPI {
     GetClassification: (data: FormContents) => Promise<boolean>;
-    GetClassificationFormDefinition: () => Promise<string>;
+    GetClassificationFormDefinition: () => Promise<IFeatureDefinition[]>;
+}
+
+export interface IFeatureDefinition {
+    name: string;
+    options: IOption[];
+}
+
+export interface IOption {
+    option: string;
+    value: string;
 }

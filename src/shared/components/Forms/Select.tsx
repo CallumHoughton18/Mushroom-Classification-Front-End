@@ -30,7 +30,9 @@ const Select: FunctionComponent<SelectProps> = (props) => {
 
     return (
         <React.Fragment>
-            <label htmlFor={props.id.toString()}>Select an Option {moreInfoIcon}</label>
+            <label htmlFor={props.id.toString()}>
+                {props.name} {moreInfoIcon}
+            </label>
             <select
                 name={props.name}
                 required={props.required}
