@@ -11,8 +11,7 @@ type ClassificationPageProps = {
 };
 const ClassificationPage: FunctionComponent<ClassificationPageProps> = ({classificationAPI}) => {
     const navManager = useAppNavigation();
-    const formData = useGetFormDefinition(classificationAPI);
-    console.log(formData);
+    const formQuestions = useGetFormDefinition(classificationAPI) ?? [];
 
     const navToClassificationResult = (formData: FormContents) => {
         const classificationData: ClassificationQueryData = {
@@ -37,7 +36,7 @@ const ClassificationPage: FunctionComponent<ClassificationPageProps> = ({classif
     return (
         <div>
             <ClassificationForm
-                questions={mockOptions}
+                questions={formQuestions}
                 onSubmit={navToClassificationResult}
             ></ClassificationForm>
         </div>

@@ -1,7 +1,7 @@
 import {FormContents} from "../../shared/types";
-import {IClassificationAPI} from "../interfaces";
+import {IClassificationAPI, IFeatureDefinition, IOption} from "../interfaces";
 
-const baseUri = "http://127.0.0.1:5000/api";
+const baseUri = "https://mushroomai.site/api";
 
 const mockClassificationAPI: IClassificationAPI = {
     GetClassification: async (data: FormContents): Promise<boolean> => {
@@ -9,10 +9,20 @@ const mockClassificationAPI: IClassificationAPI = {
         await new Promise((resolve) => setTimeout(resolve, 400));
         return true;
     },
-    GetClassificationFormDefinition: async (): Promise<string> => {
+    GetClassificationFormDefinition: async (): Promise<IFeatureDefinition[]> => {
         const formDefinition = await fetch(`${baseUri}/files/features-definition.json`);
         const formJson = await formDefinition.json();
-        return formJson;
+        const defs: IFeatureDefinition[] = [];
+        for (const key in formJson) {
+            // this conversion here doesn't seem to be working...
+            const subEntry = formJson[key] as IOption[];
+            const featureDefinition: IFeatureDefinition = {
+                name: key,
+                options: subEntry
+            };
+            defs.push(featureDefinition);
+        }
+        return defs;
     }
 };
 
