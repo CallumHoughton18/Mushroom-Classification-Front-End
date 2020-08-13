@@ -11,3 +11,5 @@ describe("<ClassificationForm /> render test", () => {
         expect(renderedClassificationForm).toMatchSnapshot();
     });
 });
+
+//TODO: add test for when form definition is null

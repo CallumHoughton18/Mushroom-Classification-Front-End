@@ -9,7 +9,8 @@ Object {
         <label
           for="classques-0"
         >
-          Select an Option 
+          TestField0
+           
           <i
             class="fa"
           />
@@ -45,7 +46,8 @@ Object {
         <label
           for="classques-1"
         >
-          Select an Option 
+          TestField1
+           
         </label>
         <select
           id="classques-1"
@@ -78,7 +80,8 @@ Object {
         <label
           for="classques-2"
         >
-          Select an Option 
+          TestField2
+           
           <i
             class="fa"
           />
@@ -123,7 +126,8 @@ Object {
       <label
         for="classques-0"
       >
-        Select an Option 
+        TestField0
+         
         <i
           class="fa"
         />
@@ -159,7 +163,8 @@ Object {
       <label
         for="classques-1"
       >
-        Select an Option 
+        TestField1
+         
       </label>
       <select
         id="classques-1"
@@ -192,7 +197,8 @@ Object {
       <label
         for="classques-2"
       >
-        Select an Option 
+        TestField2
+         
         <i
           class="fa"
         />
