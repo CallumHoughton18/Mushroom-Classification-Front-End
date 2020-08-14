@@ -9,7 +9,7 @@ Object {
         <label
           for="classques-0"
         >
-          TestField0
+          Testfield0
            
           <i
             class="fa"
@@ -19,7 +19,7 @@ Object {
           id="classques-0"
           name="TestField0"
           required=""
-          title="Select an option"
+          title="Testfield0"
         >
           <option
             disabled=""
@@ -30,30 +30,30 @@ Object {
           <option
             value="Opt1"
           >
-            Opt1
+            Option1
           </option>
           <option
             value="Opt2"
           >
-            Opt2
+            Option2
           </option>
           <option
             value="Opt3"
           >
-            Opt3
+            Option3
           </option>
         </select>
         <label
           for="classques-1"
         >
-          TestField1
+          Testfield1
            
         </label>
         <select
           id="classques-1"
           name="TestField1"
           required=""
-          title="Select an option"
+          title="Testfield1"
         >
           <option
             disabled=""
@@ -64,23 +64,23 @@ Object {
           <option
             value="Opt1"
           >
-            Opt1
+            Option1
           </option>
           <option
             value="Opt2"
           >
-            Opt2
+            Option2
           </option>
           <option
             value="Opt3"
           >
-            Opt3
+            Option3
           </option>
         </select>
         <label
           for="classques-2"
         >
-          TestField2
+          Testfield2
            
           <i
             class="fa"
@@ -90,7 +90,7 @@ Object {
           id="classques-2"
           name="TestField2"
           required=""
-          title="Select an option"
+          title="Testfield2"
         >
           <option
             disabled=""
@@ -101,17 +101,17 @@ Object {
           <option
             value="Opt1"
           >
-            Opt1
+            Option1
           </option>
           <option
             value="Opt2"
           >
-            Opt2
+            Option2
           </option>
           <option
             value="Opt3"
           >
-            Opt3
+            Option3
           </option>
         </select>
         <input
@@ -126,7 +126,7 @@ Object {
       <label
         for="classques-0"
       >
-        TestField0
+        Testfield0
          
         <i
           class="fa"
@@ -136,7 +136,7 @@ Object {
         id="classques-0"
         name="TestField0"
         required=""
-        title="Select an option"
+        title="Testfield0"
       >
         <option
           disabled=""
@@ -147,30 +147,30 @@ Object {
         <option
           value="Opt1"
         >
-          Opt1
+          Option1
         </option>
         <option
           value="Opt2"
         >
-          Opt2
+          Option2
         </option>
         <option
           value="Opt3"
         >
-          Opt3
+          Option3
         </option>
       </select>
       <label
         for="classques-1"
       >
-        TestField1
+        Testfield1
          
       </label>
       <select
         id="classques-1"
         name="TestField1"
         required=""
-        title="Select an option"
+        title="Testfield1"
       >
         <option
           disabled=""
@@ -181,23 +181,23 @@ Object {
         <option
           value="Opt1"
         >
-          Opt1
+          Option1
         </option>
         <option
           value="Opt2"
         >
-          Opt2
+          Option2
         </option>
         <option
           value="Opt3"
         >
-          Opt3
+          Option3
         </option>
       </select>
       <label
         for="classques-2"
       >
-        TestField2
+        Testfield2
          
         <i
           class="fa"
@@ -207,7 +207,7 @@ Object {
         id="classques-2"
         name="TestField2"
         required=""
-        title="Select an option"
+        title="Testfield2"
       >
         <option
           disabled=""
@@ -218,17 +218,17 @@ Object {
         <option
           value="Opt1"
         >
-          Opt1
+          Option1
         </option>
         <option
           value="Opt2"
         >
-          Opt2
+          Option2
         </option>
         <option
           value="Opt3"
         >
-          Opt3
+          Option3
         </option>
       </select>
       <input

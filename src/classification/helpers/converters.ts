@@ -2,7 +2,6 @@ export const toFormFieldTitle = (unformattedName: string): string => {
     if (unformattedName == undefined) return "";
 
     const formattedName = unformattedName.replace(/-/g, " ");
-    console.log(formattedName);
     return formattedName
         .toLowerCase()
         .split(" ")
