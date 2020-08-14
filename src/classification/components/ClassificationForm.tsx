@@ -4,6 +4,7 @@ import Modal from "../../shared/components/UI/Modal";
 import useForm from "../../shared/hooks/useForm";
 import {FormContents} from "../../shared/types";
 import {IClassificationQuestion} from "../interfaces";
+import {toFormFieldTitle} from "../helpers/converters";
 
 export type ClassificationFormProps = {
     questions: Array<IClassificationQuestion>;
@@ -30,6 +31,7 @@ const ClassificationForm: FunctionComponent<ClassificationFormProps> = (props) =
                 key={question.id}
                 id={question.id}
                 name={question.fieldName}
+                title={toFormFieldTitle(question.fieldName)}
                 value={values[question.fieldName] || ""}
                 options={question.options}
                 required={question.isRequired}

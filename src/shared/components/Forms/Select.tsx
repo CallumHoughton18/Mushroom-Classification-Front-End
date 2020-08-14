@@ -5,6 +5,7 @@ import {SelectOption} from "../../types";
 type SelectProps = {
     id: React.ReactText;
     name: string;
+    title: string;
     value: string;
     options: SelectOption[];
     required: boolean;
@@ -32,12 +33,12 @@ const Select: FunctionComponent<SelectProps> = (props) => {
     return (
         <React.Fragment>
             <label htmlFor={props.id.toString()}>
-                {props.name} {moreInfoIcon}
+                {props.title} {moreInfoIcon}
             </label>
             <select
                 name={props.name}
                 required={props.required}
-                title={props.name}
+                title={props.title}
                 onChange={props.onChange}
                 value={props.value}
                 id={props.id.toString()}

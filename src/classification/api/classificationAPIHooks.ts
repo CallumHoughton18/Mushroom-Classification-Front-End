@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react";
 import {IClassificationAPI, IClassificationQuestion} from "../interfaces";
 import {FormContents} from "../../shared/types";
+import {FeatureDefinition} from "../types";
 
 export const useIsPoisonous = (
     classificationAPI: IClassificationAPI,
@@ -23,25 +24,29 @@ export const useGetFormDefinition = (
     classificationAPI: IClassificationAPI
 ): IClassificationQuestion[] => {
     const [formDef, setFormDef] = useState<IClassificationQuestion[]>(undefined);
-    // seems messy...
+
     useEffect(() => {
         async function retrieveFormDefinition() {
             const formData = await classificationAPI.getClassificationFormDefinition();
-            const questions = formData.map((def, indx) => {
-                const classificationQuestion: IClassificationQuestion = {
-                    id: `classques-${indx}`,
-                    fieldName: def.name,
-                    options: def.options,
-                    isRequired: true,
-                    value: ""
-                };
-                return classificationQuestion;
-            });
-
+            const questions = convertFeatureDefToClassQues(formData);
             setFormDef(questions);
         }
         retrieveFormDefinition();
     }, [setFormDef, classificationAPI]);
 
     return formDef;
+};
+
+const convertFeatureDefToClassQues = (formData: FeatureDefinition[]) => {
+    const questions = formData.map((def, indx) => {
+        const classificationQuestion: IClassificationQuestion = {
+            id: `classques-${indx}`,
+            fieldName: def.name,
+            options: def.options,
+            isRequired: true,
+            value: ""
+        };
+        return classificationQuestion;
+    });
+    return questions;
 };
