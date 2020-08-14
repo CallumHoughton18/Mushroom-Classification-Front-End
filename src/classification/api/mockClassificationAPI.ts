@@ -1,16 +1,17 @@
 import {FormContents} from "../../shared/types";
-import {IClassificationAPI, IFeatureDefinition} from "../interfaces";
+import {IClassificationAPI} from "../interfaces";
+import {FeatureDefinition} from "../types";
 
 const mockClassificationAPI: IClassificationAPI = {
-    GetClassification: async (data: FormContents): Promise<boolean> => {
+    getClassification: async (data: FormContents): Promise<boolean> => {
         console.log(data);
         await new Promise((resolve) => setTimeout(resolve, 400));
         return true;
     },
-    GetClassificationFormDefinition: async (): Promise<IFeatureDefinition[]> => {
-        const mockDefs: IFeatureDefinition[] = [];
+    getClassificationFormDefinition: async (): Promise<FeatureDefinition[]> => {
+        const mockDefs: FeatureDefinition[] = [];
         for (let index = 0; index < 3; index++) {
-            const classificationQuestions: IFeatureDefinition = {
+            const classificationQuestions: FeatureDefinition = {
                 name: `classques-${index}`,
                 options: []
             };

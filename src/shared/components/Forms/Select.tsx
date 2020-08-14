@@ -1,11 +1,12 @@
 import React, {FunctionComponent, ChangeEvent} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {SelectOption} from "../../types";
 
 type SelectProps = {
     id: React.ReactText;
     name: string;
     value: string;
-    options: Array<string>;
+    options: SelectOption[];
     required: boolean;
     onChange: (event: ChangeEvent<HTMLSelectElement>) => void;
     viewInfoCallback?: () => void;
@@ -14,8 +15,8 @@ type SelectProps = {
 const Select: FunctionComponent<SelectProps> = (props) => {
     const options = props.options.map((optionVal, indx) => {
         return (
-            <option value={optionVal} key={`${optionVal}-${indx}`}>
-                {optionVal}
+            <option value={optionVal.value} key={`${optionVal}-${indx}`}>
+                {optionVal.displayname}
             </option>
         );
     });
@@ -36,7 +37,7 @@ const Select: FunctionComponent<SelectProps> = (props) => {
             <select
                 name={props.name}
                 required={props.required}
-                title="Select an option"
+                title={props.name}
                 onChange={props.onChange}
                 value={props.value}
                 id={props.id.toString()}

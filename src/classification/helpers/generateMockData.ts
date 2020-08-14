@@ -6,7 +6,7 @@ export function GenerateMockClassificationQuestions(): IClassificationQuestion[]
         const classificationQuestions: IClassificationQuestion = {
             id: `classques-${index}`,
             fieldName: `TestField${index}`,
-            options: ["Opt1", "Opt2", "Opt3"],
+            options: [],
             isRequired: true,
             value: ""
         };

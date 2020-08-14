@@ -26,7 +26,7 @@ const ClassificationPage: FunctionComponent<ClassificationPageProps> = ({classif
         const classificationQuestions: IClassificationQuestion = {
             id: `classques-${index}`,
             fieldName: `TestField${index}`,
-            options: ["Opt1", "Opt2", "Opt3"],
+            options: [],
             isRequired: true,
             value: ""
         };

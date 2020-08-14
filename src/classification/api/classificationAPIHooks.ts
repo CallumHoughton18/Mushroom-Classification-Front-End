@@ -10,7 +10,7 @@ export const useIsPoisonous = (
 
     useEffect(() => {
         async function doClassification() {
-            const test = await classificationAPI.GetClassification(classificationData);
+            const test = await classificationAPI.getClassification(classificationData);
             setIsPoisonous(test);
         }
         doClassification();
@@ -26,12 +26,12 @@ export const useGetFormDefinition = (
     // seems messy...
     useEffect(() => {
         async function retrieveFormDefinition() {
-            const formData = await classificationAPI.GetClassificationFormDefinition();
+            const formData = await classificationAPI.getClassificationFormDefinition();
             const questions = formData.map((def, indx) => {
                 const classificationQuestion: IClassificationQuestion = {
                     id: `classques-${indx}`,
                     fieldName: def.name,
-                    options: ["Opt1", "Opt2", "Opt3"],
+                    options: def.options,
                     isRequired: true,
                     value: ""
                 };
