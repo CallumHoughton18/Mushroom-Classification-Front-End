@@ -27,8 +27,10 @@ export const useGetFormDefinition = (
 
     useEffect(() => {
         async function retrieveFormDefinition() {
-            const formData = await classificationAPI.getClassificationFormDefinition();
-            const questions = convertFeatureDefToClassQues(formData);
+            const formDataResponse = await classificationAPI.getClassificationFormDefinition();
+            const questions = formDataResponse.success
+                ? convertFeatureDefToClassQues(formDataResponse.result)
+                : [];
             setFormDef(questions);
         }
         retrieveFormDefinition();

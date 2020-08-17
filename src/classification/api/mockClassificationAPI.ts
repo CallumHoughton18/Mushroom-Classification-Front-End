@@ -1,6 +1,6 @@
 import {FormContents} from "../../shared/types";
 import {IClassificationAPI} from "../interfaces";
-import {FeatureDefinition} from "../types";
+import {FeatureDefinition, APIGet} from "../types";
 
 const mockClassificationAPI: IClassificationAPI = {
     getClassification: async (data: FormContents): Promise<boolean> => {
@@ -8,7 +8,7 @@ const mockClassificationAPI: IClassificationAPI = {
         await new Promise((resolve) => setTimeout(resolve, 400));
         return true;
     },
-    getClassificationFormDefinition: async (): Promise<FeatureDefinition[]> => {
+    getClassificationFormDefinition: async (): Promise<APIGet<FeatureDefinition[]>> => {
         const mockDefs: FeatureDefinition[] = [];
         for (let index = 0; index < 3; index++) {
             const classificationQuestions: FeatureDefinition = {
@@ -17,7 +17,7 @@ const mockClassificationAPI: IClassificationAPI = {
             };
             mockDefs[index] = classificationQuestions;
         }
-        return mockDefs;
+        return {success: true, result: mockDefs};
     }
 };
 

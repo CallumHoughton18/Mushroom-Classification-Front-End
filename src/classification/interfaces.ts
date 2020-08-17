@@ -1,6 +1,6 @@
 import {IFormElement} from "../shared/interfaces";
 import {FormContents, SelectOption} from "../shared/types";
-import {FeatureDefinition} from "./types";
+import {FeatureDefinition, APIGet} from "./types";
 
 export interface IClassificationData {
     fieldName: string;
@@ -11,5 +11,5 @@ export interface IClassificationQuestion extends IFormElement, IClassificationDa
 
 export interface IClassificationAPI {
     getClassification: (data: FormContents) => Promise<boolean>;
-    getClassificationFormDefinition: () => Promise<FeatureDefinition[]>;
+    getClassificationFormDefinition: () => Promise<APIGet<FeatureDefinition[]>>;
 }

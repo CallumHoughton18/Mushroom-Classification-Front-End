@@ -1,6 +1,6 @@
 import {FormContents, LooseObject} from "../../shared/types";
 import {IClassificationAPI} from "../interfaces";
-import {FeatureDefinition} from "../types";
+import {FeatureDefinition, APIGet} from "../types";
 import {convertLooseObjectToClassificationObj} from "./classificationAPIHelpers";
 
 const baseUri = "https://mushroomai.site/api";
@@ -12,10 +12,11 @@ const classificationAPI: IClassificationAPI = {
         return true;
     },
 
-    getClassificationFormDefinition: async (): Promise<FeatureDefinition[]> => {
+    getClassificationFormDefinition: async (): Promise<APIGet<FeatureDefinition[]>> => {
         const formDefinition = await fetch(`${baseUri}/files/features-definition.json`);
-        const formJson = await formDefinition.json();
+
         const defs: FeatureDefinition[] = [];
+        const formJson = await formDefinition.json();
         for (const name in formJson) {
             const obj: LooseObject<string> = formJson[name];
             const options = convertLooseObjectToClassificationObj(obj);
@@ -25,7 +26,11 @@ const classificationAPI: IClassificationAPI = {
             };
             defs.push(featureDefinition);
         }
-        return defs;
+
+        return {
+            success: formDefinition.status === 200,
+            result: defs
+        };
     }
 };
 
