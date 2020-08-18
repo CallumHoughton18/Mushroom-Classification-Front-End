@@ -1,4 +1,4 @@
-import {render} from "@testing-library/react";
+import {render, act, waitFor} from "@testing-library/react";
 import React from "react";
 import {mocked} from "ts-jest/utils";
 import userEvent from "@testing-library/user-event";
@@ -12,9 +12,10 @@ jest.mock("../../../navigation/hooks/useAppNavigation");
 describe("<Classificationpage /> functional tests", () => {
     const mockedUseAppNavigation = mocked(useAppNavigation, true);
     const mockNav: INavigationManager = {
-        GoToClassificationPage: jest.fn(),
-        GoToAboutPage: jest.fn(),
-        GoToClassificationResultPage: jest.fn()
+        goToClassificationPage: jest.fn(),
+        goToAboutPage: jest.fn(),
+        goToClassificationResultPage: jest.fn(),
+        goToErrorPage: jest.fn()
     };
 
     beforeAll(() => {
@@ -32,8 +33,9 @@ describe("<Classificationpage /> functional tests", () => {
             <ClassificationPage classificationAPI={mockClassificationAPI} />
         );
 
-        userEvent.click(getByRole("button"));
-
-        expect(mockNav.GoToClassificationResultPage).toHaveBeenCalledTimes(1);
+        waitFor(() => {
+            userEvent.click(getByRole("button"));
+            expect(mockNav.goToClassificationResultPage).toHaveBeenCalledTimes(1);
+        });
     });
 });

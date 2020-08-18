@@ -1,11 +1,14 @@
 import classificationAPI from "../classificationAPI";
 import {server} from "../../../functional_test_mocks/server";
-import {createFeaturesDefHandler} from "../../../functional_test_mocks/handlers";
+import {createFeaturesDefHandler, defaultHandlers} from "../../../functional_test_mocks/handlers";
 // this auto polyfills the fetch api for Node
 import "whatwg-fetch";
 
 beforeAll(() => server.listen());
-afterEach(() => server.resetHandlers());
+afterEach(() => {
+    server.use(...defaultHandlers);
+    server.resetHandlers();
+});
 afterAll(() => server.close());
 
 describe("getClassificationFormDefinition tests", () => {
@@ -45,8 +48,9 @@ describe("getClassificationFormDefinition tests", () => {
         const actualFormDef = await classificationAPI.getClassificationFormDefinition();
         expect(actualFormDef).toEqual(expectedFormDef);
     });
-    it("Should handle error response code with null json", async () => {
-        server.use(createFeaturesDefHandler(403, null));
+
+    it.each([[null], [undefined]])("Should handle error response with no json", async (jsonRes) => {
+        server.use(createFeaturesDefHandler(403, jsonRes));
 
         const actualFormDef = await classificationAPI.getClassificationFormDefinition();
         expect(actualFormDef).toEqual({result: [], success: false});
