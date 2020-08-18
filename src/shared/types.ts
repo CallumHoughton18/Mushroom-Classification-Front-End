@@ -15,3 +15,7 @@ export type SelectOption = {
 export type LooseObject<T> = {
     [name: string]: T;
 };
+
+export type FriendlyAppError = {
+    message: string;
+};

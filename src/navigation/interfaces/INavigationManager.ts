@@ -1,7 +1,9 @@
 import {ClassificationQueryData} from "../../classification/types";
+import {FriendlyAppError} from "../../shared/types";
 
 export default interface INavigationManager {
-    GoToAboutPage: () => void;
-    GoToClassificationPage: () => void;
-    GoToClassificationResultPage: (classificationData: ClassificationQueryData) => void;
+    goToAboutPage: () => void;
+    goToClassificationPage: () => void;
+    goToClassificationResultPage: (classificationData: ClassificationQueryData) => void;
+    goToErrorPage: (errorMsg: FriendlyAppError) => void;
 }

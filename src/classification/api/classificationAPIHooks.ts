@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react";
+import {useState, useEffect, useRef} from "react";
 import {IClassificationAPI, IClassificationQuestion} from "../interfaces";
 import {FormContents} from "../../shared/types";
 import {FeatureDefinition} from "../types";
@@ -21,20 +21,29 @@ export const useIsPoisonous = (
 };
 
 export const useGetFormDefinition = (
-    classificationAPI: IClassificationAPI
+    classificationAPI: IClassificationAPI,
+    onErrorCallBack: () => void
 ): IClassificationQuestion[] => {
     const [formDef, setFormDef] = useState<IClassificationQuestion[]>(undefined);
+    const componentIsMounted = useRef(true);
 
     useEffect(() => {
         async function retrieveFormDefinition() {
             const formDataResponse = await classificationAPI.getClassificationFormDefinition();
-            const questions = formDataResponse.success
-                ? convertFeatureDefToClassQues(formDataResponse.result)
-                : [];
-            setFormDef(questions);
+            if (!formDataResponse.success) throw "Form response unsuccessful";
+
+            const questions = convertFeatureDefToClassQues(formDataResponse.result);
+            componentIsMounted.current && setFormDef(questions);
         }
-        retrieveFormDefinition();
-    }, [setFormDef, classificationAPI]);
+        try {
+            retrieveFormDefinition();
+        } catch (err) {
+            onErrorCallBack();
+        }
+        return () => {
+            componentIsMounted.current = false;
+        };
+    }, [setFormDef, classificationAPI, onErrorCallBack]);
 
     return formDef;
 };

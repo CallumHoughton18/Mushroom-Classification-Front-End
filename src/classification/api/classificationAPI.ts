@@ -13,24 +13,30 @@ const classificationAPI: IClassificationAPI = {
     },
 
     getClassificationFormDefinition: async (): Promise<APIGet<FeatureDefinition[]>> => {
-        const formDefinition = await fetch(`${baseUri}/files/features-definition.json`);
+        try {
+            const formDefinition = await fetch(`${baseUri}/files/features-definition.json`);
+            const defs: FeatureDefinition[] = [];
+            const formJson = await formDefinition.json();
+            for (const name in formJson) {
+                const obj: LooseObject<string> = formJson[name];
+                const options = convertLooseObjectToClassificationObj(obj);
+                const featureDefinition: FeatureDefinition = {
+                    name,
+                    options
+                };
+                defs.push(featureDefinition);
+            }
 
-        const defs: FeatureDefinition[] = [];
-        const formJson = await formDefinition.json();
-        for (const name in formJson) {
-            const obj: LooseObject<string> = formJson[name];
-            const options = convertLooseObjectToClassificationObj(obj);
-            const featureDefinition: FeatureDefinition = {
-                name,
-                options
+            return {
+                success: formDefinition.status === 200,
+                result: defs
             };
-            defs.push(featureDefinition);
+        } catch (err) {
+            return {
+                success: false,
+                result: []
+            };
         }
-
-        return {
-            success: formDefinition.status === 200,
-            result: defs
-        };
     }
 };
 

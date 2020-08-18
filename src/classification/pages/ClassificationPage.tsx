@@ -11,14 +11,17 @@ type ClassificationPageProps = {
 };
 const ClassificationPage: FunctionComponent<ClassificationPageProps> = ({classificationAPI}) => {
     const navManager = useAppNavigation();
-    const formQuestions = useGetFormDefinition(classificationAPI) ?? [];
+    const formQuestions =
+        useGetFormDefinition(classificationAPI, () => {
+            navManager.goToErrorPage({message: "Error fetching form definition"});
+        }) ?? [];
 
     const navToClassificationResult = (formData: FormContents) => {
         const classificationData: ClassificationQueryData = {
             classificationData: formData
         };
 
-        navManager.GoToClassificationResultPage(classificationData);
+        navManager.goToClassificationResultPage(classificationData);
     };
 
     const mockOptions: Array<IClassificationQuestion> = [];

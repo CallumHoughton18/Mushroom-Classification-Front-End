@@ -10,6 +10,7 @@ import "./stylesheets/main.scss";
 import ClassificationResultPage from "./classification/pages/ClassificationResultPage";
 import classificationAPI from "./classification/api/classificationAPI";
 import setupfontAwesomeLibrary from "./library_helpers/setupFontAwesomeLibrary";
+import ErrorPage from "./error/ErrorPage";
 
 const App: FunctionComponent = () => {
     setupfontAwesomeLibrary();
@@ -26,6 +27,9 @@ const App: FunctionComponent = () => {
             </Route>
             <Route path="/ClassificationResult">
                 <ClassificationResultPage classificationAPI={classificationAPI} />
+            </Route>
+            <Route path="/Error">
+                <ErrorPage />
             </Route>
         </Switch>
     );
