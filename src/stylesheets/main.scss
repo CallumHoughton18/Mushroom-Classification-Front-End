@@ -8,8 +8,8 @@
 
 @import "./base/base", "./base/typography";
 
-@import "./layout/forms", "./layout/navbar", "./layout/hide", "./layout/container", "./layout/popup",
-    "./layout/page";
+@import "./layout/centred-content", "./layout/forms", "./layout/navbar", "./layout/hide",
+    "./layout/container", "./layout/popup", "./layout/page";
 
 @import "./components/icon", "./components/button", "./components/modal",
     "./components/project-ribbon", "./components/select", "./components/logo-with-description",
