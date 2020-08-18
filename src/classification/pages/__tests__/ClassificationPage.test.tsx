@@ -1,4 +1,4 @@
-import {render, RenderResult, act, waitForElement, waitFor} from "@testing-library/react";
+import {render, waitFor} from "@testing-library/react";
 import React from "react";
 import ClassificationPage from "../ClassificationPage";
 import mockClassificationAPI from "../../../classification/api/mockClassificationAPI";
