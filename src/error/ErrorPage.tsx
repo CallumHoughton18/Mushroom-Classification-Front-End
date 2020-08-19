@@ -7,7 +7,7 @@ const ErrorPage: FunctionComponent = () => {
     return (
         <section className="centred-content">
             <h2>Oops! An Error Occured :(</h2>
-            <p>{errorMsg}</p>
+            <p>{errorMsg?.message}</p>
         </section>
     );
 };

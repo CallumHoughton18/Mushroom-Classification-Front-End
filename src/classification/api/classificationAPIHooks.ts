@@ -29,17 +29,18 @@ export const useGetFormDefinition = (
 
     useEffect(() => {
         async function retrieveFormDefinition() {
-            const formDataResponse = await classificationAPI.getClassificationFormDefinition();
-            if (!formDataResponse.success) throw "Form response unsuccessful";
+            try {
+                const formDataResponse = await classificationAPI.getClassificationFormDefinition();
+                if (formDataResponse.success) throw "Form response unsuccessful";
 
-            const questions = convertFeatureDefToClassQues(formDataResponse.result);
-            componentIsMounted.current && setFormDef(questions);
+                const questions = convertFeatureDefToClassQues(formDataResponse.result);
+                componentIsMounted.current && setFormDef(questions);
+            } catch (err) {
+                onErrorCallBack();
+            }
         }
-        try {
-            retrieveFormDefinition();
-        } catch (err) {
-            onErrorCallBack();
-        }
+        retrieveFormDefinition();
+
         return () => {
             componentIsMounted.current = false;
         };

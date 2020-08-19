@@ -5,7 +5,9 @@ import userEvent from "@testing-library/user-event";
 import useAppNavigation from "../../../navigation/hooks/useAppNavigation";
 import ClassificationPage from "../ClassificationPage";
 import INavigationManager from "../../../navigation/interfaces/INavigationManager";
-import mockClassificationAPI from "../../../classification/api/mockClassificationAPI";
+import mockClassificationAPI from "../../api/mockClassificationAPI";
+import {IClassificationAPI} from "../../interfaces";
+import {APIGet, FeatureDefinition} from "../../types";
 
 jest.mock("../../../navigation/hooks/useAppNavigation");
 
@@ -36,6 +38,24 @@ describe("<Classificationpage /> functional tests", () => {
         waitFor(() => {
             userEvent.click(getByRole("button"));
             expect(mockNav.goToClassificationResultPage).toHaveBeenCalledTimes(1);
+        });
+    });
+
+    it("Should navigate to error page if getFormDef hook fails", () => {
+        const classificationAPIFailureMock: IClassificationAPI = {
+            getClassification: mockClassificationAPI.getClassification,
+            getClassificationFormDefinition: () => {
+                const bleh: APIGet<FeatureDefinition[]> = {
+                    success: false,
+                    result: []
+                };
+                return Promise.resolve(bleh);
+            }
+        };
+
+        render(<ClassificationPage classificationAPI={classificationAPIFailureMock} />);
+        waitFor(() => {
+            expect(mockNav.goToErrorPage).toHaveBeenCalled();
         });
     });
 });
