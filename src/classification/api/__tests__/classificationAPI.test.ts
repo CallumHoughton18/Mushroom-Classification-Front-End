@@ -1,8 +1,13 @@
 import classificationAPI from "../classificationAPI";
 import {server} from "../../../functional_test_mocks/server";
-import {createFeaturesDefHandler, defaultHandlers} from "../../../functional_test_mocks/handlers";
+import {
+    createFeaturesDefHandler,
+    createGetClassificationHandler,
+    defaultHandlers
+} from "../../../functional_test_mocks/handlers";
 // this auto polyfills the fetch api for Node
 import "whatwg-fetch";
+import {FormContents} from "../../../shared/types";
 
 beforeAll(() => server.listen());
 afterEach(() => {
@@ -54,5 +59,22 @@ describe("getClassificationFormDefinition tests", () => {
 
         const actualFormDef = await classificationAPI.getClassificationFormDefinition();
         expect(actualFormDef).toEqual({result: [], success: false});
+    });
+});
+
+describe("getClassification tests", () => {
+    const mockContent: FormContents = {
+        fieldname: "value"
+    };
+
+    it("Should return success with poisonous is true", async () => {
+        const result = await classificationAPI.getClassification(mockContent);
+        expect(result).toEqual({success: true, result: true});
+    });
+
+    it.each([[null], [undefined]])("Should handle error response with no json", async (jsonRes) => {
+        server.use(createGetClassificationHandler(403, jsonRes));
+        const result = await classificationAPI.getClassification(mockContent);
+        expect(result).toEqual({success: false, result: null});
     });
 });

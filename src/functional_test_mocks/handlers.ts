@@ -12,6 +12,18 @@ export const createFeaturesDefHandler = (
     );
 };
 
+export const createGetClassificationHandler = (
+    statusCode: number,
+    json: Record<string, unknown>
+): RequestHandler<MockedRequest, typeof restContext, ParsedRestRequest> => {
+    return rest.get(
+        'https://mushroomai.site/api/prediction/submit?values=[{"fieldname":"value"}]',
+        (req, res, ctx) => {
+            return res(ctx.status(statusCode), ctx.json(json));
+        }
+    );
+};
+
 export const defaultHandlers = [
     createFeaturesDefHandler(200, {
         "cap-shape": {
@@ -24,5 +36,6 @@ export const defaultHandlers = [
         },
         "cap-surface": {f: "fibrous", g: "grooves", y: "scaly", s: "smooth"},
         bruises: {t: "yes", f: "no"}
-    })
+    }),
+    createGetClassificationHandler(200, {poisonous: true})
 ];
