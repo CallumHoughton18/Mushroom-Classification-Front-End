@@ -4,6 +4,7 @@ import {ClassificationQueryData} from "../types";
 import {IClassificationAPI} from "../interfaces";
 import {useIsPoisonous} from "../api/classificationAPIHooks";
 import Spinner from "../../shared/components/UI/Spinner";
+import Container from "../../shared/components/Layout/Container";
 
 type ClassificationResultsPageProps = {
     classificationAPI: IClassificationAPI;
@@ -13,8 +14,6 @@ const ClassificationResultPage: FunctionComponent<ClassificationResultsPageProps
     classificationAPI
 }) => {
     //TODO: for now this is fine, but ideally want a separate 'loading' hook
-    // for Spinner rendering, and isPoisonous could return an object indicating
-    // if there was an API error for better error handling
     const {classificationData} = useGetNavData<ClassificationQueryData>();
     const isPoisonous = useIsPoisonous(classificationAPI, classificationData);
     return (
@@ -22,11 +21,14 @@ const ClassificationResultPage: FunctionComponent<ClassificationResultsPageProps
             {isPoisonous === undefined ? (
                 <Spinner />
             ) : (
-                <div className="page">
-                    <h1>Classification Results Page, Form Data:</h1>
+                <div className="result-summary">
                     {JSON.stringify(classificationData)}
                     {isPoisonous !== undefined && (
-                        <p>Mock API response: {isPoisonous.toString()}</p>
+                        <h2>
+                            {isPoisonous
+                                ? "The Mushroom is Predicted to be Poisonous!"
+                                : "The Mushroom is Predicted to be Edible!"}
+                        </h2>
                     )}
                 </div>
             )}

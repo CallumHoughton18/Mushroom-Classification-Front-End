@@ -1,4 +1,4 @@
-import {SelectOption, LooseObject} from "../../shared/types";
+import {SelectOption, LooseObject, FormContents} from "../../shared/types";
 
 export const convertLooseObjectToClassificationObj = (obj: LooseObject<string>): SelectOption[] => {
     const options: SelectOption[] = [];
@@ -10,4 +10,10 @@ export const convertLooseObjectToClassificationObj = (obj: LooseObject<string>):
         options.push(option);
     });
     return options;
+};
+
+export const convertFormContentsToJson = (data: FormContents): string => {
+    const contents: FormContents[] = [];
+    contents.push(data);
+    return JSON.stringify(contents);
 };

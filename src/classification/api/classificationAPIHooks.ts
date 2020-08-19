@@ -7,12 +7,14 @@ export const useIsPoisonous = (
     classificationAPI: IClassificationAPI,
     classificationData: FormContents
 ): boolean => {
-    const [isPoisonous, setIsPoisonous] = useState(undefined);
+    const [isPoisonous, setIsPoisonous] = useState<boolean>(undefined);
 
     useEffect(() => {
         async function doClassification() {
-            const test = await classificationAPI.getClassification(classificationData);
-            setIsPoisonous(test);
+            const classificationResponse = await classificationAPI.getClassification(
+                classificationData
+            );
+            setIsPoisonous(classificationResponse.result);
         }
         doClassification();
     }, [setIsPoisonous, classificationData, classificationAPI]);
@@ -31,7 +33,7 @@ export const useGetFormDefinition = (
         async function retrieveFormDefinition() {
             try {
                 const formDataResponse = await classificationAPI.getClassificationFormDefinition();
-                if (formDataResponse.success) throw "Form response unsuccessful";
+                if (!formDataResponse.success) throw "Form response unsuccessful";
 
                 const questions = convertFeatureDefToClassQues(formDataResponse.result);
                 componentIsMounted.current && setFormDef(questions);

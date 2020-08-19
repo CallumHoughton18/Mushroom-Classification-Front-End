@@ -5,6 +5,10 @@ export type APIGet<T> = {
     result: T;
 };
 
+export type ClassificationResponse = {
+    poisonous: boolean;
+};
+
 export type ClassificationQueryData = {
     classificationData: FormContents;
 };

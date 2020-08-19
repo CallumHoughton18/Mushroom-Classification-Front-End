@@ -10,6 +10,6 @@ export interface IClassificationData {
 export interface IClassificationQuestion extends IFormElement, IClassificationData {}
 
 export interface IClassificationAPI {
-    getClassification: (data: FormContents) => Promise<boolean>;
+    getClassification: (data: FormContents) => Promise<APIGet<boolean>>;
     getClassificationFormDefinition: () => Promise<APIGet<FeatureDefinition[]>>;
 }
