@@ -42,7 +42,7 @@ describe("<Classificationpage /> functional tests", () => {
     });
 
     it("Should navigate to error page if getFormDef hook fails", () => {
-        const classificationAPIFailureMock: IClassificationAPI = {
+        const classificationAPIUnSuccesseMock: IClassificationAPI = {
             getClassification: mockClassificationAPI.getClassification,
             getClassificationFormDefinition: () => {
                 const bleh: APIGet<FeatureDefinition[]> = {
@@ -53,9 +53,9 @@ describe("<Classificationpage /> functional tests", () => {
             }
         };
 
-        render(<ClassificationPage classificationAPI={classificationAPIFailureMock} />);
+        render(<ClassificationPage classificationAPI={classificationAPIUnSuccesseMock} />);
         waitFor(() => {
-            expect(mockNav.goToErrorPage).toHaveBeenCalled();
+            expect(mockNav.goToErrorPage).toHaveBeenCalledTimes(1);
         });
     });
 });
