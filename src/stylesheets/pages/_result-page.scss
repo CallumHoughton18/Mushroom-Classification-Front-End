@@ -1,0 +1,23 @@
+.result-page {
+    @extend .container;
+    margin: 0 10%;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    .left-icon {
+        height: 5rem;
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+    }
+
+    .right-icon {
+        height: 5rem;
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+    }
+
+    .result-text {
+        margin: 1rem;
+        text-align: center;
+    }
+}

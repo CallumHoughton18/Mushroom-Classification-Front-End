@@ -9,6 +9,8 @@ $secondary-color-darkest: #344e41 !default;
 $secondary-color-highlight: #a3b18a !default;
 $secondary-color-lightest: #dad7cd !default;
 
+$warning-color: #942911 !default;
+
 $primary-color: #2e3440 !default;
 $primary-color-alt: #464e5e !default;
 $primary-background: #eceff4 !default;
@@ -27,4 +29,5 @@ $primary-color-highlight: #e5e9f0 !default;
     primaryBackground: $primary-background;
     primaryBackgroundLighter: $primary-background-lighter;
     primaryColorHighlight: $primary-color-highlight;
+    warningColor: $warning-color;
 }

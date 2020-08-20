@@ -10,6 +10,7 @@ export type sassVariablesType = {
     primaryBackground: string;
     primaryBackgroundLighter: string;
     primaryColorHighlight: string;
+    warningColor: string;
 };
 
 export const sassVars: sassVariablesType;

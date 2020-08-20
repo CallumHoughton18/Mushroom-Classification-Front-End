@@ -21,7 +21,8 @@ jest.mock("../../../../stylesheets/abstractions/_variables.scss", () => {
         primaryColorAlt: "",
         primaryBackground: "",
         primaryBackgroundLighter: "",
-        primaryColorHighlight: ""
+        primaryColorHighlight: "",
+        warningColor: ""
     };
     return mockSassVars;
 });
