@@ -1,4 +1,5 @@
-$graphic-size: 250px;
+$graphic-width: 600px;
+$graphic-height: 300px;
 
 .about-page {
     @extend .page;
@@ -17,8 +18,8 @@ $graphic-size: 250px;
 
             .mushroom {
                 color: $secondary-color-lighter;
-                width: $graphic-size;
-                height: $graphic-size;
+                width: $graphic-width;
+                height: $graphic-height;
             }
         }
 
@@ -39,6 +40,7 @@ $graphic-size: 250px;
         }
 
         @media (max-width: 1000px) {
+            margin-top: 10px;
             .inner-content {
                 h1 {
                     margin-right: 0px;
@@ -50,8 +52,8 @@ $graphic-size: 250px;
 
                 .mushroom {
                     color: $secondary-color;
-                    width: $graphic-size/1.5;
-                    height: $graphic-size/1.5;
+                    width: $graphic-width/1.5;
+                    height: $graphic-height/1.5;
                     margin-bottom: 30px;
                 }
             }

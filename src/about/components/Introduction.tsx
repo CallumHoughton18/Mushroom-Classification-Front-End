@@ -1,8 +1,11 @@
 import React, {FunctionComponent, Fragment} from "react";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import Container from "../../shared/components/Layout/Container";
+import Mushroom from "../../shared/components/Icons/Mushroom";
 
-const Introduction: FunctionComponent = () => {
+type introductionPropsType = {
+    mushroomColor: string;
+};
+const Introduction: FunctionComponent<introductionPropsType> = ({mushroomColor}) => {
     const IntroductionText = (
         <Fragment>
             <h1>Mushroom Classification - A Machine Learning Example</h1>
@@ -21,7 +24,7 @@ const Introduction: FunctionComponent = () => {
         </Fragment>
     );
 
-    const introIcon = <FontAwesomeIcon icon="leaf" className="mushroom"></FontAwesomeIcon>;
+    const introIcon = <Mushroom color={mushroomColor} className="mushroom" />;
 
     return (
         <Container

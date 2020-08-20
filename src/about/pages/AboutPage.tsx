@@ -10,7 +10,7 @@ const AboutPage: FunctionComponent = () => {
     return (
         <section className="about-page">
             <section className="info-section">
-                <Introduction />
+                <Introduction mushroomColor={sassVars.secondaryColor} />
                 <ProjectLinks
                     style="project-links"
                     PrimaryLogoColor={sassVars.secondaryColorLighter}
