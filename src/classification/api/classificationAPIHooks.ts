@@ -5,19 +5,26 @@ import {FeatureDefinition} from "../types";
 
 export const useIsPoisonous = (
     classificationAPI: IClassificationAPI,
-    classificationData: FormContents
+    classificationData: FormContents,
+    onErrorCallback: () => void
 ): boolean => {
     const [isPoisonous, setIsPoisonous] = useState<boolean>(undefined);
 
     useEffect(() => {
         async function doClassification() {
-            const classificationResponse = await classificationAPI.getClassification(
-                classificationData
-            );
-            setIsPoisonous(classificationResponse.result);
+            try {
+                const classificationRes = await classificationAPI.getClassification(
+                    classificationData
+                );
+                if (!classificationRes.success) throw "Error retrieving classification from API";
+
+                setIsPoisonous(classificationRes.result);
+            } catch (err) {
+                onErrorCallback();
+            }
         }
         doClassification();
-    }, [setIsPoisonous, classificationData, classificationAPI]);
+    }, [setIsPoisonous, classificationData, classificationAPI, onErrorCallback]);
 
     return isPoisonous;
 };

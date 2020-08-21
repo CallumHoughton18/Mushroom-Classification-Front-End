@@ -8,17 +8,13 @@ import INavigationManager from "../../../navigation/interfaces/INavigationManage
 import mockClassificationAPI from "../../api/mockClassificationAPI";
 import {IClassificationAPI} from "../../interfaces";
 import {APIGet, FeatureDefinition} from "../../types";
+import {generateMockNav} from "../../../test_helpers/testHelpers";
 
 jest.mock("../../../navigation/hooks/useAppNavigation");
 
 describe("<Classificationpage /> functional tests", () => {
     const mockedUseAppNavigation = mocked(useAppNavigation, true);
-    const mockNav: INavigationManager = {
-        goToClassificationPage: jest.fn(),
-        goToAboutPage: jest.fn(),
-        goToClassificationResultPage: jest.fn(),
-        goToErrorPage: jest.fn()
-    };
+    const mockNav = generateMockNav();
 
     beforeAll(() => {
         mockedUseAppNavigation.mockImplementation(() => {
@@ -45,11 +41,11 @@ describe("<Classificationpage /> functional tests", () => {
         const classificationAPIUnSuccesseMock: IClassificationAPI = {
             getClassification: mockClassificationAPI.getClassification,
             getClassificationFormDefinition: () => {
-                const bleh: APIGet<FeatureDefinition[]> = {
+                const fail: APIGet<FeatureDefinition[]> = {
                     success: false,
                     result: []
                 };
-                return Promise.resolve(bleh);
+                return Promise.resolve(fail);
             }
         };
 

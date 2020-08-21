@@ -8,7 +8,7 @@ export type ClassificationFormSUTType = {
     Component: ReactElement<ClassificationFormProps>;
     onSubmit: jest.Mock;
 };
-export function GenerateClassificationFormSUT(): ClassificationFormSUTType {
+export function generateClassificationFormSUT(): ClassificationFormSUTType {
     const mockOptions = GenerateMockClassificationQuestions();
     const onSubmitMock = jest.fn();
     const SUTWrapper: ClassificationFormSUTType = {

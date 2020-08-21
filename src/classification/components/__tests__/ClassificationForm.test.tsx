@@ -1,5 +1,5 @@
 import {render} from "@testing-library/react";
-import {GenerateClassificationFormSUT} from "../../../test_helpers/classificationTestHelpers";
+import {generateClassificationFormSUT} from "../../../test_helpers/classificationTestHelpers";
 //TODO: Need to wrap some rendering in act()
 
 // These are purely unit tests, so shouldn't be dependent on internal hook implementation
@@ -7,7 +7,7 @@ import {GenerateClassificationFormSUT} from "../../../test_helpers/classificatio
 
 describe("<ClassificationForm /> render test", () => {
     it("should render ClassificationForm component", () => {
-        const sut = GenerateClassificationFormSUT();
+        const sut = generateClassificationFormSUT();
         const renderedClassificationForm = render(sut.Component);
         expect(renderedClassificationForm).toMatchSnapshot();
     });

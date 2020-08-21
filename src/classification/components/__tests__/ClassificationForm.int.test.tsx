@@ -1,5 +1,5 @@
 import {render} from "@testing-library/react";
-import {GenerateClassificationFormSUT} from "../../../test_helpers/classificationTestHelpers";
+import {generateClassificationFormSUT} from "../../../test_helpers/classificationTestHelpers";
 import userEvent from "@testing-library/user-event";
 
 describe("<ClassificationForm /> behaviour tests", () => {
@@ -7,7 +7,7 @@ describe("<ClassificationForm /> behaviour tests", () => {
         // Currently, relying on form checking inbuilt into browser.
         // somewhere else in the application the submission data from the form will be checked
         // plus API endpoint has data validation anyway
-        const sut = GenerateClassificationFormSUT();
+        const sut = generateClassificationFormSUT();
         const renderedClassificationForm = render(sut.Component);
         const submitButton = renderedClassificationForm.getByRole("button");
 
@@ -17,7 +17,7 @@ describe("<ClassificationForm /> behaviour tests", () => {
     });
 
     it("should select first option in first select element", () => {
-        const sut = GenerateClassificationFormSUT();
+        const sut = generateClassificationFormSUT();
 
         const renderedClassificationForm = render(sut.Component);
         const firstSelectElement = (renderedClassificationForm.getAllByRole(
@@ -33,7 +33,7 @@ describe("<ClassificationForm /> behaviour tests", () => {
     });
 
     it("should generate correct form submission data", async () => {
-        const sut = GenerateClassificationFormSUT();
+        const sut = generateClassificationFormSUT();
 
         const renderedClassificationForm = render(sut.Component);
         const selectElements = renderedClassificationForm.getAllByRole(

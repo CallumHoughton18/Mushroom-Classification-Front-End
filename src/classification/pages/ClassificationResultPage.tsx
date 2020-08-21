@@ -1,5 +1,6 @@
 import React, {FunctionComponent} from "react";
 import useGetNavData from "../../navigation/hooks/useGetNavData";
+import useAppNavigation from "../../navigation/hooks/useAppNavigation";
 import {ClassificationQueryData} from "../types";
 import {IClassificationAPI} from "../interfaces";
 import {useIsPoisonous} from "../api/classificationAPIHooks";
@@ -16,7 +17,10 @@ const ClassificationResultPage: FunctionComponent<ClassificationResultsPageProps
 }) => {
     //TODO: for now this is fine, but ideally want a separate 'loading' hook
     const {classificationData} = useGetNavData<ClassificationQueryData>();
-    const isPoisonous = useIsPoisonous(classificationAPI, classificationData);
+    const navManager = useAppNavigation();
+    const isPoisonous = useIsPoisonous(classificationAPI, classificationData, () => {
+        navManager.goToErrorPage({message: "Error Retrieving Classification Result"});
+    });
 
     const genPoisonousText = (isPoisonous: boolean) => {
         return (
