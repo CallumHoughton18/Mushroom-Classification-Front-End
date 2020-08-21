@@ -7,6 +7,7 @@ import {useIsPoisonous} from "../api/classificationAPIHooks";
 import Spinner from "../../shared/components/UI/Spinner";
 import Mushroom from "../../shared/components/Icons/Mushroom";
 import sassVars from "../../stylesheets/abstractions/_variables.scss";
+import {LoadingState} from "../../shared/enums";
 
 type ClassificationResultsPageProps = {
     classificationAPI: IClassificationAPI;
@@ -15,12 +16,14 @@ type ClassificationResultsPageProps = {
 const ClassificationResultPage: FunctionComponent<ClassificationResultsPageProps> = ({
     classificationAPI
 }) => {
-    //TODO: for now this is fine, but ideally want a separate 'loading' hook
     const {classificationData} = useGetNavData<ClassificationQueryData>();
     const navManager = useAppNavigation();
-    const isPoisonous = useIsPoisonous(classificationAPI, classificationData, () => {
+
+    const [isPoisonous, isLoading] = useIsPoisonous(classificationAPI, classificationData, () => {
         navManager.goToErrorPage({message: "Error Retrieving Classification Result"});
     });
+
+    if (isLoading === LoadingState.LOADING || isPoisonous === undefined) return <Spinner />;
 
     const genPoisonousText = (isPoisonous: boolean) => {
         return (
@@ -33,18 +36,13 @@ const ClassificationResultPage: FunctionComponent<ClassificationResultsPageProps
     };
     const warningColor = isPoisonous ? sassVars.warningColor : sassVars.secondaryColor;
 
-    const resultSummary =
-        isPoisonous === undefined ? (
-            <Spinner />
-        ) : (
-            <section className="result-page">
-                <Mushroom color={warningColor} className="left-icon" />
-                {genPoisonousText(isPoisonous)}
-                <Mushroom color={warningColor} className="right-icon" />
-            </section>
-        );
-
-    return resultSummary;
+    return (
+        <section className="result-page">
+            <Mushroom color={warningColor} className="left-icon" />
+            {genPoisonousText(isPoisonous)}
+            <Mushroom color={warningColor} className="right-icon" />
+        </section>
+    );
 };
 
 export default ClassificationResultPage;

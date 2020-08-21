@@ -3,6 +3,7 @@ import ClassificationForm, {
     ClassificationFormProps
 } from "../classification/components/ClassificationForm";
 import {GenerateMockClassificationQuestions} from "../classification/helpers/generateMockData";
+import {IClassificationQuestion} from "../classification/interfaces";
 
 export type ClassificationFormSUTType = {
     Component: ReactElement<ClassificationFormProps>;
@@ -21,4 +22,19 @@ export function generateClassificationFormSUT(): ClassificationFormSUTType {
         onSubmit: onSubmitMock
     };
     return SUTWrapper;
+}
+
+export function generateMockOptions(): IClassificationQuestion[] {
+    const mockOptions: IClassificationQuestion[] = [];
+    for (let index = 0; index < 3; index++) {
+        const classificationQuestions: IClassificationQuestion = {
+            id: `classques-${index}`,
+            fieldName: `TestField${index}`,
+            options: [],
+            isRequired: true,
+            value: ""
+        };
+        mockOptions[index] = classificationQuestions;
+    }
+    return mockOptions;
 }

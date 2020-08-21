@@ -4,7 +4,6 @@ import {mocked} from "ts-jest/utils";
 import userEvent from "@testing-library/user-event";
 import useAppNavigation from "../../../navigation/hooks/useAppNavigation";
 import ClassificationPage from "../ClassificationPage";
-import INavigationManager from "../../../navigation/interfaces/INavigationManager";
 import mockClassificationAPI from "../../api/mockClassificationAPI";
 import {IClassificationAPI} from "../../interfaces";
 import {APIGet, FeatureDefinition} from "../../types";

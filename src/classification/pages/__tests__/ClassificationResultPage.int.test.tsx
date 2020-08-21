@@ -5,7 +5,6 @@ import {mocked} from "ts-jest/utils";
 import ClassificationResultPage from "../ClassificationResultPage";
 import useGetNavData from "../../../navigation/hooks/useGetNavData";
 import useAppNavigation from "../../../navigation/hooks/useAppNavigation";
-import INavigationManager from "../../../navigation/interfaces/INavigationManager";
 import {APIGet} from "../../types";
 import {IClassificationAPI} from "../../interfaces";
 import {generateMockNav} from "../../../test_helpers/testHelpers";

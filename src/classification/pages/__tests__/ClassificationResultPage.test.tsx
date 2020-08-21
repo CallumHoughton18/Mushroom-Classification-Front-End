@@ -6,8 +6,7 @@ import {mocked} from "ts-jest/utils";
 import {sassVariablesType} from "../../../stylesheets/abstractions/_variables.scss";
 import ClassificationResultPage from "../ClassificationResultPage";
 import useGetNavData from "../../../navigation/hooks/useGetNavData";
-import useAppNavigation from "../../../navigation/hooks/useAppNavigation";
-import INavigationManager from "../../../navigation/interfaces/INavigationManager";
+import {LoadingState} from "../../../shared/enums";
 
 jest.mock("../../../navigation/hooks/useAppNavigation");
 jest.mock("../../api/classificationAPIHooks");
@@ -36,7 +35,7 @@ describe("<ClassificationResultPage /> render tests", () => {
     const useIsPoisonousMock = mocked(useIsPoisonous, true);
 
     it("Should render ClassificationResultPage for poisonous result", () => {
-        useIsPoisonousMock.mockImplementationOnce(() => true);
+        useIsPoisonousMock.mockImplementationOnce(() => [true, LoadingState.LOADED]);
         const result = render(
             <ClassificationResultPage classificationAPI={mockClassificationAPI} />
         );
@@ -44,7 +43,7 @@ describe("<ClassificationResultPage /> render tests", () => {
     });
 
     it("Should render ClassificationResultPage for edible result", () => {
-        useIsPoisonousMock.mockImplementationOnce(() => false);
+        useIsPoisonousMock.mockImplementationOnce(() => [false, LoadingState.LOADED]);
         const result = render(
             <ClassificationResultPage classificationAPI={mockClassificationAPI} />
         );
