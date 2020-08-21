@@ -1,0 +1,27 @@
+{
+    "cap-shape": {
+        "info": "The shape of the head of the mushroom.",
+        "image": "https://datascienceplus.com/wp-content/uploads/2018/02/mushroom-cap-shape.jpg"
+    },
+    "cap-surface": "y",
+    "cap-color": "e",
+    "bruises": "f",
+    "odor": "n",
+    "gill-attachment": "f",
+    "gill-spacing": "c",
+    "gill-size": "n",
+    "gill-color": "w",
+    "stalk-shape": "e",
+    "stalk-root": "b",
+    "stalk-surface-above-ring": "s",
+    "stalk-surface-below-ring": "s",
+    "stalk-color-above-ring": "w",
+    "stalk-color-below-ring": "w",
+    "veil-type": "p",
+    "veil-color": "w",
+    "ring-number": "t",
+    "ring-type": "s",
+    "spore-print-color": "w",
+    "population": "v",
+    "habitat": "d"
+}
