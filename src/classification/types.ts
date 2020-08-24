@@ -5,6 +5,15 @@ export type APIGet<T> = {
     result: T;
 };
 
+export type ClassificationDescriptions = {
+    [classificationKey: string]: ClassificationInfo;
+};
+
+export type ClassificationInfo = {
+    info: string;
+    image?: string;
+};
+
 export type ClassificationResponse = {
     poisonous: boolean;
 };

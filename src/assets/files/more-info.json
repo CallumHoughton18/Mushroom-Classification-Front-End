@@ -3,25 +3,43 @@
         "info": "The shape of the head of the mushroom.",
         "image": "https://datascienceplus.com/wp-content/uploads/2018/02/mushroom-cap-shape.jpg"
     },
-    "cap-surface": "y",
-    "cap-color": "e",
-    "bruises": "f",
-    "odor": "n",
-    "gill-attachment": "f",
-    "gill-spacing": "c",
-    "gill-size": "n",
-    "gill-color": "w",
-    "stalk-shape": "e",
-    "stalk-root": "b",
-    "stalk-surface-above-ring": "s",
-    "stalk-surface-below-ring": "s",
-    "stalk-color-above-ring": "w",
-    "stalk-color-below-ring": "w",
-    "veil-type": "p",
-    "veil-color": "w",
-    "ring-number": "t",
-    "ring-type": "s",
-    "spore-print-color": "w",
-    "population": "v",
-    "habitat": "d"
+    "cap-surface": {
+        "info": "The texture on the head of the mushroom.",
+        "image": "https://datascienceplus.com/wp-content/uploads/2018/02/mushroom-cap-surface.jpg"
+    },
+    "gill-attachment": {
+        "info": "How the gills, underneath the cap, are attached to the stalk.",
+        "image": "https://datascienceplus.com/wp-content/uploads/2018/02/mushroom-gill-attachment.jpg"
+    },
+    "gill-spacing": {
+        "info": "How the gills, underneath the cap, are spaced.",
+        "image": "https://datascienceplus.com/wp-content/uploads/2018/02/mushroom-gill-spacing.jpg"
+    },
+    "stalk-shape": {
+        "info": "The shape of the stalk, located below the head.",
+        "image": "https://datascienceplus.com/wp-content/uploads/2018/02/mushroom-stalk.jpg"
+    },
+    "stalk-root": {
+        "info": "The shape of the root at the bottom of the stalk"
+    },
+    "stalk-surface-above-ring": {
+        "info": "The texture on the stalk above the ring, the ring is location about 2/3 up the stalk usually.",
+        "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fibiologia.com%2Fwp-content%2Fuploads%2F2018%2F12%2Fkiso_img_01.jpg&f=1&nofb=1"
+    },
+    "stalk-surface-below-ring": {
+        "info": "The texture on the stalk below the ring, the ring is location about 2/3 up the stalk usually.",
+        "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fibiologia.com%2Fwp-content%2Fuploads%2F2018%2F12%2Fkiso_img_01.jpg&f=1&nofb=1"
+    },
+    "veil-type": {
+        "info": "Tissue 'veil' like structure on the mushroom. A universal veil covers the entire cap and extends down. A partial veil does not cover the entire cap, and is more present on the underside of the cap and stem."
+    },
+    "ring-number": {
+        "info": "a ring of tissue around the stalk. The ring is what remains of the veil."
+    },
+    "ring-type": {
+        "info": "Shape of the ring, if present, around the stalk."
+    },
+    "spore-print-color": {
+        "info": "The spore print is the powdery deposit obtained by allowing spores of a fungal fruit body to fall onto a surface underneath, typically obtained by cutting off the cap and placing it gill side down on paper over night."
+    }
 }

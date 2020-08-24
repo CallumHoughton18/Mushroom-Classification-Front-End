@@ -1,10 +1,11 @@
-import React, {FunctionComponent, useState} from "react";
+import React, {FunctionComponent, Fragment} from "react";
 import Select from "../../shared/components/Forms/Select";
-import Modal from "../../shared/components/UI/Modal";
 import useForm from "../../shared/hooks/useForm";
 import {FormContents} from "../../shared/types";
 import {IClassificationQuestion} from "../interfaces";
 import {toFormFieldTitle} from "../helpers/converters";
+import {getClassificationDescriptions} from "../helpers/getClassificationDescriptions";
+import useModal from "../../shared/hooks/useModal";
 
 export type ClassificationFormProps = {
     questions: Array<IClassificationQuestion>;
@@ -12,44 +13,34 @@ export type ClassificationFormProps = {
 };
 
 const ClassificationForm: FunctionComponent<ClassificationFormProps> = (props) => {
-    const [showInfoModal, setShowInfoModal] = useState(false);
     const [values, handleChange, handleSubmit] = useForm(props.onSubmit);
+    const [RenderModal, toggle] = useModal();
 
-    const mockModal = (
-        <Modal
-            title="More Information"
-            closeModalCallBack={() => {
-                setShowInfoModal(false);
-            }}
-        >
-            <p>Information blah blah blah</p>
-        </Modal>
-    );
     const selects = props.questions.map((question, indx) => {
+        const classDesc = getClassificationDescriptions()[`${question.fieldName}`];
+
         return (
-            <Select
-                key={question.id}
-                id={question.id}
-                name={question.fieldName}
-                title={toFormFieldTitle(question.fieldName)}
-                value={values[question.fieldName] || ""}
-                options={question.options}
-                required={question.isRequired}
-                onChange={handleChange}
-                viewInfoCallback={
-                    indx % 2 === 0
-                        ? () => {
-                              setShowInfoModal(true);
-                          }
-                        : null
-                }
-            ></Select>
+            <Fragment key={question.id}>
+                <RenderModal title={classDesc?.info ?? "bleh"}>
+                    <p>This is stuff</p>
+                </RenderModal>
+                <Select
+                    key={question.id}
+                    id={question.id}
+                    name={question.fieldName}
+                    title={toFormFieldTitle(question.fieldName)}
+                    value={values[question.fieldName] || ""}
+                    options={question.options}
+                    required={question.isRequired}
+                    onChange={handleChange}
+                    viewInfoCallback={toggle}
+                ></Select>
+            </Fragment>
         );
     });
 
     return (
         <React.Fragment>
-            {showInfoModal ? mockModal : null}
             <form onSubmit={handleSubmit}>
                 {selects}
                 <input type="submit" value="Submit" />
