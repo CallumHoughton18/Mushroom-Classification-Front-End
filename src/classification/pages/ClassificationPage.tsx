@@ -44,6 +44,7 @@ const ClassificationPage: FunctionComponent<ClassificationPageProps> = ({classif
                         return classificationDescs[question.fieldName] != null;
                     }}
                     viewInfoCallback={(question) => {
+                        console.log(question);
                         setQuesForInfo(question);
                         toggle();
                     }}

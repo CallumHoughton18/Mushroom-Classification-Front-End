@@ -33,11 +33,7 @@ const Select: FunctionComponent<SelectProps> = (props) => {
             }}
             role={moreInfoRole}
         >
-            <FontAwesomeIcon
-                icon="question-circle"
-                onClick={props.viewInfoCallback}
-                className="more-info"
-            ></FontAwesomeIcon>
+            <FontAwesomeIcon icon="question-circle" className="more-info"></FontAwesomeIcon>
         </a>
     ) : null;
 

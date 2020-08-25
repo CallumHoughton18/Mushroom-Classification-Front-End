@@ -12,6 +12,8 @@ type ModalProps = {
 };
 
 const Modal: FunctionComponent<ModalProps> = ({title, children, toggle, isShowing}) => {
+    // There is probably a more 'react' way of doing this using refs.
+    // also really the element should be passed in the modal via props, or the id should anyway
     const modalRootEle = useGetElement("modal-root");
     if (!modalRootEle) return null;
 
