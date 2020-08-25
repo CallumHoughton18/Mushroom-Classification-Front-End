@@ -1,6 +1,7 @@
 import React, {FunctionComponent, ChangeEvent} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {SelectOption} from "../../types";
+import {moreInfoRole} from "../../constants";
 
 type SelectProps = {
     id: React.ReactText;
@@ -22,12 +23,22 @@ const Select: FunctionComponent<SelectProps> = (props) => {
         );
     });
 
+    // Wrapped in anchor tag due to FontAwesomeIcon having to be mocked for tests
+    // so this makes the onclick handler more testable
     const moreInfoIcon = props.viewInfoCallback ? (
-        <FontAwesomeIcon
-            icon="question-circle"
-            onClick={props.viewInfoCallback}
-            className="more-info"
-        ></FontAwesomeIcon>
+        <a
+            onClick={(e) => {
+                e.preventDefault();
+                props.viewInfoCallback();
+            }}
+            role={moreInfoRole}
+        >
+            <FontAwesomeIcon
+                icon="question-circle"
+                onClick={props.viewInfoCallback}
+                className="more-info"
+            ></FontAwesomeIcon>
+        </a>
     ) : null;
 
     return (

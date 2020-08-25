@@ -1,5 +1,5 @@
 import classificationAPI from "../classificationAPI";
-import {server} from "../../../functional_test_mocks/server";
+import {server} from "../../../functional_test_mocks/mockServer";
 import {
     createFeaturesDefHandler,
     createGetClassificationHandler,

@@ -15,7 +15,7 @@ export type ClassificationFormProps = {
 const ClassificationForm: FunctionComponent<ClassificationFormProps> = (props) => {
     const [values, handleChange, handleSubmit] = useForm(props.onSubmit);
 
-    const selects = props.questions.map((question, indx) => {
+    const selects = props.questions.map((question) => {
         const viewInfoCallback = props.hasInfoPopup(question)
             ? () => {
                   props.viewInfoCallback(question);

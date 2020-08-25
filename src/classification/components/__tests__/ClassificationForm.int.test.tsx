@@ -1,13 +1,22 @@
 import {render} from "@testing-library/react";
-import {generateClassificationFormSUT} from "../../../test_helpers/classificationTestHelpers";
+import {
+    generateClassificationFormSUT,
+    ClassificationFormSUTType
+} from "../../../test_helpers/classificationTestHelpers";
 import userEvent from "@testing-library/user-event";
+import {moreInfoRole} from "../../../shared/constants";
 
 describe("<ClassificationForm /> behaviour tests", () => {
+    let sut: ClassificationFormSUTType;
+
+    beforeEach(() => {
+        sut = generateClassificationFormSUT();
+    });
+
     it("should not submit form if form is empty", () => {
         // Currently, relying on form checking inbuilt into browser.
         // somewhere else in the application the submission data from the form will be checked
         // plus API endpoint has data validation anyway
-        const sut = generateClassificationFormSUT();
         const renderedClassificationForm = render(sut.Component);
         const submitButton = renderedClassificationForm.getByRole("button");
 
@@ -17,8 +26,6 @@ describe("<ClassificationForm /> behaviour tests", () => {
     });
 
     it("should select first option in first select element", () => {
-        const sut = generateClassificationFormSUT();
-
         const renderedClassificationForm = render(sut.Component);
         const firstSelectElement = (renderedClassificationForm.getAllByRole(
             "combobox"
@@ -33,13 +40,12 @@ describe("<ClassificationForm /> behaviour tests", () => {
     });
 
     it("should generate correct form submission data", async () => {
-        const sut = generateClassificationFormSUT();
-
         const renderedClassificationForm = render(sut.Component);
         const selectElements = renderedClassificationForm.getAllByRole(
             "combobox"
         ) as HTMLSelectElement[];
 
+        // Go through each select element, and select "Opt1" as the value
         for (let index = 0; index < selectElements.length; index++) {
             const element = selectElements[index];
             const option = element.options[1].value;
@@ -52,6 +58,29 @@ describe("<ClassificationForm /> behaviour tests", () => {
             TestField0: "Opt1",
             TestField1: "Opt1",
             TestField2: "Opt1"
+        });
+    });
+
+    describe("More info button tests", () => {
+        beforeEach(() => {
+            sut.hasInfoPopup.mockReturnValue(true);
+        });
+
+        it("should render buttons to display more information", () => {
+            const renderedForm = render(sut.Component);
+
+            expect(renderedForm).toMatchSnapshot();
+        });
+
+        it("should call viewInfoCallback when more info button clicked", () => {
+            const {getAllByRole} = render(sut.Component);
+            const moreInfoBtns = getAllByRole(moreInfoRole);
+
+            moreInfoBtns.forEach((infoEle) => {
+                userEvent.click(infoEle);
+            });
+
+            expect(sut.viewInfoCallback).toHaveBeenCalledTimes(moreInfoBtns.length);
         });
     });
 });
