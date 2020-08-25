@@ -1,10 +1,8 @@
-import {FormContents} from "../../shared/types";
 import {IClassificationAPI} from "../interfaces";
 import {FeatureDefinition, APIGet} from "../types";
 
 const mockClassificationAPI: IClassificationAPI = {
-    getClassification: async (data: FormContents): Promise<APIGet<boolean>> => {
-        console.log(data);
+    getClassification: async (): Promise<APIGet<boolean>> => {
         await new Promise((resolve) => setTimeout(resolve, 400));
         return {
             success: true,

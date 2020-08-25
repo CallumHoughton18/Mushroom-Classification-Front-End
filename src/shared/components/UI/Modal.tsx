@@ -1,7 +1,8 @@
-import React, {FunctionComponent, ReactNode} from "react";
+import React, {FunctionComponent, ReactNode, useRef} from "react";
 
 import Button from "./Button";
-import {createPortal} from "react-dom";
+import {createPortal, findDOMNode} from "react-dom";
+import {useGetElement} from "../../hooks/domHooks";
 
 type ModalProps = {
     title: string;
@@ -11,8 +12,8 @@ type ModalProps = {
 };
 
 const Modal: FunctionComponent<ModalProps> = ({title, children, toggle, isShowing}) => {
-    const domEl = document.getElementById("modal-root");
-    if (!domEl) return null;
+    const modalRootEle = useGetElement("modal-root");
+    if (!modalRootEle) return null;
 
     return isShowing
         ? createPortal(
@@ -25,7 +26,7 @@ const Modal: FunctionComponent<ModalProps> = ({title, children, toggle, isShowin
                       </div>
                   </section>
               </div>,
-              domEl
+              modalRootEle
           )
         : null;
 };
