@@ -1,7 +1,7 @@
-import React, {FunctionComponent, ReactNode, useRef} from "react";
+import React, {FunctionComponent, ReactNode} from "react";
 
 import Button from "./Button";
-import {createPortal, findDOMNode} from "react-dom";
+import {createPortal} from "react-dom";
 import {useGetElement} from "../../hooks/domHooks";
 
 type ModalProps = {
