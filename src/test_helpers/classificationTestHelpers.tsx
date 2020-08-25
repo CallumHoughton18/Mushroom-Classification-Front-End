@@ -8,18 +8,27 @@ import {IClassificationQuestion} from "../classification/interfaces";
 export type ClassificationFormSUTType = {
     Component: ReactElement<ClassificationFormProps>;
     onSubmit: jest.Mock;
+    hasInfoPopup: jest.Mock;
+    viewInfoCallback: jest.Mock;
 };
 export function generateClassificationFormSUT(): ClassificationFormSUTType {
     const mockOptions = GenerateMockClassificationQuestions();
     const onSubmitMock = jest.fn();
+    const hasInfoPopupMock = jest.fn();
+    const viewInfoCallbackMock = jest.fn();
+
     const SUTWrapper: ClassificationFormSUTType = {
         Component: (
             <ClassificationForm
+                viewInfoCallback={viewInfoCallbackMock}
+                hasInfoPopup={hasInfoPopupMock}
                 questions={mockOptions}
                 onSubmit={onSubmitMock}
             ></ClassificationForm>
         ),
-        onSubmit: onSubmitMock
+        onSubmit: onSubmitMock,
+        hasInfoPopup: hasInfoPopupMock,
+        viewInfoCallback: viewInfoCallbackMock
     };
     return SUTWrapper;
 }

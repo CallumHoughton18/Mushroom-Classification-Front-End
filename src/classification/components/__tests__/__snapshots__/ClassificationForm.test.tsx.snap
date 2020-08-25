@@ -11,9 +11,6 @@ Object {
         >
           Testfield0
            
-          <i
-            class="fa"
-          />
         </label>
         <select
           id="classques-0"
@@ -82,9 +79,6 @@ Object {
         >
           Testfield2
            
-          <i
-            class="fa"
-          />
         </label>
         <select
           id="classques-2"
@@ -128,9 +122,6 @@ Object {
       >
         Testfield0
          
-        <i
-          class="fa"
-        />
       </label>
       <select
         id="classques-0"
@@ -199,9 +190,6 @@ Object {
       >
         Testfield2
          
-        <i
-          class="fa"
-        />
       </label>
       <select
         id="classques-2"

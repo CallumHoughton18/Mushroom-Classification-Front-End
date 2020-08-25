@@ -20,7 +20,7 @@
         "image": "https://datascienceplus.com/wp-content/uploads/2018/02/mushroom-stalk.jpg"
     },
     "stalk-root": {
-        "info": "The shape of the root at the bottom of the stalk"
+        "info": "The shape of the root at the bottom of the stalk."
     },
     "stalk-surface-above-ring": {
         "info": "The texture on the stalk above the ring, the ring is location about 2/3 up the stalk usually.",
@@ -31,7 +31,7 @@
         "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fibiologia.com%2Fwp-content%2Fuploads%2F2018%2F12%2Fkiso_img_01.jpg&f=1&nofb=1"
     },
     "veil-type": {
-        "info": "Tissue 'veil' like structure on the mushroom. A universal veil covers the entire cap and extends down. A partial veil does not cover the entire cap, and is more present on the underside of the cap and stem."
+        "info": "Tissue 'veil' like structure on the mushroom. A universal veil covers the entire cap and extends down. A partial veil does not cover the entire cap, and is more present on the underside of the cap and stalk."
     },
     "ring-number": {
         "info": "a ring of tissue around the stalk. The ring is what remains of the veil."

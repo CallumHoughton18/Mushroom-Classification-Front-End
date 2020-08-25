@@ -1,4 +1,4 @@
-export const toFormFieldTitle = (unformattedName: string): string => {
+export const toTitleCase = (unformattedName: string): string => {
     if (unformattedName == undefined) return "";
 
     const formattedName = unformattedName.replace(/-/g, " ");

@@ -1,4 +1,4 @@
-import {useState, Fragment, FunctionComponent, ReactNode, useEffect} from "react";
+import {useState, Fragment, FunctionComponent, ReactNode} from "react";
 import Modal from "../components/UI/Modal";
 import React from "react";
 
