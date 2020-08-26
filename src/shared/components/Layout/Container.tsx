@@ -6,6 +6,10 @@ type SectionProps = {
     OuterContent?: ReactNode;
 };
 
+/**
+ * A container with outer content, and internal content wrapped in an inner div
+ * @param props
+ */
 const Container: FunctionComponent<SectionProps> = (props) => {
     return (
         <div className={props.sectionStyle}>

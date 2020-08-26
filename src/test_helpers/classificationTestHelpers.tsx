@@ -11,6 +11,11 @@ export type ClassificationFormSUTType = {
     hasInfoPopup: jest.Mock;
     viewInfoCallback: jest.Mock;
 };
+
+/**
+ * Wrapper function to generate ClassificationForm SUT with properties
+ * for callback methods for easy assertions
+ */
 export function generateClassificationFormSUT(): ClassificationFormSUTType {
     const mockOptions = GenerateMockClassificationQuestions();
     const onSubmitMock = jest.fn();

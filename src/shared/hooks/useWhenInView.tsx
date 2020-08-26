@@ -1,5 +1,9 @@
 import {useState, useEffect, MutableRefObject} from "react";
 
+/**
+ * hook for determing if element attached with @param domRef is visible
+ * @param domRef reference object, for instance attached to a DOM element
+ */
 const useWhenInView = (domRef: MutableRefObject<Element>): boolean => {
     const [isVisible, setVisible] = useState(true);
 

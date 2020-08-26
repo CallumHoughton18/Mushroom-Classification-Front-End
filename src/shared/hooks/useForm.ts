@@ -1,6 +1,10 @@
 import {useState, ChangeEvent, FormEvent} from "react";
 import {FormContents, GenericFormElement} from "../types";
 
+/**
+ * Minimal hook for managing form state and form data.
+ * @param submitCallback callback to fire when form is submitted.
+ */
 const useForm = (
     submitCallback: (data: FormContents) => void
 ): [FormContents, (event: ChangeEvent<GenericFormElement>) => void, (event: FormEvent) => void] => {

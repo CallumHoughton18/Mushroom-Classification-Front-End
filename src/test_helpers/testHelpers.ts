@@ -1,4 +1,5 @@
 import INavigationManager from "../navigation/interfaces/INavigationManager";
+// This contains generic test helper functions for use across any tests
 
 export function generateMockNav(): INavigationManager {
     return {
