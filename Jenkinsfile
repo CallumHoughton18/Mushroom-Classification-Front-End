@@ -6,6 +6,15 @@ pipeline {
     buildDiscarder(logRotator(numToKeepStr: '5', artifactNumToKeepStr: '5'))
   }  
   stages {
+    stage('Copy .env files') {
+      agent { docker { image 'node:14.7.0-alpine' } }
+      steps {
+        withCredentials([file(credentialsId: 'dotEnvFile', variable: 'ENV_FILE')]){
+          sh "cp \$ENV_FILE ./.env"
+          }
+      }
+    }
+
     stage('build and test') {
       agent { docker { image 'node:14.7.0-alpine' } }
       stages {
