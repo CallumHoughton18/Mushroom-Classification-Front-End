@@ -1,5 +1,8 @@
 import {rest, RequestHandler, MockedRequest, restContext, ParsedRestRequest} from "msw";
 
+// These are mock handlers for intercepting API requests when a mock service worker is used
+// this is useful when running tests that perform real requests using fetch or axios etc
+
 export const createFeaturesDefHandler = (
     statusCode: number,
     json: Record<string, unknown>
