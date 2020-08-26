@@ -5,15 +5,14 @@ import {
     convertLooseObjectToClassificationObj,
     convertFormContentsToJson as convertFormContentsToJsonString
 } from "./classificationAPIHelpers";
-
-const baseUri = "https://mushroomai.site/api";
+import {API_BASE_URL} from "../../utils/envConfig";
 
 const classificationAPI: IClassificationAPI = {
     getClassification: async (data: FormContents): Promise<APIGet<boolean>> => {
         try {
             const valuesJSONArray = convertFormContentsToJsonString(data);
             const searchParams = new URLSearchParams({values: valuesJSONArray});
-            const formDefinition = await fetch(`${baseUri}/prediction/submit?${searchParams}`);
+            const formDefinition = await fetch(`${API_BASE_URL}/prediction/submit?${searchParams}`);
             const classification = (await formDefinition.json()) as ClassificationResponse;
 
             const isSuccess = formDefinition.status === 200;
@@ -32,7 +31,7 @@ const classificationAPI: IClassificationAPI = {
 
     getClassificationFormDefinition: async (): Promise<APIGet<FeatureDefinition[]>> => {
         try {
-            const formDefinition = await fetch(`${baseUri}/files/features-definition.json`);
+            const formDefinition = await fetch(`${API_BASE_URL}/files/features-definition.json`);
             const defs: FeatureDefinition[] = [];
             const formJson = await formDefinition.json();
             for (const name in formJson) {

@@ -3,16 +3,15 @@ import {rest, RequestHandler, MockedRequest, restContext, ParsedRestRequest} fro
 // These are mock handlers for intercepting API requests when a mock service worker is used
 // this is useful when running tests that perform real requests using fetch or axios etc
 
+const baseUrl = process.env.API_BASE_URL;
+
 export const createFeaturesDefHandler = (
     statusCode: number,
     json: Record<string, unknown>
 ): RequestHandler<MockedRequest, typeof restContext, ParsedRestRequest> => {
-    return rest.get(
-        "https://mushroomai.site/api/files/features-definition.json",
-        (req, res, ctx) => {
-            return res(ctx.status(statusCode), ctx.json(json));
-        }
-    );
+    return rest.get(`${baseUrl}/files/features-definition.json`, (req, res, ctx) => {
+        return res(ctx.status(statusCode), ctx.json(json));
+    });
 };
 
 export const createGetClassificationHandler = (
@@ -20,7 +19,7 @@ export const createGetClassificationHandler = (
     json: Record<string, unknown>
 ): RequestHandler<MockedRequest, typeof restContext, ParsedRestRequest> => {
     return rest.get(
-        'https://mushroomai.site/api/prediction/submit?values=[{"fieldname":"value"}]',
+        `${baseUrl}/prediction/submit?values=[{"fieldname":"value"}]`,
         (req, res, ctx) => {
             return res(ctx.status(statusCode), ctx.json(json));
         }

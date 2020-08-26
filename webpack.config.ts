@@ -2,6 +2,9 @@ import path from "path";
 import webpack, {Configuration} from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
+import dotenv from "dotenv";
+
+const env = dotenv.config().parsed;
 
 const webpackConfig = (): Configuration => ({
     devtool: "source-map",
@@ -71,7 +74,8 @@ const webpackConfig = (): Configuration => ({
         }),
         new webpack.DefinePlugin({
             "process.env.NAME": JSON.stringify(require("./package.json").name),
-            "process.env.VERSION": JSON.stringify(require("./package.json").version)
+            "process.env.VERSION": JSON.stringify(require("./package.json").version),
+            "process.env.API_BASE_URL": JSON.stringify(env.API_BASE_URL)
         }),
         new ForkTsCheckerWebpackPlugin({eslint: true})
     ]
