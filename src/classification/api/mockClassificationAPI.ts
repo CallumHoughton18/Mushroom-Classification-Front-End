@@ -1,6 +1,9 @@
 import {IClassificationAPI} from "../interfaces";
 import {FeatureDefinition, APIGet} from "../types";
 
+// This is a mock implementation of IClassificationAPI,
+// helpful for developing locally and using it for testing purposes
+
 const mockClassificationAPI: IClassificationAPI = {
     getClassification: async (): Promise<APIGet<boolean>> => {
         await new Promise((resolve) => setTimeout(resolve, 400));

@@ -1,3 +1,7 @@
+/**
+ * @param unformattedName
+ * @returns {string} a title, with - replaced with spaces, and each word capitalized
+ */
 export const toTitleCase = (unformattedName: string): string => {
     if (unformattedName == undefined) return "";
 

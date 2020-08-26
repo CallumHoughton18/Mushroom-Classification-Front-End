@@ -4,6 +4,13 @@ import useModal from "../../shared/hooks/useModal";
 import {ClassificationDescriptions} from "../types";
 import {toTitleCase} from "../helpers/converters";
 
+/**
+ * A hook for generating the modal used to display information
+ * about a classification question
+ * @param modalRootId ID of the HTMLElement (a div) to render the modal in
+ * @param classificationDescriptions
+ * @returns The modal to render, and the SetSelectedQuestion action to change the modal body
+ */
 const useMoreInfoModal = (
     modalRootId: string,
     classificationDescriptions: ClassificationDescriptions

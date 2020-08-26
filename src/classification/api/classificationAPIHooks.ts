@@ -6,8 +6,15 @@ import {convertFeatureDefToClassQues} from "./classificationAPIHelpers";
 
 // To me there seems to be a fair amount of boilerplate here to get
 // a safe async hook to work for API requests...if I wanted to spend more time
-// on this it'd be worth refactoring onto a more generic 'getAPIData' hook maybe?
+// on this it'd be worth refactoring onto a more generic 'getAPIData'.
 
+/**
+ * Hook to check if given @param classificationData leads to a poisonous or edible prediction.
+ * @param classificationAPI an instance of @type {IClassificationAPI}
+ * @param classificationData completed form data to be used for a prediction
+ * @param onErrorCallback callback to call if any errors occur calling the API
+ * @returns @type {boolean} poisonous/not poisonous @type {LoadingState} state of loading data from API
+ */
 export const useIsPoisonous = (
     classificationAPI: IClassificationAPI,
     classificationData: FormContents,
@@ -44,6 +51,12 @@ export const useIsPoisonous = (
     return [isPoisonous, isLoading];
 };
 
+/**
+ * Hook to retrieve form definition from API to generate the classification form from.
+ * @param classificationAPI an instance of @type{ IClassificationAPI}
+ * @param onErrorCallback callback to call if any errors occur calling the API
+ * @returns array of classification questions, and the state of loading data from API
+ */
 export const useGetFormDefinition = (
     classificationAPI: IClassificationAPI,
     onErrorCallBack: () => void

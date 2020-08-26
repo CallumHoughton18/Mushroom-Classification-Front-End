@@ -1,5 +1,8 @@
 import {IClassificationQuestion} from "../interfaces";
 
+/**
+ * @returns {IClassificationQuestion} array with three instance members.
+ */
 export function GenerateMockClassificationQuestions(): IClassificationQuestion[] {
     const mockOptions: IClassificationQuestion[] = [];
     for (let index = 0; index < 3; index++) {
