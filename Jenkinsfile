@@ -55,7 +55,10 @@ pipeline {
       steps {
         echo 'This step will push the image'
         script {
-          withCredentials([string(credentialsId: 'dockerhub-repo', variable: 'REPO')]) {
+          withCredentials([string(credentialsId: 'dockerhub-repo', variable: 'REPO'), 
+                          file(credentialsId: 'dotEnvFile', variable: 'ENV_FILE')]) {
+            sh "cp \$ENV_FILE ./.env"
+            sh "ls"
             def apiImage = docker.build("${REPO}", ".")
             docker.withRegistry('https://registry.hub.docker.com', 'DockerHub') {
               apiImage.push("${env.BUILD_NUMBER}")
