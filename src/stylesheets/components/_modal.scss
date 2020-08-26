@@ -4,8 +4,8 @@
 
     .modal-window {
         border-radius: 0.5rem;
-        min-width: 60%;
-        min-height: 55%;
+        width: 600px;
+        height: 400px;
         max-height: 80%;
         max-width: 80%;
         position: fixed;
@@ -28,12 +28,14 @@
         }
 
         .modal-body {
+            overflow: auto;
             max-height: 100%;
             max-width: 100%;
             flex-grow: 1;
         }
 
         .modal-footer {
+            margin-top: 2rem;
             align-self: center;
         }
     }
