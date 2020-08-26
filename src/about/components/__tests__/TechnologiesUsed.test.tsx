@@ -3,7 +3,7 @@ import {render} from "@testing-library/react";
 import {mocked} from "ts-jest/utils";
 import useWhenInView from "../../../shared/hooks/useWhenInView";
 import {TechnologiesUsedProps} from "../TechnologiesUsed";
-import {generateTechnologiesUsedSUT} from "../../../test_helpers/aboutTestHelpers";
+import {generateTechnologiesUsedSUT} from "../../../test_helpers/helpers/aboutTestHelpers";
 
 jest.mock("../../../shared/hooks/useWhenInView");
 

@@ -7,7 +7,7 @@ import useGetNavData from "../../../navigation/hooks/useGetNavData";
 import useAppNavigation from "../../../navigation/hooks/useAppNavigation";
 import {APIGet} from "../../types";
 import {IClassificationAPI} from "../../interfaces";
-import {generateMockNav} from "../../../test_helpers/testHelpers";
+import {generateMockNav} from "../../../test_helpers/helpers/testHelpers";
 
 jest.mock("../../../navigation/hooks/useAppNavigation");
 jest.mock("../../../navigation/hooks/useGetNavData");

@@ -2,7 +2,7 @@ import {render} from "@testing-library/react";
 import {
     generateClassificationFormSUT,
     ClassificationFormSUTType
-} from "../../../test_helpers/classificationTestHelpers";
+} from "../../../test_helpers/helpers/classificationTestHelpers";
 import userEvent from "@testing-library/user-event";
 import {moreInfoRole} from "../../../shared/constants";
 

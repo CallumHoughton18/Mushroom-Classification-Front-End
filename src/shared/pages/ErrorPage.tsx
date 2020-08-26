@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from "react";
-import useGetNavData from "../navigation/hooks/useGetNavData";
-import {FriendlyAppError} from "../shared/types";
+import useGetNavData from "../../navigation/hooks/useGetNavData";
+import {FriendlyAppError} from "../types";
 
 const ErrorPage: FunctionComponent = () => {
     const errorMsg = useGetNavData<FriendlyAppError>();

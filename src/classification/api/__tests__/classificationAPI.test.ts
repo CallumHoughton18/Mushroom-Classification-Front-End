@@ -1,10 +1,10 @@
 import classificationAPI from "../classificationAPI";
-import {server} from "../../../functional_test_mocks/mockServer";
+import {server} from "../../../test_helpers/functional_test_mocks/mockServer";
 import {
     createFeaturesDefHandler,
     createGetClassificationHandler,
     defaultHandlers
-} from "../../../functional_test_mocks/handlers";
+} from "../../../test_helpers/functional_test_mocks/handlers";
 // this auto polyfills the fetch api for Node
 import "whatwg-fetch";
 import {FormContents} from "../../../shared/types";

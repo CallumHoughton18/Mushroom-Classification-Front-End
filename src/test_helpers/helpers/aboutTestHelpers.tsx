@@ -1,5 +1,5 @@
 import React from "react";
-import TechnologiesUsed from "../about/components/TechnologiesUsed";
+import TechnologiesUsed from "../../about/components/TechnologiesUsed";
 
 export function generateTechnologiesUsedSUT(): JSX.Element {
     return (

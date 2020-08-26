@@ -1,7 +1,7 @@
 import {ReactElement} from "react";
 import {render} from "@testing-library/react";
 import {TechnologiesUsedProps} from "../TechnologiesUsed";
-import {generateTechnologiesUsedSUT} from "../../../test_helpers/aboutTestHelpers";
+import {generateTechnologiesUsedSUT} from "../../../test_helpers/helpers/aboutTestHelpers";
 
 let technologiesUsedComponent: ReactElement<TechnologiesUsedProps>;
 

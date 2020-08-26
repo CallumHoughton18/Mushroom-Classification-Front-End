@@ -10,7 +10,7 @@ import "./stylesheets/main.scss";
 import ClassificationResultPage from "./classification/pages/ClassificationResultPage";
 import classificationAPI from "./classification/api/classificationAPI";
 import setupfontAwesomeLibrary from "./library_helpers/setupFontAwesomeLibrary";
-import ErrorPage from "./error/ErrorPage";
+import ErrorPage from "./shared/pages/ErrorPage";
 
 const App: FunctionComponent = () => {
     setupfontAwesomeLibrary();

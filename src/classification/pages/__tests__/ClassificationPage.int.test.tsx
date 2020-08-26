@@ -7,7 +7,7 @@ import ClassificationPage from "../ClassificationPage";
 import mockClassificationAPI from "../../api/mockClassificationAPI";
 import {IClassificationAPI} from "../../interfaces";
 import {APIGet, FeatureDefinition} from "../../types";
-import {generateMockNav} from "../../../test_helpers/testHelpers";
+import {generateMockNav} from "../../../test_helpers/helpers/testHelpers";
 import getClassificationDescriptions from "../../helpers/getClassificationDescriptions";
 import {moreInfoRole} from "../../../shared/constants";
 

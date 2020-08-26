@@ -1,9 +1,9 @@
 import React, {ReactElement} from "react";
 import ClassificationForm, {
     ClassificationFormProps
-} from "../classification/components/ClassificationForm";
-import {GenerateMockClassificationQuestions} from "../classification/helpers/generateMockData";
-import {IClassificationQuestion} from "../classification/interfaces";
+} from "../../classification/components/ClassificationForm";
+import {GenerateMockClassificationQuestions} from "../../classification/helpers/generateMockData";
+import {IClassificationQuestion} from "../../classification/interfaces";
 
 export type ClassificationFormSUTType = {
     Component: ReactElement<ClassificationFormProps>;

@@ -4,7 +4,7 @@ import ClassificationPage from "../ClassificationPage";
 import mockClassificationAPI from "../../../classification/api/mockClassificationAPI";
 import {useGetFormDefinition} from "../../api/classificationAPIHooks";
 import {mocked} from "ts-jest/utils";
-import {generateMockOptions} from "../../../test_helpers/classificationTestHelpers";
+import {generateMockOptions} from "../../../test_helpers/helpers/classificationTestHelpers";
 import {LoadingState} from "../../../shared/enums";
 import getClassificationDescriptions from "../../helpers/getClassificationDescriptions";
 
