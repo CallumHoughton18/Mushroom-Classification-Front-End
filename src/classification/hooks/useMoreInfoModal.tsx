@@ -5,9 +5,10 @@ import {ClassificationDescriptions} from "../types";
 import {toTitleCase} from "../helpers/converters";
 
 const useMoreInfoModal = (
+    modalRootId: string,
     classificationDescriptions: ClassificationDescriptions
 ): [JSX.Element, Dispatch<SetStateAction<IClassificationQuestion>>, () => void] => {
-    const [RenderModal, toggle] = useModal();
+    const [RenderModal, toggle] = useModal(modalRootId);
     const [selectedQuestion, setSelectedQuestion] = useState<IClassificationQuestion>(null);
     const option = classificationDescriptions[selectedQuestion?.fieldName ?? ""];
 

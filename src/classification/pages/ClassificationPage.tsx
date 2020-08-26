@@ -18,7 +18,7 @@ const ClassificationPage: FunctionComponent<ClassificationPageProps> = ({classif
     const classificationDescs = getClassificationDescriptions();
 
     const navManager = useAppNavigation();
-    const [modal, setQuesForInfo, toggle] = useMoreInfoModal(classificationDescs);
+    const [modal, setQuesForInfo, toggle] = useMoreInfoModal("modal-root", classificationDescs);
     const [formQuestions, loading] = useGetFormDefinition(classificationAPI, () => {
         navManager.goToErrorPage({message: "Error fetching form definition"});
     });

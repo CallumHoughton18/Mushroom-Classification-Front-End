@@ -6,7 +6,7 @@ export type modalProps = {
     title: string;
     children: ReactNode;
 };
-const useModal = (): [FunctionComponent<modalProps>, () => void] => {
+const useModal = (modalRootId: string): [FunctionComponent<modalProps>, () => void] => {
     const [isShowing, setIsShowing] = useState(false);
 
     const toggle = () => setIsShowing((prevState) => !prevState);
@@ -15,7 +15,12 @@ const useModal = (): [FunctionComponent<modalProps>, () => void] => {
         return (
             <Fragment>
                 {isShowing && (
-                    <Modal title={title} toggle={toggle} isShowing={isShowing}>
+                    <Modal
+                        title={title}
+                        toggle={toggle}
+                        isShowing={isShowing}
+                        modalRootId={modalRootId}
+                    >
                         {children}
                     </Modal>
                 )}
