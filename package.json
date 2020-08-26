@@ -5,6 +5,7 @@
     "main": "index.js",
     "license": "MIT",
     "jest": {
+        "setupFiles": ["dotenv/config"],
         "moduleFileExtensions": [
             "ts",
             "tsx",
@@ -42,7 +43,7 @@
         "lint": "eslint './src/**/*.{ts,tsx}'",
         "analyze": "source-map-explorer build/*.js",
         "lint:fix": "eslint './src/**/*.{ts,tsx}' --fix",
-        "test": "jest --env.API_BASE_URL=https://mushroomai.site/api",
+        "test": "jest",
         "test:watch": "jest --watch"
     },
     "devDependencies": {
