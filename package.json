@@ -5,7 +5,9 @@
     "main": "index.js",
     "license": "MIT",
     "jest": {
-        "setupFiles": ["dotenv/config"],
+        "setupFiles": [
+            "dotenv/config"
+        ],
         "moduleFileExtensions": [
             "ts",
             "tsx",
