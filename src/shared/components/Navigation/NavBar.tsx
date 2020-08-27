@@ -2,7 +2,7 @@ import React, {FunctionComponent} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 import NavLinks from "./NavLinks";
-import logo from "../../../icons/logo.png";
+import logo from "../../../assets/imgs/logo.png";
 import useNavbarExpanded from "../../hooks/useNavbarExpanded";
 
 import sassVars from "../../../stylesheets/abstractions/_variables.scss";
