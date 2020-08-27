@@ -1,10 +1,10 @@
-import React, {FunctionComponent} from "react";
+import React from "react";
 
 type mushroomProps = {
     color: string;
     className?: string;
 };
-const Mushroom: FunctionComponent<mushroomProps> = ({color, className}) => {
+const Mushroom = ({color, className}: mushroomProps): JSX.Element => {
     return (
         <svg viewBox="0 0 1000 1000" className={className}>
             <g>

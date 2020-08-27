@@ -1,4 +1,4 @@
-import React, {FunctionComponent} from "react";
+import React from "react";
 import GithubLogo from "../../shared/components/Logos/GithubLogo";
 import DockerLogo from "../../shared/components/Logos/DockerLogo";
 
@@ -8,7 +8,7 @@ type ProjectLinksType = {
     style: string;
 };
 
-const ProjectLinks: FunctionComponent<ProjectLinksType> = (props) => {
+const ProjectLinks = (props: ProjectLinksType): JSX.Element => {
     return (
         <div className={props.style}>
             <GithubLogo

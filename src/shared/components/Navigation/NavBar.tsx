@@ -1,4 +1,4 @@
-import React, {FunctionComponent} from "react";
+import React from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 import NavLinks from "./NavLinks";
@@ -7,7 +7,7 @@ import useNavbarExpanded from "../../hooks/useNavbarExpanded";
 
 import sassVars from "../../../stylesheets/abstractions/_variables.scss";
 
-const NavBar: FunctionComponent = () => {
+const NavBar = (): JSX.Element => {
     const widthForHamburger = parseInt(sassVars.maxWidthForHamburger, 10);
     const [expanded, setExpanded] = useNavbarExpanded(widthForHamburger, "resize");
     return (

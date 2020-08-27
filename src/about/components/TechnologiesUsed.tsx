@@ -1,4 +1,4 @@
-import React, {FunctionComponent, ReactNode, Fragment, useRef} from "react";
+import React, {ReactNode, Fragment, useRef} from "react";
 import ReactLogo from "../../shared/components/Logos/ReactLogo";
 import PythonLogo from "../../shared/components/Logos/PythonLogo";
 import TypeScriptLogo from "../../shared/components/Logos/TypeScriptLogo";
@@ -14,7 +14,7 @@ export type TechnologiesUsedProps = {
     children?: ReactNode;
 };
 
-const TechnologiesUsed: FunctionComponent<TechnologiesUsedProps> = (props) => {
+const TechnologiesUsed = (props: TechnologiesUsedProps): JSX.Element => {
     const domRef = useRef();
     const isInView = useWhenInView(domRef);
     const style = `${props.style} ${isInView ? props.fadeInClass : "hide"}`;

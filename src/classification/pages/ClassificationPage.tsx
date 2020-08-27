@@ -1,4 +1,4 @@
-import React, {FunctionComponent} from "react";
+import React from "react";
 import ClassificationForm from "../components/ClassificationForm";
 import useAppNavigation from "../../navigation/hooks/useAppNavigation";
 import {FormContents} from "../../shared/types";
@@ -14,7 +14,7 @@ type ClassificationPageProps = {
     classificationAPI: IClassificationAPI;
 };
 
-const ClassificationPage: FunctionComponent<ClassificationPageProps> = ({classificationAPI}) => {
+const ClassificationPage = ({classificationAPI}: ClassificationPageProps): JSX.Element => {
     const classificationDescs = getClassificationDescriptions();
 
     const navManager = useAppNavigation();

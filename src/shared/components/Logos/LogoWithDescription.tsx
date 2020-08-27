@@ -1,4 +1,4 @@
-import React, {FunctionComponent, ReactNode} from "react";
+import React, {ReactNode} from "react";
 
 type LogoWithDescriptionProps = {
     children?: ReactNode;
@@ -7,7 +7,7 @@ type LogoWithDescriptionProps = {
     logoDescription: string;
 };
 
-const LogoWithDescription: FunctionComponent<LogoWithDescriptionProps> = (props) => {
+const LogoWithDescription = (props: LogoWithDescriptionProps): JSX.Element => {
     return (
         <div className={props.logoClass}>
             {props.children}

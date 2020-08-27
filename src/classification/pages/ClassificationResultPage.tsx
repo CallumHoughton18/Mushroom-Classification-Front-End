@@ -1,4 +1,4 @@
-import React, {FunctionComponent} from "react";
+import React from "react";
 import useGetNavData from "../../navigation/hooks/useGetNavData";
 import useAppNavigation from "../../navigation/hooks/useAppNavigation";
 import {ClassificationQueryData} from "../types";
@@ -13,9 +13,9 @@ type ClassificationResultsPageProps = {
     classificationAPI: IClassificationAPI;
 };
 
-const ClassificationResultPage: FunctionComponent<ClassificationResultsPageProps> = ({
+const ClassificationResultPage = ({
     classificationAPI
-}) => {
+}: ClassificationResultsPageProps): JSX.Element => {
     const {classificationData} = useGetNavData<ClassificationQueryData>();
     const navManager = useAppNavigation();
 

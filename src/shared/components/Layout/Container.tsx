@@ -1,4 +1,4 @@
-import React, {FunctionComponent, ReactNode} from "react";
+import React, {ReactNode} from "react";
 
 type SectionProps = {
     sectionStyle: string;
@@ -10,7 +10,7 @@ type SectionProps = {
  * A container with outer content, and internal content wrapped in an inner div
  * @param props
  */
-const Container: FunctionComponent<SectionProps> = (props) => {
+const Container = (props: SectionProps): JSX.Element => {
     return (
         <div className={props.sectionStyle}>
             <div>{props.InnerContent}</div>

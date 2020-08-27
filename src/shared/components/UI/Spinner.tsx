@@ -1,7 +1,7 @@
-import React, {FunctionComponent} from "react";
+import React from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
-const Spinner: FunctionComponent = () => {
+const Spinner = (): JSX.Element => {
     const spinnerIcon = (
         <FontAwesomeIcon icon="spinner" spin className="spinner-icon"></FontAwesomeIcon>
     );

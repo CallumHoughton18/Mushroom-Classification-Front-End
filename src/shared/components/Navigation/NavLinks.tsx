@@ -1,11 +1,11 @@
-import React, {FunctionComponent} from "react";
+import React from "react";
 import {NavLink} from "react-router-dom";
 
 type NavLinkProps = {
     onLinkClicked: () => void;
 };
 
-const NavLinks: FunctionComponent<NavLinkProps> = (props) => {
+const NavLinks = (props: NavLinkProps): JSX.Element => {
     return (
         <ul>
             <li onClick={props.onLinkClicked}>

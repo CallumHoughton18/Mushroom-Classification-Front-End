@@ -1,4 +1,4 @@
-import React, {FunctionComponent} from "react";
+import React from "react";
 
 import Introduction from "../components/Introduction";
 import ProjectLinks from "../components/ProjectLinks";
@@ -6,7 +6,7 @@ import ProjectLinks from "../components/ProjectLinks";
 import sassVars from "../../stylesheets/abstractions/_variables.scss";
 import TechnologiesRibbon from "../components/TechnologiesUsed";
 
-const AboutPage: FunctionComponent = () => {
+const AboutPage = (): JSX.Element => {
     return (
         <section className="about-page">
             <section className="info-section">

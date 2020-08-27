@@ -1,4 +1,4 @@
-import React, {FunctionComponent, ChangeEvent} from "react";
+import React, {ChangeEvent} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {SelectOption} from "../../types";
 import {moreInfoRole} from "../../constants";
@@ -14,7 +14,7 @@ type SelectProps = {
     viewInfoCallback?: () => void;
 };
 
-const Select: FunctionComponent<SelectProps> = (props) => {
+const Select = (props: SelectProps): JSX.Element => {
     const options = props.options.map((optionVal, indx) => {
         return (
             <option value={optionVal.value} key={`${optionVal}-${indx}`}>

@@ -1,4 +1,4 @@
-import React, {FunctionComponent, ReactNode} from "react";
+import React, {ReactNode} from "react";
 
 import Button from "./Button";
 import {createPortal} from "react-dom";
@@ -13,13 +13,7 @@ type ModalProps = {
     children: ReactNode;
 };
 
-const Modal: FunctionComponent<ModalProps> = ({
-    modalRootId,
-    title,
-    children,
-    toggle,
-    isShowing
-}) => {
+const Modal = ({modalRootId, title, children, toggle, isShowing}: ModalProps): JSX.Element => {
     // There is probably a more 'react' way of doing this using refs.
     // also really the element should be passed in the modal via props, or the id should anyway
     const modalRootEle = useGetElement(modalRootId);

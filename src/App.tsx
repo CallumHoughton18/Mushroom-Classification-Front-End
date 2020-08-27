@@ -1,4 +1,4 @@
-import React, {FunctionComponent, lazy, Suspense} from "react";
+import React, {lazy, Suspense} from "react";
 import {Route, BrowserRouter as Router, Switch} from "react-router-dom";
 
 import NavBar from "./shared/components/Navigation/NavBar";
@@ -12,7 +12,7 @@ import classificationAPI from "./classification/api/classificationAPI";
 import setupfontAwesomeLibrary from "./library_helpers/setupFontAwesomeLibrary";
 import ErrorPage from "./shared/pages/ErrorPage";
 
-const App: FunctionComponent = () => {
+const App = (): JSX.Element => {
     setupfontAwesomeLibrary();
     const routes = (
         <Switch>

@@ -1,11 +1,11 @@
-import React, {FunctionComponent} from "react";
+import React from "react";
 
 type ButtonProps = {
     onClick: () => void;
     children: React.ReactNode;
 };
 
-const Button: FunctionComponent<ButtonProps> = (props) => {
+const Button = (props: ButtonProps): JSX.Element => {
     return <button onClick={props.onClick}>{props.children}</button>;
 };
 

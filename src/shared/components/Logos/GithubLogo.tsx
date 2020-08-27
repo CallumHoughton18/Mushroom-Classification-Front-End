@@ -1,7 +1,7 @@
-import React, {FunctionComponent} from "react";
+import React from "react";
 import {LogoProps} from "./LogoTypes";
 
-const GithubLogo: FunctionComponent<LogoProps> = ({LogoPrimaryColor, Link}) => {
+const GithubLogo = ({LogoPrimaryColor, Link}: LogoProps): JSX.Element => {
     return (
         <a href={Link}>
             <svg width="100%" height="100%" viewBox="0 0 24 24">

@@ -1,7 +1,7 @@
-import React, {FunctionComponent} from "react";
+import React from "react";
 import {LogoProps} from "./LogoTypes";
 
-const DockerLogo: FunctionComponent<LogoProps> = ({LogoPrimaryColor, LogoSecondaryColor, Link}) => {
+const DockerLogo = ({LogoPrimaryColor, LogoSecondaryColor, Link}: LogoProps): JSX.Element => {
     return (
         <a href={Link}>
             <svg version="1.1" width="100%" height="100%" viewBox="0 0 512 512">

@@ -1,8 +1,8 @@
-import React, {FunctionComponent} from "react";
+import React from "react";
 import useGetNavData from "../../navigation/hooks/useGetNavData";
 import {FriendlyAppError} from "../types";
 
-const ErrorPage: FunctionComponent = () => {
+const ErrorPage = (): JSX.Element => {
     const errorMsg = useGetNavData<FriendlyAppError>();
     return (
         <section className="centred-content">

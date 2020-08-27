@@ -1,11 +1,7 @@
-import React, {FunctionComponent} from "react";
+import React from "react";
 import {LogoProps} from "./LogoTypes";
 
-const TypeScriptLogo: FunctionComponent<LogoProps> = ({
-    LogoPrimaryColor,
-    LogoSecondaryColor,
-    Link
-}) => {
+const TypeScriptLogo = ({LogoPrimaryColor, LogoSecondaryColor, Link}: LogoProps): JSX.Element => {
     return (
         <a href={Link}>
             <svg width="100%" height="100%" viewBox="0 0 256 256" preserveAspectRatio="xMidYMid">

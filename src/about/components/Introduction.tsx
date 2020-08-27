@@ -1,11 +1,11 @@
-import React, {FunctionComponent, Fragment} from "react";
+import React, {Fragment} from "react";
 import Container from "../../shared/components/Layout/Container";
 import Mushroom from "../../shared/components/Icons/Mushroom";
 
 type introductionPropsType = {
     mushroomColor: string;
 };
-const Introduction: FunctionComponent<introductionPropsType> = ({mushroomColor}) => {
+const Introduction = ({mushroomColor}: introductionPropsType): JSX.Element => {
     const IntroductionText = (
         <Fragment>
             <h1>Mushroom Classification - A Machine Learning Example</h1>

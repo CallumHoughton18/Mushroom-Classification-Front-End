@@ -1,4 +1,4 @@
-import React, {FunctionComponent} from "react";
+import React from "react";
 import Select from "../../shared/components/Forms/Select";
 import useForm from "../../shared/hooks/useForm";
 import {FormContents} from "../../shared/types";
@@ -12,7 +12,7 @@ export type ClassificationFormProps = {
     hasInfoPopup: (question: IClassificationQuestion) => boolean;
 };
 
-const ClassificationForm: FunctionComponent<ClassificationFormProps> = (props) => {
+const ClassificationForm = (props: ClassificationFormProps): JSX.Element => {
     const [values, handleChange, handleSubmit] = useForm(props.onSubmit);
 
     const selects = props.questions.map((question) => {
