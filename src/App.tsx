@@ -11,6 +11,7 @@ import ClassificationResultPage from "./classification/pages/ClassificationResul
 import classificationAPI from "./classification/api/classificationAPI";
 import setupfontAwesomeLibrary from "./library_helpers/setupFontAwesomeLibrary";
 import ErrorPage from "./shared/pages/ErrorPage";
+import Spinner from "./shared/components/UI/Spinner";
 
 const App = (): JSX.Element => {
     setupfontAwesomeLibrary();
@@ -35,7 +36,7 @@ const App = (): JSX.Element => {
     );
 
     return (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<Spinner />}>
             <Router>
                 <NavBar />
                 <main>{routes}</main>
