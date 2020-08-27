@@ -7,3 +7,4 @@ Dockerfile
 testresults.xml
 linterresults.xml
 Jenkinsfile
+README.md
