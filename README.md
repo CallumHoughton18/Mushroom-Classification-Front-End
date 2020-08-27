@@ -1,4 +1,6 @@
 # Mushroom Classification Front-End
+![Jenkins](https://img.shields.io/jenkins/build?jobUrl=http%3A%2F%2Fjenkins.mushroomai.site%2Fjob%2FMushroom_Classification_Front_End%2Fjob%2Fmaster%2F) ![Jenkins tests](https://img.shields.io/jenkins/tests?compact_message&failed_label=failed&jobUrl=http%3A%2F%2Fjenkins.mushroomai.site%2Fjob%2FMushroom_Classification_Front_End%2Fjob%2Fmaster%2F&passed_label=passed&skipped_label=skipped) ![Jenkins Coverage](https://img.shields.io/jenkins/coverage/cobertura?jobUrl=http%3A%2F%2Fjenkins.mushroomai.site%2Fjob%2FMushroom_Classification_Front_End%2Fjob%2Fmaster%2F) ![GitHub](https://img.shields.io/github/license/CallumHoughton18/Mushroom-Classification-Front-End)
+
 The front-end for interacting with the [Mushroom Classification Model API](https://github.com/CallumHoughton18/Mushroom-Classification), built using TypeScript and ReactJS.
 
 ## Demo and Availability
@@ -98,6 +100,6 @@ In the spirit of open source the Jenkins CI and CD jobs can be viewed [here](htt
 
 Credentials also need to be configured for the pipeline. Which credentials, and of what type, can be easily seen via the `withCredentials` blocks in the Jenkinsfile or via the viewable jobs for the demos.
 
-# Liability
+## Liability
 
 This project is purely to demonstrate how a machine learning model can be generated and then interacted with via a web API, **the project is not to be used in your decision on whether to consume a mushroom or not**. Any project authors/contributors are not responsible for any harm you inflict on yourself if you refuse to follow this rule.
