@@ -70,7 +70,8 @@ const webpackConfig = (): Configuration => ({
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: "./public/index.html"
+            template: "./public/index.html",
+            favicon: "./public/favicon.ico"
         }),
         new webpack.DefinePlugin({
             "process.env.NAME": JSON.stringify(require("./package.json").name),
