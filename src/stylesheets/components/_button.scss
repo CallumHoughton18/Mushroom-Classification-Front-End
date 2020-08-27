@@ -1,4 +1,8 @@
 button {
+    opacity: 1;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     -webkit-transition: background-color 50ms linear;
     -ms-transition: background-color 50ms linear;
     transition: background-color 50ms linear;
