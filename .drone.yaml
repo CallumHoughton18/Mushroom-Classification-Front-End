@@ -5,8 +5,12 @@ name: mushroom-classification-frontend-pipeline
 steps: 
 - name: build-and-test-and-lint
   image: node:14.7.0-alpine
+  environment:
+    DOTENVS:
+      from_secret: DOTENVS
   commands:
     - yarn
+    - echo "$DOTENVS" > ./.env
     - yarn jest --coverage
     - yarn lint --format checkstyle
 
