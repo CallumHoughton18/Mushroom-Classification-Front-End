@@ -1,0 +1,26 @@
+kind: pipeline
+type: docker
+name: mushroom-classification-frontend-pipeline
+
+steps: 
+- name: build-and-test
+  image: node:14.7.0-alpine
+  commands:
+    - yarn
+    - yarn jest --coverage
+    - yarn lint --format checkstyle
+
+# - name: publish-docker-image  
+#   image: plugins/docker
+#   settings:
+#     username:
+#       from_secret: dockerhubusername
+#     password:
+#       from_secret: dockerhubpassword
+#     repo:
+#       from_secret: dockerhubimage
+#     dockerfile: ./dockerfile
+#   auto_tag: true
+#   when:
+#     branch:
+#     - master
