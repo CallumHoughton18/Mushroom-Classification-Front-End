@@ -3,7 +3,7 @@ type: docker
 name: mushroom-classification-frontend-pipeline
 
 steps: 
-- name: build-and-test
+- name: build-and-test-and-lint
   image: node:14.7.0-alpine
   commands:
     - yarn
