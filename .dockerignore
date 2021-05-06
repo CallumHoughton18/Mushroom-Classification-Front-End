@@ -8,3 +8,4 @@ testresults.xml
 linterresults.xml
 Jenkinsfile
 README.md
+.env

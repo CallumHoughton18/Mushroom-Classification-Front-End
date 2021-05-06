@@ -14,17 +14,16 @@ steps:
     - yarn jest --coverage
     - yarn lint --format checkstyle
 
-# - name: publish-docker-image  
-#   image: plugins/docker
-#   settings:
-#     username:
-#       from_secret: dockerhubusername
-#     password:
-#       from_secret: dockerhubpassword
-#     repo:
-#       from_secret: dockerhubimage
-#     dockerfile: ./dockerfile
-#   auto_tag: true
-#   when:
-#     branch:
-#     - master
+- name: publish-docker-image  
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: dockerhubusername
+    password:
+      from_secret: dockerhubpassword
+    repo:
+      from_secret: dockerhubimage
+  auto_tag: true
+  when:
+    branch:
+    - master
