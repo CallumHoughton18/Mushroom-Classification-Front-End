@@ -12,7 +12,10 @@ steps:
     - yarn
     - echo "$DOTENVS" > ./.env
     # temporary disable tests as VPS is running out of memory when running tests
+    # not much point upgrading my VPS just to run a pipeline for two
+    # apps which I've finished working on
     # - yarn jest --coverage
+    # - yarn build
     - yarn lint --format checkstyle
 
 - name: publish-docker-image  
@@ -28,20 +31,3 @@ steps:
   when:
     branch:
     - master
-
-- name: trigger  
-  image: plugins/downstream
-  environment:
-    deploymentreponame:
-      from_secret: deploymentreponame
-  settings:
-    server:
-      from_secret: droneservername
-    token:
-      from_secret: authtoken
-    fork: true
-    repositories:
-      - '$deploymentreponame'
-  when:
-    branch:
-      - master

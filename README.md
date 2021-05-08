@@ -1,11 +1,11 @@
 # Mushroom Classification Front-End
-![Jenkins](https://img.shields.io/jenkins/build?jobUrl=http%3A%2F%2Fjenkins.mushroomai.site%2Fjob%2FMushroom_Classification_Front_End%2Fjob%2Fmaster%2F) ![Jenkins tests](https://img.shields.io/jenkins/tests?compact_message&failed_label=failed&jobUrl=http%3A%2F%2Fjenkins.mushroomai.site%2Fjob%2FMushroom_Classification_Front_End%2Fjob%2Fmaster%2F&passed_label=passed&skipped_label=skipped) ![Jenkins Coverage](https://img.shields.io/jenkins/coverage/cobertura?jobUrl=http%3A%2F%2Fjenkins.mushroomai.site%2Fjob%2FMushroom_Classification_Front_End%2Fjob%2Fmaster%2F) ![GitHub](https://img.shields.io/github/license/CallumHoughton18/Mushroom-Classification-Front-End)
+[![Build Status](https://devops.callums-stuff.net/api/badges/CallumHoughton18/Mushroom-Classification-Front-End/status.svg)](https://devops.callums-stuff.net/CallumHoughton18/Mushroom-Classification-Front-End) ![GitHub](https://img.shields.io/github/license/CallumHoughton18/Mushroom-Classification-Front-End)
 
 The front-end for interacting with the [Mushroom Classification Model API](https://github.com/CallumHoughton18/Mushroom-Classification), built using TypeScript and ReactJS.
 
 ## Demo and Availability
 
-A demo of the application is available at [https://mushroomai.site](https://mushroomai.site).
+A demo of the application is available at [mushrooml.callums-stuff.net](https://mushrooml.callums-stuff.net).
 
 The application is also available as a [public docker image](https://hub.docker.com/repository/docker/callumhoughton22/mushroom-classification-front-end).
 
@@ -13,7 +13,7 @@ The application is also available as a [public docker image](https://hub.docker.
 
 The project uses the `dotenv` npm package to manage environment variables. So, in the project root a `.env` file needs to be created and a `API_BASE_URL` environment needs to be specified, either pointing to a version of the backend API running locally or the live site. For example:
 
-`API_BASE_URL=https://mushroomai.site/api`
+`API_BASE_URL=https://mushroomlapi.callums-stuff.net`
 
 Besides this the application doesn't require any special setup and can be ran using the usual npm/yarn commands, I use yarn as my dependency management tool so all the instructional commands will be given in that form, but the npm equivalent can easily be found.
 
@@ -91,14 +91,16 @@ The project uses Webpack, with TypeScript plugins, along with the TypeScript tra
 
 The project is containerised via Docker using the root `Dockerfile`. To view an example of how it can be deployed check the [Mushroom Classification Deployment Repository](https://github.com/CallumHoughton18/Mushroom-Classification-Deployment).
 
-## Jenkins CD/CI
+## CD/CI
 
-The project is configured for a CD/CI Pipeline via Jenkins 2.0, the 'pipeline as code' is available in the root `jenkinsfile`. 
-**The Jenkins server must have the initial recommended plugins when installing Jenkins, as well as the Warnings Next Generation plugin and the Cobertura plugin. You must also configure the extended email notification plugin**.
+~~The project is configured for a CD/CI Pipeline via Jenkins 2.0, the 'pipeline as code' is available in the root `jenkinsfile`. 
+**The Jenkins server must have the initial recommended plugins when installing Jenkins, as well as the Warnings Next Generation plugin and the Cobertura plugin. You must also configure the extended email notification plugin**.~~
 
-In the spirit of open source the Jenkins CI and CD jobs can be viewed [here](http://jenkins.mushroomai.site/).
+~~In the spirit of open source the Jenkins CI and CD jobs can be viewed [here](http://jenkins.mushroomai.site/).~~
 
-Credentials also need to be configured for the pipeline. Which credentials, and of what type, can be easily seen via the `withCredentials` blocks in the Jenkinsfile or via the viewable jobs for the demos.
+~~Credentials also need to be configured for the pipeline. Which credentials, and of what type, can be easily seen via the `withCredentials` blocks in the Jenkinsfile or via the viewable jobs for the demos.~~
+
+As of May 2021 the projects CI and CD pipeline is configured via a self hosted drone.io instance. [The pipeline is publically visible.](https://devops.callums-stuff.net/CallumHoughton18/Mushroom-Classification-Front-End) The jenkinsfile has been kept in the repository as it could be useful.
 
 ## Liability
 
