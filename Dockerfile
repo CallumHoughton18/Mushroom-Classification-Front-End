@@ -9,5 +9,5 @@ COPY ./package.json ./yarn.lock ./
 RUN yarn install
 
 COPY . ./
-CMD ["yarn", "build"]
+RUN yarn build
 # Would be nice here to delete everything and just have the build folder as the app folder? 
