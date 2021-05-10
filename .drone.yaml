@@ -10,7 +10,7 @@ steps:
       from_secret: DOTENVS
   commands:
     - yarn
-    - echo "$DOTENVS" > ./.env
+    - echo "API_BASE_URL=https://mushroomlapi.callums-stuff.net/api" > ./.env
     # temporary disable tests as VPS is running out of memory when running tests
     # not much point upgrading my VPS just to run a pipeline for two
     # apps which I've finished working on
